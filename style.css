@@ -35,9 +35,15 @@ section{
 
 .card{
     background:white;
+    border-radius:20px;
     padding:25px;
-    border-radius:18px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
 }
 
 .card h3{
