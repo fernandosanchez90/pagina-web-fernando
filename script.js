@@ -51,13 +51,15 @@ document.body.innerHTML = `
         </p>
     </div>
 </a>
-        <div class="card">
-            <h3>Normativa Educativa</h3>
-            <p>
-                Elaboración de informes, actas y comunicados sustentados en la
-                normativa vigente.
-            </p>
-        </div>
+       <a href="normativa-educativa.html" style="text-decoration:none;color:inherit;">
+    <div class="card">
+        <h3>Normativa Educativa</h3>
+        <p>
+            Elaboración de informes, actas y comunicados sustentados en la
+            normativa vigente.
+        </p>
+    </div>
+</a>
 
         <div class="card">
             <h3>Convivencia Escolar</h3>
