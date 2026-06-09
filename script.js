@@ -87,11 +87,11 @@ document.body.innerHTML = `
     <div class="card-container">
 
         <div class="card">
-            <h3>Gestión Educativa</h3>
-            <p>
-                Dirección y coordinación de procesos institucionales orientados
-                a la mejora continua.
-            </p>
+            <h3>Estructura Tecno-Pedagógica de Aula Virtual</h3>
+
+<p>
+Diseño e implementación de entornos virtuales de aprendizaje fundamentados en criterios pedagógicos, tecnológicos y metodológicos que fortalecen la experiencia educativa.
+</p>
         </div>
 
         <div class="card">
