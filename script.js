@@ -43,13 +43,14 @@ document.body.innerHTML = `
     </div>
 </a>
 
-        <div class="card">
-            <h3>Acompañamiento Pedagógico</h3>
-            <p>
-                Seguimiento docente, planificación, evaluación y mejora continua.
-            </p>
-        </div>
-
+<a href="acompanamiento-pedagogico.html" style="text-decoration:none;color:inherit;">
+    <div class="card">
+        <h3>Acompañamiento Pedagógico</h3>
+        <p>
+            Seguimiento docente, planificación, evaluación y mejora continua.
+        </p>
+    </div>
+</a>
         <div class="card">
             <h3>Normativa Educativa</h3>
             <p>
