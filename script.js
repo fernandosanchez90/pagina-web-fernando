@@ -86,13 +86,19 @@ document.body.innerHTML = `
 
     <div class="card-container">
 
-        <div class="card">
-            <h3>Estructura Tecno-Pedagógica de Aula Virtual</h3>
+        <a href="eva-multiplicacion-por-dos.html" style="text-decoration:none;color:inherit;">
 
-<p>
-Diseño e implementación de entornos virtuales de aprendizaje fundamentados en criterios pedagógicos, tecnológicos y metodológicos que fortalecen la experiencia educativa.
-</p>
-        </div>
+    <div class="card">
+
+        <h3>Estructura Tecno-Pedagógica de Aula Virtual</h3>
+
+        <p>
+            Diseño e implementación de entornos virtuales de aprendizaje fundamentados en criterios pedagógicos, tecnológicos y metodológicos que fortalecen la experiencia educativa.
+        </p>
+
+    </div>
+
+</a>
 
         <div class="card">
             <h3>Innovación Pedagógica</h3>
