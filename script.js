@@ -62,7 +62,15 @@ document.body.innerHTML = `
 </a>
 
         <div class="card">
-            <h3>Convivencia Escolar</h3>
+<a href="convivencia-escolar.html" style="text-decoration:none;color:inherit;">
+    <div class="card">
+        <h3>Convivencia Escolar</h3>
+        <p>
+            Desarrollo de estrategias para el bienestar integral de la
+            comunidad educativa.
+        </p>
+    </div>
+</a>
             <p>
                 Desarrollo de estrategias para el bienestar integral de la
                 comunidad educativa.
