@@ -33,13 +33,15 @@ document.body.innerHTML = `
 
     <div class="card-container">
 
-        <div class="card">
-            <h3>Gestión Institucional</h3>
-            <p>
-                Organización y fortalecimiento de procesos académicos,
-                administrativos y convivenciales.
-            </p>
-        </div>
+        <a href="gestion-educativa.html" style="text-decoration:none;color:inherit;">
+    <div class="card">
+        <h3>Gestión Educativa</h3>
+        <p>
+            Organización y fortalecimiento de procesos académicos,
+            administrativos y convivenciales.
+        </p>
+    </div>
+</a>
 
         <div class="card">
             <h3>Acompañamiento Pedagógico</h3>
