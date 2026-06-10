@@ -127,7 +127,19 @@ document.body.innerHTML = `
                 profesionales del personal educativo.
             </p>
         </div>
+<a href="comentarios.html" style="text-decoration:none;color:inherit;">
 
+    <div class="card">
+
+        <h3>Opiniones y Comentarios</h3>
+
+        <p>
+            Espacio para registrar comentarios, sugerencias y retroalimentación sobre el portafolio profesional, la gestión educativa y los proyectos desarrollados.
+        </p>
+
+    </div>
+
+</a>
     </div>
 
 </section>
