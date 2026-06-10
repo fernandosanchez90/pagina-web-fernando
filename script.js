@@ -12,6 +12,10 @@ document.body.innerHTML = `
     <p>
         Rector | Magíster en Pedagogía | Gestor Educativo
     </p>
+ <div class="contador-visitas">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=fernandosanchez90.pagina-web-fernando"
+         alt="Contador de visitas">
+</div>   
 </header>
 
 <section>
