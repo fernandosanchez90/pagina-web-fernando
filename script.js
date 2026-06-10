@@ -127,6 +127,8 @@ document.body.innerHTML = `
                 profesionales del personal educativo.
             </p>
         </div>
+</div>
+
 <a href="comentarios.html" class="comentarios-cta">
 
     <div class="comentarios-texto">
@@ -148,8 +150,6 @@ document.body.innerHTML = `
     </div>
 
 </a>
-<
-    </div>
 
 </section>
 
