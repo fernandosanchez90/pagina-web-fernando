@@ -127,19 +127,28 @@ document.body.innerHTML = `
                 profesionales del personal educativo.
             </p>
         </div>
-<a href="comentarios.html" style="text-decoration:none;color:inherit;">
+<a href="comentarios.html" class="comentarios-cta">
 
-    <div class="card">
+    <div class="comentarios-texto">
 
-        <h3>Opiniones y Comentarios</h3>
+        <h2>💬 Tu opinión es muy importante</h2>
 
         <p>
-            Espacio para registrar comentarios, sugerencias y retroalimentación sobre el portafolio profesional, la gestión educativa y los proyectos desarrollados.
+            Este espacio ha sido creado para recibir comentarios, sugerencias y retroalimentación sobre mi portafolio profesional, proyectos educativos y propuestas de innovación pedagógica.
+        </p>
+
+        <p>
+            Tu aporte contribuye a la mejora continua y al fortalecimiento de la práctica educativa.
         </p>
 
     </div>
 
+    <div class="comentarios-boton">
+        Dejar comentario →
+    </div>
+
 </a>
+<
     </div>
 
 </section>
