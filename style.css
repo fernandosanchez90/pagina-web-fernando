@@ -87,3 +87,54 @@ footer{
 .contador-numero img{
     height:35px;
 }
+.comentarios-cta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    margin-top:40px;
+    padding:35px;
+    background:linear-gradient(135deg,#003366,#00509d);
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+.comentarios-texto h2{
+    margin-top:0;
+    margin-bottom:15px;
+    font-size:32px;
+    color:white;
+}
+
+.comentarios-texto p{
+    margin-bottom:10px;
+    line-height:1.7;
+    color:white;
+}
+
+.comentarios-boton{
+    background:#fbbf24;
+    color:#003366;
+    font-weight:bold;
+    padding:18px 28px;
+    border-radius:15px;
+    font-size:20px;
+    white-space:nowrap;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+.comentarios-cta:hover{
+    transform:translateY(-4px);
+    transition:0.3s;
+}
+
+@media(max-width:768px){
+
+    .comentarios-cta{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
