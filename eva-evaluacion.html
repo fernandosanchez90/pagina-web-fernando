@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluación - Multiplicación por 2</title>
+
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#fffbeb;color:#243447;line-height:1.7;}
+header{background:linear-gradient(135deg,#ca8a04,#facc15);color:white;text-align:center;padding:55px 20px;}
+header h1{margin:0;font-size:42px;}
+.container{max-width:1180px;margin:auto;padding:40px 20px;}
+.card{background:white;border-radius:20px;padding:28px;margin-bottom:25px;box-shadow:0 4px 14px rgba(0,0,0,.08);}
+.gold{border-top:8px solid #ca8a04;}
+.blue{border-top:8px solid #2563eb;}
+.green{border-top:8px solid #16a34a;}
+.orange{border-top:8px solid #ea580c;}
+.purple{border-top:8px solid #7c3aed;}
+.red{border-top:8px solid #dc2626;}
+input{padding:12px;border:2px solid #cbd5e1;border-radius:10px;font-size:18px;width:130px;}
+button,.btn{display:inline-block;background:#003366;color:white;text-decoration:none;border:none;padding:13px 25px;border-radius:12px;margin-top:15px;margin-right:10px;font-weight:bold;cursor:pointer;}
+button:hover,.btn:hover{background:#00264d;}
+.question{background:#f8fafc;border-radius:16px;padding:20px;margin-bottom:18px;border-left:7px solid #ca8a04;}
+.resultado{display:none;border-radius:20px;padding:28px;margin-top:25px;text-align:center;font-size:20px;font-weight:bold;}
+.excelente{background:#dcfce7;color:#166534;}
+.bueno{background:#dbeafe;color:#1e40af;}
+.practica{background:#fef3c7;color:#92400e;}
+.refuerzo{background:#fee2e2;color:#991b1b;}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;margin-top:20px;}
+.badge{background:#f8fafc;border-radius:16px;padding:18px;text-align:center;font-weight:bold;border-top:6px solid #ca8a04;}
+footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:40px;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Dimensión Evaluativa</h1>
+<p>Verificación del aprendizaje sobre la multiplicación por 2</p>
+</header>
+
+<div class="container">
+
+<div class="card gold">
+<h2>Instrucciones</h2>
+<p>
+Responde cada pregunta. Cada respuesta correcta vale <strong>2 puntos</strong>.  
+El puntaje final será sobre <strong>10 puntos</strong>.
+</p>
+</div>
+
+<div class="card blue">
+<h2>Evaluación interactiva</h2>
+
+<div class="question">
+<p><strong>1. ¿Cuánto es 2 × 3?</strong></p>
+<input id="p1" type="number">
+</div>
+
+<div class="question">
+<p><strong>2. ¿Cuánto es 5 × 2?</strong></p>
+<input id="p2" type="number">
+</div>
+
+<div class="question">
+<p><strong>3. Si hay 4 grupos de 2 elementos, ¿cuántos elementos hay?</strong></p>
+<input id="p3" type="number">
+</div>
+
+<div class="question">
+<p><strong>4. Ana tiene 3 pares de zapatos. ¿Cuántos zapatos tiene en total?</strong></p>
+<input id="p4" type="number">
+</div>
+
+<div class="question">
+<p><strong>5. Observa: ● ● &nbsp;&nbsp; ● ● &nbsp;&nbsp; ● ●. ¿Cuántos elementos hay?</strong></p>
+<input id="p5" type="number">
+</div>
+
+<button onclick="calcularResultado()">Calcular resultado</button>
+
+<div id="resultado" class="resultado"></div>
+</div>
+
+<div class="card purple">
+<h2>Niveles de logro</h2>
+
+<div class="badges">
+<div class="badge">9 - 10<br>Experto en la tabla del 2</div>
+<div class="badge">7 - 8<br>Muy buen trabajo</div>
+<div class="badge">5 - 6<br>Sigue practicando</div>
+<div class="badge">0 - 4<br>Revisa los materiales</div>
+</div>
+</div>
+
+<div class="card green">
+<h2>Cierre del EVA</h2>
+<p>
+Al finalizar esta evaluación, el estudiante completa el recorrido por las seis dimensiones del Entorno Virtual de Aprendizaje:
+</p>
+<ul>
+<li>Dimensión Informativa</li>
+<li>Dimensión Formativa</li>
+<li>Dimensión Experiencial</li>
+<li>Dimensión Comunicativa</li>
+<li>Recursos de Apoyo</li>
+<li>Evaluación</li>
+</ul>
+</div>
+
+<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+<a href="eva-materiales.html" class="btn">Revisar materiales</a>
+<a href="index.html" class="btn">Finalizar recorrido</a>
+
+</div>
+
+<footer>
+Fernando Sánchez | Evaluación • Multiplicación por 2
+</footer>
+
+<script>
+function calcularResultado(){
+    let puntaje = 0;
+
+    const respuestas = [
+        Number(document.getElementById("p1").value),
+        Number(document.getElementById("p2").value),
+        Number(document.getElementById("p3").value),
+        Number(document.getElementById("p4").value),
+        Number(document.getElementById("p5").value)
+    ];
+
+    const correctas = [6,10,8,6,6];
+
+    for(let i=0; i<correctas.length; i++){
+        if(respuestas[i] === correctas[i]){
+            puntaje += 2;
+        }
+    }
+
+    const resultado = document.getElementById("resultado");
+    resultado.style.display = "block";
+
+    if(puntaje >= 9){
+        resultado.className = "resultado excelente";
+        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Excelente. Eres experto en la tabla del 2.";
+    }else if(puntaje >= 7){
+        resultado.className = "resultado bueno";
+        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Muy buen trabajo. Dominas gran parte del tema.";
+    }else if(puntaje >= 5){
+        resultado.className = "resultado practica";
+        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Sigue practicando. Revisa nuevamente algunos ejemplos.";
+    }else{
+        resultado.className = "resultado refuerzo";
+        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Necesitas reforzar. Vuelve a revisar los materiales.";
+    }
+}
+</script>
+
+</body>
+</html>
