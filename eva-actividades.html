@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dimensión Experiencial - Multiplicación por 2</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff7ed;
+    color:#243447;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#ea580c,#fb923c);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+}
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:28px;
+    margin-bottom:25px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.orange{border-top:8px solid #ea580c;}
+.blue{border-top:8px solid #2563eb;}
+.green{border-top:8px solid #16a34a;}
+.purple{border-top:8px solid #7c3aed;}
+.red{border-top:8px solid #dc2626;}
+
+h2{
+    margin-top:0;
+}
+
+.input-box{
+    padding:12px;
+    border:2px solid #cbd5e1;
+    border-radius:10px;
+    font-size:18px;
+    width:120px;
+    margin:10px 0;
+}
+
+button{
+    background:#003366;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:6px;
+}
+
+button:hover{
+    background:#00264d;
+}
+
+.feedback{
+    font-weight:bold;
+    margin-top:10px;
+    padding:10px;
+    border-radius:10px;
+    display:none;
+}
+
+.correcto{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.incorrecto{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+}
+
+.option{
+    background:#f8fafc;
+    border:2px solid #cbd5e1;
+    border-radius:16px;
+    padding:18px;
+    text-align:center;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.option:hover{
+    border-color:#2563eb;
+    background:#dbeafe;
+}
+
+.problem{
+    background:#f0fdf4;
+    border-left:7px solid #16a34a;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:18px;
+}
+
+.game-box{
+    text-align:center;
+    background:#f3e8ff;
+    border-radius:18px;
+    padding:25px;
+    border:2px solid #c084fc;
+}
+
+.question{
+    font-size:34px;
+    font-weight:bold;
+    color:#5b21b6;
+    margin:20px 0;
+}
+
+.btn{
+    display:inline-block;
+    background:#003366;
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:12px;
+    margin-top:15px;
+    margin-right:10px;
+    font-weight:bold;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Dimensión Experiencial</h1>
+<p>Aplicamos la multiplicación por 2 mediante retos y actividades interactivas</p>
+</header>
+
+<div class="container">
+
+<div class="card orange">
+<h2>Propósito de la Dimensión Experiencial</h2>
+<p>
+En esta sección el estudiante aplica lo aprendido mediante ejercicios, problemas cotidianos y un mini juego interactivo. 
+El objetivo es comprobar la comprensión de la multiplicación por 2 como suma repetida y formación de grupos iguales.
+</p>
+</div>
+
+<div class="card blue">
+<h2>Actividad 1: Observa y responde</h2>
+<p>
+Hay 3 grupos de 2 elementos. ¿Cuántos elementos hay en total?
+</p>
+
+<p style="font-size:28px; text-align:center;">
+● ● &nbsp;&nbsp; ● ● &nbsp;&nbsp; ● ●
+</p>
+
+<p>
+Escribe tu respuesta:
+</p>
+
+<input id="respuesta1" class="input-box" type="number">
+<br>
+<button onclick="verificarActividad1()">Verificar</button>
+
+<div id="feedback1" class="feedback"></div>
+</div>
+
+<div class="card green">
+<h2>Actividad 2: Completa los resultados</h2>
+
+<div class="problem">
+<p><strong>2 × 4 =</strong></p>
+<input id="respuesta2" class="input-box" type="number">
+</div>
+
+<div class="problem">
+<p><strong>2 × 6 =</strong></p>
+<input id="respuesta3" class="input-box" type="number">
+</div>
+
+<div class="problem">
+<p><strong>2 × 8 =</strong></p>
+<input id="respuesta4" class="input-box" type="number">
+</div>
+
+<button onclick="verificarActividad2()">Verificar respuestas</button>
+<div id="feedback2" class="feedback"></div>
+</div>
+
+<div class="card purple">
+<h2>Actividad 3: Problema cotidiano</h2>
+<p>
+Ana tiene 4 pares de zapatos. Si cada par tiene 2 zapatos, ¿cuántos zapatos tiene en total?
+</p>
+
+<input id="respuesta5" class="input-box" type="number">
+<br>
+<button onclick="verificarActividad3()">Verificar</button>
+<div id="feedback3" class="feedback"></div>
+</div>
+
+<div class="card red">
+<h2>Mini juego: Reto de la tabla del 2</h2>
+<p>
+Presiona el botón para generar una multiplicación por 2. Escribe la respuesta y comprueba si es correcta.
+</p>
+
+<div class="game-box">
+<button onclick="generarPregunta()">Generar pregunta</button>
+<div id="preguntaJuego" class="question">Presiona iniciar</div>
+
+<input id="respuestaJuego" class="input-box" type="number">
+<br>
+<button onclick="verificarJuego()">Comprobar</button>
+
+<div id="feedbackJuego" class="feedback"></div>
+</div>
+</div>
+
+<div class="card orange">
+<h2>Cierre de la experiencia</h2>
+<p>
+Si lograste resolver las actividades, ya estás preparado para participar en la Dimensión Comunicativa, donde podrás compartir tus respuestas, expresar dudas y recibir retroalimentación.
+</p>
+</div>
+
+<a href="eva-comunicacion.html" class="btn">Continuar a Dimensión Comunicativa →</a>
+<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+
+</div>
+
+<footer>
+Fernando Sánchez | Dimensión Experiencial • Multiplicación por 2
+</footer>
+
+<script>
+let numeroActual = 0;
+
+function mostrarFeedback(id, correcto, mensajeCorrecto, mensajeIncorrecto){
+    const feedback = document.getElementById(id);
+    feedback.style.display = "block";
+    feedback.className = correcto ? "feedback correcto" : "feedback incorrecto";
+    feedback.textContent = correcto ? mensajeCorrecto : mensajeIncorrecto;
+}
+
+function verificarActividad1(){
+    const respuesta = Number(document.getElementById("respuesta1").value);
+    mostrarFeedback(
+        "feedback1",
+        respuesta === 6,
+        "Correcto. 3 grupos de 2 forman 6 elementos.",
+        "Vuelve a intentarlo. Cuenta de dos en dos: 2, 4, 6."
+    );
+}
+
+function verificarActividad2(){
+    const r1 = Number(document.getElementById("respuesta2").value);
+    const r2 = Number(document.getElementById("respuesta3").value);
+    const r3 = Number(document.getElementById("respuesta4").value);
+
+    const correcto = r1 === 8 && r2 === 12 && r3 === 16;
+
+    mostrarFeedback(
+        "feedback2",
+        correcto,
+        "Muy bien. Completaste correctamente los resultados.",
+        "Revisa nuevamente la tabla del 2. Recuerda que los resultados aumentan de dos en dos."
+    );
+}
+
+function verificarActividad3(){
+    const respuesta = Number(document.getElementById("respuesta5").value);
+    mostrarFeedback(
+        "feedback3",
+        respuesta === 8,
+        "Correcto. 4 pares de zapatos tienen 8 zapatos en total.",
+        "Vuelve a intentarlo. Cada par tiene 2 zapatos: 4 × 2."
+    );
+}
+
+function generarPregunta(){
+    numeroActual = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("preguntaJuego").textContent = numeroActual + " × 2 = ?";
+    document.getElementById("respuestaJuego").value = "";
+    const feedback = document.getElementById("feedbackJuego");
+    feedback.style.display = "none";
+}
+
+function verificarJuego(){
+    if(numeroActual === 0){
+        mostrarFeedback(
+            "feedbackJuego",
+            false,
+            "",
+            "Primero genera una pregunta."
+        );
+        return;
+    }
+
+    const respuesta = Number(document.getElementById("respuestaJuego").value);
+    const correcto = respuesta === numeroActual * 2;
+
+    mostrarFeedback(
+        "feedbackJuego",
+        correcto,
+        "Excelente. Respuesta correcta.",
+        "Intenta otra vez. Multiplica " + numeroActual + " por 2."
+    );
+}
+</script>
+
+</body>
+</html>
