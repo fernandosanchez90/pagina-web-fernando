@@ -88,6 +88,26 @@ footer{
     height:35px;
 }
 .comentarios-cta{
+
+    grid-column:1 / -1;
+    width:100%;
+    box-sizing:border-box;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    margin-top:40px;
+    padding:35px;
+    background:linear-gradient(135deg,#003366,#00509d);
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+}   
+    
+    
     display:flex;
     justify-content:space-between;
     align-items:center;
