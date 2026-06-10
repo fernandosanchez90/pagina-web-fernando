@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dimensión Comunicativa - Multiplicación por 2</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff1f2;
+    color:#243447;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#dc2626,#f87171);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+}
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:28px;
+    margin-bottom:25px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.red{border-top:8px solid #dc2626;}
+.blue{border-top:8px solid #2563eb;}
+.green{border-top:8px solid #16a34a;}
+.purple{border-top:8px solid #7c3aed;}
+.orange{border-top:8px solid #ea580c;}
+
+textarea, input{
+    width:100%;
+    padding:14px;
+    border:2px solid #cbd5e1;
+    border-radius:12px;
+    font-size:16px;
+    box-sizing:border-box;
+    margin-top:10px;
+}
+
+button{
+    background:#003366;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+button:hover{
+    background:#00264d;
+}
+
+.message{
+    background:#f8fafc;
+    border-left:6px solid #dc2626;
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+.feedback{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.ok{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.warn{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+}
+
+.guide{
+    background:#f8fafc;
+    border-radius:16px;
+    padding:20px;
+    border-left:7px solid #2563eb;
+}
+
+.btn{
+    display:inline-block;
+    background:#003366;
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:12px;
+    margin-top:15px;
+    margin-right:10px;
+    font-weight:bold;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Dimensión Comunicativa</h1>
+<p>Compartimos ideas, dudas y reflexiones sobre la multiplicación por 2</p>
+</header>
+
+<div class="container">
+
+<div class="card red">
+<h2>Propósito de la Dimensión Comunicativa</h2>
+<p>
+Esta dimensión permite que el estudiante exprese sus ideas, comparta ejemplos, formule preguntas y reflexione sobre lo aprendido. La comunicación fortalece la comprensión porque permite explicar con palabras propias cómo funciona la multiplicación por 2.
+</p>
+</div>
+
+<div class="card blue">
+<h2>Foro de participación</h2>
+<p>
+Pregunta guía:
+<strong>¿Dónde puedes usar la multiplicación por 2 en tu vida diaria?</strong>
+</p>
+
+<textarea id="respuestaForo" rows="4" placeholder="Escribe aquí tu respuesta..."></textarea>
+<button onclick="publicarForo()">Publicar participación</button>
+
+<div id="feedbackForo" class="feedback"></div>
+
+<div id="muroForo"></div>
+</div>
+
+<div class="card green">
+<h2>Preguntas guía para conversar</h2>
+
+<div class="grid">
+<div class="guide">
+<strong>Pregunta 1</strong>
+<p>¿Qué significa formar grupos de 2?</p>
+</div>
+
+<div class="guide">
+<strong>Pregunta 2</strong>
+<p>¿Por qué la multiplicación por 2 se relaciona con los dobles?</p>
+</div>
+
+<div class="guide">
+<strong>Pregunta 3</strong>
+<p>¿Qué ejemplo puedes encontrar en tu casa o en la escuela?</p>
+</div>
+</div>
+</div>
+
+<div class="card purple">
+<h2>Mi reflexión de aprendizaje</h2>
+<p>
+Completa la siguiente idea:
+</p>
+
+<p><strong>Hoy aprendí que multiplicar por 2 significa...</strong></p>
+
+<textarea id="reflexion" rows="4" placeholder="Escribe tu reflexión..."></textarea>
+<button onclick="guardarReflexion()">Guardar reflexión</button>
+
+<div id="feedbackReflexion" class="feedback"></div>
+<div id="resultadoReflexion"></div>
+</div>
+
+<div class="card orange">
+<h2>Retroalimentación del docente</h2>
+<p>
+Después de compartir tus ideas, revisa si tu explicación menciona alguno de estos elementos:
+</p>
+
+<ul>
+<li>Grupos de dos.</li>
+<li>Suma repetida.</li>
+<li>Dobles.</li>
+<li>Ejemplos de la vida diaria.</li>
+</ul>
+
+<p>
+Si tu respuesta incluye estas ideas, significa que estás comprendiendo correctamente el tema.
+</p>
+</div>
+
+<a href="eva-recursos.html" class="btn">Continuar a Recursos de Apoyo →</a>
+<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+
+</div>
+
+<footer>
+Fernando Sánchez | Dimensión Comunicativa • Multiplicación por 2
+</footer>
+
+<script>
+function mostrar(id, tipo, texto){
+    const elemento = document.getElementById(id);
+    elemento.style.display = "block";
+    elemento.className = "feedback " + tipo;
+    elemento.textContent = texto;
+}
+
+function publicarForo(){
+    const texto = document.getElementById("respuestaForo").value.trim();
+
+    if(texto.length < 10){
+        mostrar("feedbackForo", "warn", "Escribe una participación más completa.");
+        return;
+    }
+
+    mostrar("feedbackForo", "ok", "Participación publicada correctamente.");
+
+    const muro = document.getElementById("muroForo");
+    const mensaje = document.createElement("div");
+    mensaje.className = "message";
+    mensaje.textContent = texto;
+    muro.prepend(mensaje);
+
+    document.getElementById("respuestaForo").value = "";
+}
+
+function guardarReflexion(){
+    const texto = document.getElementById("reflexion").value.trim();
+
+    if(texto.length < 10){
+        mostrar("feedbackReflexion", "warn", "Completa tu reflexión con una idea más clara.");
+        return;
+    }
+
+    mostrar("feedbackReflexion", "ok", "Reflexión guardada correctamente.");
+
+    document.getElementById("resultadoReflexion").innerHTML =
+        '<div class="message"><strong>Mi reflexión:</strong><br>' + texto + '</div>';
+
+    document.getElementById("reflexion").value = "";
+}
+</script>
+
+</body>
+</html>
