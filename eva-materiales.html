@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dimensión Formativa - Multiplicación por 2</title>
+<title>Dimensión Formativa - EVA Matemática</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#f5f7fa;
-    color:#243447;
+    background:#f4f7fb;
+    color:#263238;
     line-height:1.75;
 }
 
@@ -18,34 +18,144 @@ header{
     background:linear-gradient(135deg,#15803d,#22c55e);
     color:white;
     text-align:center;
-    padding:55px 20px;
+    padding:70px 20px 60px;
+}
+
+.header-label{
+    font-size:18px;
+    letter-spacing:3px;
+    font-weight:bold;
+    text-transform:uppercase;
+    opacity:.9;
 }
 
 header h1{
-    margin:0;
-    font-size:42px;
+    margin:14px 0 8px;
+    font-size:54px;
+    line-height:1.1;
+}
+
+.header-subtitle{
+    font-size:24px;
+    margin:8px 0;
+}
+
+.header-topic{
+    font-size:36px;
+    font-weight:bold;
+    color:#fde68a;
+    margin:14px 0;
+}
+
+.header-method{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.35);
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:18px;
+    margin-top:10px;
 }
 
 .container{
     max-width:1180px;
     margin:auto;
-    padding:40px 20px;
+    padding:42px 20px;
 }
 
 .card{
     background:white;
-    border-radius:20px;
-    padding:28px;
-    margin-bottom:25px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border-radius:22px;
+    padding:32px;
+    margin-bottom:30px;
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
 }
 
 .card h2{
+    color:#003366;
     margin-top:0;
 }
 
-.video-card{
-    border-top:8px solid #2563eb;
+.center{
+    text-align:center;
+}
+
+.badge{
+    display:inline-block;
+    color:white;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.badge-experiencia{background:#2563eb;}
+.badge-reflexion{background:#16a34a;}
+.badge-conceptualizacion{background:#ea580c;}
+.badge-aplicacion{background:#dc2626;}
+
+.proposito{
+    background:linear-gradient(135deg,#ecfdf5,#eff6ff);
+    border:3px solid #16a34a;
+    position:relative;
+    overflow:hidden;
+}
+
+.proposito::before{
+    content:"📚";
+    position:absolute;
+    right:28px;
+    top:22px;
+    font-size:78px;
+    opacity:.16;
+}
+
+.proposito h2{
+    font-size:36px;
+    text-align:center;
+    color:#166534;
+}
+
+.proposito-texto{
+    font-size:22px;
+    text-align:center;
+    font-weight:bold;
+    color:#1f2937;
+    max-width:900px;
+    margin:0 auto 24px;
+}
+
+.curriculo{
+    background:white;
+    border-left:8px solid #16a34a;
+    border-radius:16px;
+    padding:24px;
+    margin-top:24px;
+}
+
+.curriculo h3{
+    margin-top:0;
+    color:#166534;
+}
+
+.erca-card{
+    border-left:10px solid;
+}
+
+.experiencia{
+    border-color:#2563eb;
+}
+
+.reflexion{
+    border-color:#16a34a;
+}
+
+.conceptualizacion{
+    border-color:#ea580c;
+}
+
+.aplicacion{
+    border-color:#dc2626;
 }
 
 .video-box{
@@ -53,8 +163,9 @@ header h1{
     padding-bottom:56.25%;
     height:0;
     overflow:hidden;
-    border-radius:18px;
-    margin-top:20px;
+    border-radius:20px;
+    margin-top:22px;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
 }
 
 .video-box iframe{
@@ -66,94 +177,194 @@ header h1{
     border:0;
 }
 
-.orange{border-top:8px solid #ea580c;}
-.purple{border-top:8px solid #7c3aed;}
-.green{border-top:8px solid #16a34a;}
-.red{border-top:8px solid #dc2626;}
-.blue{border-top:8px solid #2563eb;}
-
-.visual-groups{
+.question-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:18px;
-    margin-top:20px;
+    margin-top:22px;
 }
 
-.group-card{
-    background:#fff7ed;
+.question-card{
+    background:#f0fdf4;
     border-radius:18px;
-    padding:20px;
+    padding:22px;
+    border:2px solid #bbf7d0;
     text-align:center;
-    border:2px solid #fed7aa;
+    font-weight:bold;
+    color:#166534;
+}
+
+.math-play{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:22px;
+    margin-top:24px;
+}
+
+.math-box{
+    border-radius:24px;
+    padding:28px;
+    text-align:center;
+    color:#1f2937;
+    box-shadow:0 8px 18px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.math-box:hover{
+    transform:translateY(-6px);
+}
+
+.math-box h3{
+    margin-top:0;
+    color:#003366;
+    font-size:26px;
+}
+
+.dobles{
+    background:#dbeafe;
+}
+
+.triples{
+    background:#dcfce7;
 }
 
 .objects{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin:15px 0;
+    font-size:42px;
+    line-height:1.7;
+    margin:18px 0;
 }
 
-.circle{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    background:#fb923c;
-    box-shadow:inset 0 -4px 0 rgba(0,0,0,.12);
+.result{
+    background:white;
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:14px;
+    font-weight:bold;
+    color:#003366;
+    margin-top:10px;
+}
+
+.table-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+    margin-top:24px;
+}
+
+.table-card{
+    border-radius:22px;
+    padding:26px;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.table-card h3{
+    margin-top:0;
+    text-align:center;
+    color:#003366;
+}
+
+.table-two{
+    background:#f3e8ff;
+    border:2px solid #c084fc;
+}
+
+.table-three{
+    background:#ffedd5;
+    border:2px solid #fb923c;
 }
 
 .table-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:15px;
-    margin-top:20px;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:14px;
+    margin-top:18px;
 }
 
 .table-item{
-    background:#f3e8ff;
-    border-radius:16px;
-    padding:18px;
+    background:white;
+    border-radius:14px;
+    padding:14px;
     text-align:center;
-    font-size:22px;
+    font-size:20px;
     font-weight:bold;
-    color:#5b21b6;
-    border:2px solid #c084fc;
+    color:#003366;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
 }
 
 .example-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:18px;
+    margin-top:22px;
 }
 
 .example{
-    background:#f0fdf4;
-    border-left:7px solid #16a34a;
+    background:#f8fafc;
     border-radius:18px;
     padding:22px;
+    border-left:7px solid #ea580c;
 }
 
 .example strong{
-    color:#166534;
+    color:#9a3412;
     display:block;
     margin-bottom:10px;
 }
 
+.daily-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+    margin-top:22px;
+}
+
+.daily-card{
+    background:#fff7ed;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    border:2px solid #fed7aa;
+}
+
+.daily-card h3{
+    margin-top:0;
+    color:#9a3412;
+}
+
+.final-box{
+    background:#fef2f2;
+    border-left:8px solid #dc2626;
+    border-radius:18px;
+    padding:24px;
+    margin-top:22px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
 .btn{
     display:inline-block;
-    background:#003366;
     color:white;
     text-decoration:none;
-    padding:13px 25px;
-    border-radius:12px;
-    margin-top:15px;
-    margin-right:10px;
+    padding:13px 24px;
+    border-radius:10px;
     font-weight:bold;
 }
 
-.btn:hover{
-    background:#00264d;
+.btn-primary{
+    background:#003366;
+}
+
+.btn-back{
+    background:#2563eb;
+}
+
+.btn-next{
+    background:#ea580c;
 }
 
 footer{
@@ -163,147 +374,122 @@ footer{
     padding:25px;
     margin-top:40px;
 }
+
+@media(max-width:700px){
+    header h1{
+        font-size:38px;
+    }
+
+    .header-topic{
+        font-size:28px;
+    }
+
+    .proposito-texto{
+        font-size:19px;
+    }
+
+    .objects{
+        font-size:36px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
+<div class="header-label">Entorno Virtual de Aprendizaje</div>
 <h1>Dimensión Formativa</h1>
-<p>Materiales de aprendizaje para comprender la multiplicación por 2</p>
+<div class="header-subtitle">EVA Matemática | Tercero de Educación General Básica</div>
+<div class="header-topic">Multiplicación por 2 y por 3</div>
+<div class="header-method">📘 Metodología ERCA</div>
 </header>
 
 <div class="container">
 
-<div class="card green">
-<h2>Propósito de la Dimensión Formativa</h2>
-    
+<section class="card proposito">
+<h2>Propósito de Aprendizaje</h2>
+<p class="proposito-texto">
+Comprender la multiplicación por 2 y por 3 como una forma organizada de representar sumas repetidas, identificar dobles y triples, reconocer patrones numéricos y relacionarlos con situaciones cotidianas.
+</p>
+
+<div class="curriculo">
+<h3>📚 Destreza Curricular Vinculada</h3>
 <p>
-En esta sección se presentan los materiales que permiten comprender la multiplicación por 2 antes de desarrollar actividades prácticas. Los recursos están organizados para que el estudiante observe, relacione, analice y construya el concepto de multiplicación como suma repetida.
+El aprendizaje se relaciona con el desarrollo de patrones numéricos crecientes y con el uso de estrategias de cálculo para resolver situaciones matemáticas sencillas mediante suma y multiplicación.
 </p>
 </div>
-<div class="card blue">
+</section>
 
-<h2>Destreza e Indicador de Evaluación</h2>
-
+<section class="card erca-card experiencia">
+<span class="badge badge-experiencia">👀 ERCA: Experiencia</span>
+<h2>Observamos para Descubrir</h2>
 <p>
-<strong>Destreza:</strong>
-Resolver multiplicaciones sencillas mediante agrupaciones, suma repetida y representaciones gráficas.
-</p>
-
-<p>
-<strong>Indicador de evaluación:</strong>
-Reconoce la multiplicación como una forma abreviada de suma repetida y la aplica correctamente en ejercicios básicos.
-</p>
-
-</div>
-<div class="card video-card">
-<h2>Video explicativo</h2>
-<p>
-Observa el siguiente video para recordar qué significa multiplicar y cómo se relaciona con formar grupos iguales.
+Observa atentamente el siguiente video. Mientras lo miras, identifica grupos iguales, repeticiones, dobles y triples. Esta observación será el punto de partida para comprender la multiplicación.
 </p>
 
 <div class="video-box">
-<iframe src="https://www.youtube.com/embed/WES-u3UPDRA" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/YFtEaVw5k1A" allowfullscreen></iframe>
 </div>
-</div>
+</section>
 
-<div class="card orange">
-<h2>¿Qué significa multiplicar por 2?</h2>
+<section class="card erca-card reflexion">
+<span class="badge badge-reflexion">💭 ERCA: Reflexión</span>
+<h2>Preguntas para Pensar</h2>
 <p>
-Multiplicar por 2 significa formar grupos iguales de dos elementos. También puede entenderse como sumar varias veces el número 2.
+Después de observar el video, reflexiona sobre lo que descubriste. Estas preguntas te ayudarán a relacionar la experiencia con la idea de multiplicar.
 </p>
 
-<div class="visual-groups">
+<div class="question-grid">
+<div class="question-card">¿Qué grupos iguales observaste?</div>
+<div class="question-card">¿Dónde aparecieron cantidades repetidas?</div>
+<div class="question-card">¿Qué significa formar dobles?</div>
+<div class="question-card">¿Qué significa formar triples?</div>
+</div>
+</section>
 
-<div class="group-card">
-<h3>1 grupo de 2</h3>
+<section class="card erca-card conceptualizacion">
+<span class="badge badge-conceptualizacion">📚 ERCA: Conceptualización</span>
+<h2>Construimos el Concepto Matemático</h2>
+<p>
+Multiplicar significa sumar varias veces una misma cantidad. Cuando multiplicamos por 2 formamos dobles; cuando multiplicamos por 3 formamos triples.
+</p>
+
+<div class="math-play">
+
+<div class="math-box dobles">
+<h3>🍎 Dobles</h3>
 <div class="objects">
-<div class="circle"></div><div class="circle"></div>
+🍎 🍎<br>
+🍎 🍎
 </div>
-<p><strong>1 × 2 = 2</strong></p>
+<p>Dos grupos de dos manzanas.</p>
+<span class="result">2 + 2 = 4 | 2 × 2 = 4</span>
 </div>
 
-<div class="group-card">
-<h3>2 grupos de 2</h3>
+<div class="math-box triples">
+<h3>⭐ Triples</h3>
 <div class="objects">
-<div class="circle"></div><div class="circle"></div>
-<div class="circle"></div><div class="circle"></div>
+⭐ ⭐ ⭐<br>
+⭐ ⭐ ⭐
 </div>
-<p><strong>2 × 2 = 4</strong></p>
-</div>
-
-<div class="group-card">
-<h3>3 grupos de 2</h3>
-<div class="objects">
-<div class="circle"></div><div class="circle"></div>
-<div class="circle"></div><div class="circle"></div>
-<div class="circle"></div><div class="circle"></div>
-</div>
-<p><strong>3 × 2 = 6</strong></p>
+<p>Dos grupos de tres estrellas.</p>
+<span class="result">3 + 3 = 6 | 2 × 3 = 6</span>
 </div>
 
 </div>
-</div>
-<div class="card">
+</section>
 
-<h2 style="color:#ca8a04;">
-💡 ¿Sabías que?
-</h2>
-
-<p>
-Cuando multiplicamos por 2 estamos formando dobles.
+<section class="card conceptualizacion">
+<h2 class="center">Tablas de Multiplicar por 2 y por 3</h2>
+<p class="center">
+Observa los patrones. En la tabla del 2 los resultados aumentan de dos en dos; en la tabla del 3 aumentan de tres en tres.
 </p>
 
-<p>
-Por ejemplo:
-</p>
+<div class="table-section">
 
-<ul>
-<li>2 ojos por persona.</li>
-<li>2 manos por persona.</li>
-<li>2 ruedas en una bicicleta.</li>
-<li>1 par de zapatos equivale a 2 zapatos.</li>
-</ul>
-
-<p>
-Por eso multiplicar por 2 aparece constantemente en nuestra vida diaria.
-</p>
-
-</div>
-<div class="card red">
-
-<h2>Multiplicación por 2 en la vida diaria</h2>
-
-<div class="visual-groups">
-
-<div class="group-card">
-<h3>🚲 Bicicletas</h3>
-<p>2 ruedas por bicicleta</p>
-<p><strong>3 × 2 = 6 ruedas</strong></p>
-</div>
-
-<div class="group-card">
-<h3>👀 Ojos</h3>
-<p>2 ojos por persona</p>
-<p><strong>4 × 2 = 8 ojos</strong></p>
-</div>
-
-<div class="group-card">
-<h3>👐 Manos</h3>
-<p>2 manos por persona</p>
-<p><strong>5 × 2 = 10 manos</strong></p>
-</div>
-
-</div>
-
-</div>   
-<div class="card purple">
-<h2>Tabla del 2</h2>
-<p>
-Revisa la tabla del 2. Observa que los resultados aumentan de dos en dos.
-</p>
-
+<div class="table-card table-two">
+<h3>Tabla del 2</h3>
 <div class="table-grid">
 <div class="table-item">2 × 1 = 2</div>
 <div class="table-item">2 × 2 = 4</div>
@@ -318,46 +504,104 @@ Revisa la tabla del 2. Observa que los resultados aumentan de dos en dos.
 </div>
 </div>
 
-<div class="card green">
-<h2>Ejemplos resueltos</h2>
+<div class="table-card table-three">
+<h3>Tabla del 3</h3>
+<div class="table-grid">
+<div class="table-item">3 × 1 = 3</div>
+<div class="table-item">3 × 2 = 6</div>
+<div class="table-item">3 × 3 = 9</div>
+<div class="table-item">3 × 4 = 12</div>
+<div class="table-item">3 × 5 = 15</div>
+<div class="table-item">3 × 6 = 18</div>
+<div class="table-item">3 × 7 = 21</div>
+<div class="table-item">3 × 8 = 24</div>
+<div class="table-item">3 × 9 = 27</div>
+<div class="table-item">3 × 10 = 30</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="card conceptualizacion">
+<h2 class="center">Ejemplos Resueltos</h2>
 
 <div class="example-grid">
 
 <div class="example">
-<strong>Ejemplo 1</strong>
+<strong>Ejemplo 1: Doble</strong>
 <p>2 + 2 = 4</p>
 <p>Entonces: <strong>2 × 2 = 4</strong></p>
 </div>
 
 <div class="example">
-<strong>Ejemplo 2</strong>
-<p>2 + 2 + 2 = 6</p>
-<p>Entonces: <strong>3 × 2 = 6</strong></p>
+<strong>Ejemplo 2: Triple</strong>
+<p>3 + 3 + 3 = 9</p>
+<p>Entonces: <strong>3 × 3 = 9</strong></p>
 </div>
 
 <div class="example">
-<strong>Ejemplo 3</strong>
-<p>2 + 2 + 2 + 2 = 8</p>
-<p>Entonces: <strong>4 × 2 = 8</strong></p>
+<strong>Ejemplo 3: Grupos iguales</strong>
+<p>3 + 3 + 3 + 3 = 12</p>
+<p>Entonces: <strong>4 × 3 = 12</strong></p>
 </div>
 
 </div>
+</section>
+
+<section class="card">
+<h2 class="center">Multiplicación en la Vida Diaria</h2>
+
+<div class="daily-grid">
+
+<div class="daily-card">
+<h3>🚲 Bicicletas</h3>
+<p>Una bicicleta tiene 2 ruedas.</p>
+<p><strong>3 × 2 = 6 ruedas</strong></p>
 </div>
 
-<div class="card red">
-<h2>Antes de continuar</h2>
+<div class="daily-card">
+<h3>👀 Ojos</h3>
+<p>Una persona tiene 2 ojos.</p>
+<p><strong>4 × 2 = 8 ojos</strong></p>
+</div>
+
+<div class="daily-card">
+<h3>🍽️ Tríos</h3>
+<p>Hay 3 platos en cada mesa.</p>
+<p><strong>4 × 3 = 12 platos</strong></p>
+</div>
+
+<div class="daily-card">
+<h3>🌟 Estrellas</h3>
+<p>Hay 3 estrellas en cada grupo.</p>
+<p><strong>5 × 3 = 15 estrellas</strong></p>
+</div>
+
+</div>
+</section>
+
+<section class="card erca-card aplicacion">
+<span class="badge badge-aplicacion">🛠️ ERCA: Aplicación</span>
+<h2>Antes de Continuar</h2>
+
+<div class="final-box">
 <p>
-Ahora que revisaste los materiales, ya puedes pasar a la Dimensión Experiencial, donde aplicarás lo aprendido mediante ejercicios, retos y actividades prácticas.
+Ahora que observaste, reflexionaste y construiste el concepto de multiplicación por 2 y por 3, estás listo para resolver ejercicios, retos y actividades prácticas en la siguiente sección.
 </p>
 </div>
+</section>
 
-<a href="eva-actividades.html" class="btn">Continuar a Dimensión Experiencial →</a>
-<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+<div class="buttons">
+<a href="eva-informacion.html" class="btn btn-back">← Regresar a la Dimensión Informativa</a>
+<a href="eva-actividades.html" class="btn btn-next">🛠️ Aplicar lo Aprendido →</a>
+<a href="eva-multiplicacion-por-dos.html" class="btn btn-primary">← Regresar al EVA</a>
+</div>
 
 </div>
 
 <footer>
-Fernando Sánchez | Dimensión Formativa • Multiplicación por 2
+Fernando Sánchez | EVA Matemática • Multiplicación por 2 y por 3 • Dimensión Formativa
 </footer>
 
 </body>
