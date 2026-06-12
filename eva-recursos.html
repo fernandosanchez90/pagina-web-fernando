@@ -29,7 +29,9 @@ input{padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:18px;te
 table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden;}
 th{background:#7c3aed;color:white;padding:14px;border:1px solid #ddd;}
 td{padding:14px;border:1px solid #ddd;}
-td input{width:auto;}
+.progress-bar{background:#e5e7eb;border-radius:20px;overflow:hidden;height:26px;margin-top:15px;}
+.progress-fill{background:#16a34a;height:100%;width:0%;color:white;text-align:center;font-weight:bold;line-height:26px;transition:.4s;}
+.insignia{font-size:24px;font-weight:bold;text-align:center;margin-top:20px;color:#7c3aed;}
 footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:40px;}
 </style>
 </head>
@@ -66,6 +68,8 @@ Esta sección reúne actividades internas del EVA para que el estudiante observe
 <div class="box">2 x 9 = 18</div>
 <div class="box">2 x 10 = 20</div>
 </div>
+
+<button class="btn" onclick="marcarActividad('tabla')">Marcar tabla revisada</button>
 </div>
 
 <div class="card green">
@@ -130,14 +134,20 @@ Esta sección reúne actividades internas del EVA para que el estudiante observe
 <div class="card purple">
 <h2>Tabla de avance del estudiante</h2>
 <p>
-Marca las actividades que ya completaste para revisar tu progreso antes de continuar a la evaluación.
+El avance se marca automáticamente cuando completas cada actividad.
 </p>
+
+<div class="progress-bar">
+<div class="progress-fill" id="barraProgreso">0%</div>
+</div>
+
+<p class="insignia" id="insignia">Aún no tienes insignia. Empieza a practicar.</p>
 
 <table>
 <thead>
 <tr>
 <th>Actividad</th>
-<th>Realizada</th>
+<th>Estado</th>
 <th>Comentario</th>
 </tr>
 </thead>
@@ -145,41 +155,43 @@ Marca las actividades que ya completaste para revisar tu progreso antes de conti
 <tbody>
 <tr>
 <td>Tabla visual del 2</td>
-<td style="text-align:center;"><input type="checkbox"></td>
+<td id="estado-tabla">Pendiente</td>
 <td>Reconozco la secuencia de dos en dos.</td>
 </tr>
 
 <tr>
 <td>Tarjeta interactiva</td>
-<td style="text-align:center;"><input type="checkbox"></td>
+<td id="estado-tarjeta">Pendiente</td>
 <td>Practiqué operación y resultado.</td>
 </tr>
 
 <tr>
 <td>Completa el resultado</td>
-<td style="text-align:center;"><input type="checkbox"></td>
+<td id="estado-completar">Pendiente</td>
 <td>Respondí multiplicaciones directas.</td>
 </tr>
 
 <tr>
 <td>Selección múltiple</td>
-<td style="text-align:center;"><input type="checkbox"></td>
+<td id="estado-opcion">Pendiente</td>
 <td>Elegí la respuesta correcta entre varias opciones.</td>
 </tr>
 
 <tr>
 <td>Problema de la vida real</td>
-<td style="text-align:center;"><input type="checkbox"></td>
+<td id="estado-problema">Pendiente</td>
 <td>Apliqué la multiplicación en una situación cotidiana.</td>
 </tr>
 
 <tr>
 <td>Juego de memoria</td>
-<td style="text-align:center;"><input type="checkbox"></td>
+<td id="estado-memoria">Pendiente</td>
 <td>Relacioné operación con resultado.</td>
 </tr>
 </tbody>
 </table>
+
+<button class="btn" onclick="reiniciarAvance()">Reiniciar avance</button>
 </div>
 
 <a href="eva-evaluacion.html" class="btn">Continuar a Evaluación →</a>
@@ -199,6 +211,66 @@ let numeroOpcion = 5;
 let primeraCarta = null;
 let bloqueo = false;
 
+let avance = {
+  tabla:false,
+  tarjeta:false,
+  completar:false,
+  opcion:false,
+  problema:false,
+  memoria:false
+};
+
+function marcarActividad(nombre){
+  avance[nombre] = true;
+  actualizarAvance();
+}
+
+function actualizarAvance(){
+  const total = Object.keys(avance).length;
+  const completadas = Object.values(avance).filter(valor => valor).length;
+  const porcentaje = Math.round((completadas / total) * 100);
+
+  document.getElementById("barraProgreso").style.width = porcentaje + "%";
+  document.getElementById("barraProgreso").textContent = porcentaje + "%";
+
+  Object.keys(avance).forEach(nombre => {
+    const celda = document.getElementById("estado-" + nombre);
+    if(avance[nombre]){
+      celda.textContent = "Completada";
+      celda.style.color = "#16a34a";
+      celda.style.fontWeight = "bold";
+    }else{
+      celda.textContent = "Pendiente";
+      celda.style.color = "#dc2626";
+      celda.style.fontWeight = "bold";
+    }
+  });
+
+  const insignia = document.getElementById("insignia");
+
+  if(porcentaje === 100){
+    insignia.textContent = "🥇 Maestro de la tabla del 2: estás listo para continuar a la evaluación.";
+  }else if(porcentaje >= 70){
+    insignia.textContent = "🥈 Experto en multiplicar por 2: estás avanzando muy bien.";
+  }else if(porcentaje >= 40){
+    insignia.textContent = "🥉 Aprendiz de la tabla del 2: sigue practicando.";
+  }else{
+    insignia.textContent = "Aún no tienes insignia. Empieza a practicar.";
+  }
+}
+
+function reiniciarAvance(){
+  avance = {
+    tabla:false,
+    tarjeta:false,
+    completar:false,
+    opcion:false,
+    problema:false,
+    memoria:false
+  };
+  actualizarAvance();
+}
+
 function nuevaTarjeta(){
   numeroTarjeta = Math.floor(Math.random()*10)+1;
   tarjetaMostrandoRespuesta = false;
@@ -214,6 +286,7 @@ function voltearTarjeta(){
   }else{
     tarjeta.textContent = 2 * numeroTarjeta;
     tarjetaMostrandoRespuesta = true;
+    marcarActividad("tarjeta");
   }
 }
 
@@ -238,6 +311,7 @@ function verificarCompletar(){
   if(respuesta === correcta){
     resultado.textContent = "¡Correcto!";
     resultado.style.color = "#16a34a";
+    marcarActividad("completar");
   }else{
     resultado.textContent = "Intenta otra vez. La respuesta correcta es " + correcta + ".";
     resultado.style.color = "#dc2626";
@@ -272,6 +346,7 @@ function verificarOpcion(valor, correcta){
   if(valor === correcta){
     resultado.textContent = "¡Respuesta correcta!";
     resultado.style.color = "#16a34a";
+    marcarActividad("opcion");
   }else{
     resultado.textContent = "Respuesta incorrecta. Revisa la tabla del 2.";
     resultado.style.color = "#dc2626";
@@ -304,6 +379,7 @@ function nuevoProblema(){
       if(valor === correcta){
         resultado.textContent = "¡Muy bien! Resolviste el problema.";
         resultado.style.color = "#16a34a";
+        marcarActividad("problema");
       }else{
         resultado.textContent = "Revisa: debes multiplicar 2 x " + cantidad + ".";
         resultado.style.color = "#dc2626";
@@ -368,6 +444,7 @@ function descubrirCarta(carta){
     primeraCarta = null;
     document.getElementById("memoriaResultado").textContent = "¡Pareja encontrada!";
     document.getElementById("memoriaResultado").style.color = "#16a34a";
+    marcarActividad("memoria");
   }else{
     bloqueo = true;
 
@@ -387,6 +464,7 @@ nuevaCompletar();
 nuevaOpcion();
 nuevoProblema();
 iniciarMemoria();
+actualizarAvance();
 </script>
 
 </body>
