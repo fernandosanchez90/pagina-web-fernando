@@ -112,14 +112,19 @@ document.body.innerHTML = `
 
 </a>
 
-        <div class="card">
+      <a href="tutor-socratico-ia.html" style="text-decoration:none;color:inherit;">
+<div class="card">
             <h3>Innovación Pedagógica</h3>
-            <p>
-                Implementación de metodologías activas y recursos tecnológicos
-                para fortalecer el aprendizaje.
-            </p>
-        </div>
+          <p>
+Desarrollo de propuestas educativas innovadoras mediante la integración de metodologías activas, recursos tecnológicos y herramientas de Inteligencia Artificial aplicadas al aprendizaje.
+</p>
 
+<p>
+<strong>Proyecto destacado:</strong><br>
+Tutor Socrático con IA
+</p>
+        </div>
+</a>
         <div class="card">
             <h3>Formación Docente</h3>
             <p>
