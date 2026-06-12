@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dimensión Informativa - Modelo Tecno-Pedagógico</title>
+<title>Dimensión Informativa - EVA Matemática</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial, sans-serif;
     background:#f5f7fa;
-    color:#243447;
-    line-height:1.75;
+    color:#333;
 }
 
 header{
     background:#003366;
     color:white;
     text-align:center;
-    padding:55px 20px;
+    padding:60px 20px;
 }
 
 header h1{
@@ -27,11 +27,11 @@ header h1{
 }
 
 header p{
-    font-size:19px;
+    font-size:20px;
 }
 
 .container{
-    max-width:1180px;
+    max-width:1100px;
     margin:auto;
     padding:40px 20px;
 }
@@ -39,9 +39,10 @@ header p{
 .card{
     background:white;
     border-radius:18px;
-    padding:28px;
-    margin-bottom:25px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    padding:30px;
+    margin-bottom:28px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    line-height:1.8;
 }
 
 .card h2{
@@ -49,85 +50,93 @@ header p{
     margin-top:0;
 }
 
-.ficha{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
-}
-
-.item{
-    background:#f8fafc;
-    border-left:6px solid #003366;
-    border-radius:14px;
-    padding:18px;
-}
-
-.item strong{
-    color:#003366;
-    display:block;
-    margin-bottom:5px;
-}
-
-.ruta{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:15px;
-}
-
-.paso{
-    background:white;
-    border-radius:16px;
-    padding:18px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-    border-top:7px solid #003366;
-}
-
-.paso h3{
-    margin-top:0;
-    font-size:18px;
-}
-
-.info{border-top-color:#2563eb;}
-.formativa{border-top-color:#16a34a;}
-.experiencial{border-top-color:#ea580c;}
-.comunicativa{border-top-color:#dc2626;}
-.recursos{border-top-color:#7c3aed;}
-.evaluacion{border-top-color:#ca8a04;}
-
-.visual{
-    background:#fff7ed;
-    border-left:8px solid #ea580c;
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:25px;
-}
-
-.visual h2{
-    color:#ea580c;
-    margin-top:0;
-}
-
-.operacion{
-    font-size:30px;
+.badge{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:8px 16px;
+    border-radius:30px;
     font-weight:bold;
-    color:#ea580c;
-    text-align:center;
+    margin-bottom:15px;
+}
+
+.info-box{
+    background:#eaf2ff;
+    border-left:8px solid #2563eb;
+    border-radius:14px;
+    padding:22px;
+    margin-top:20px;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    background:white;
+}
+
+th{
+    background:#003366;
+    color:white;
+    padding:14px;
+    text-align:left;
+}
+
+td{
+    border:1px solid #dbe4f0;
+    padding:14px;
+}
+
+ul{
+    padding-left:25px;
+}
+
+.route{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.route-card{
+    background:#f8fafc;
+    border-radius:16px;
+    padding:22px;
+    border-top:7px solid #2563eb;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.route-card h3{
+    margin-top:0;
+    color:#003366;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
 }
 
 .btn{
     display:inline-block;
-    background:#003366;
     color:white;
     text-decoration:none;
-    padding:13px 25px;
-    border-radius:12px;
-    margin-top:15px;
-    margin-right:10px;
+    padding:13px 24px;
+    border-radius:10px;
     font-weight:bold;
 }
 
-.btn:hover{
-    background:#00264d;
+.btn-primary{
+    background:#003366;
+}
+
+.btn-formativa{
+    background:#16a34a;
 }
 
 footer{
@@ -144,112 +153,152 @@ footer{
 
 <header>
 <h1>Dimensión Informativa</h1>
-<p>Modelo Tecno-Pedagógico de Aula Virtual | Caso de aplicación: Multiplicación por 2</p>
+<p>EVA Matemática | Multiplicación por 2 y por 3</p>
 </header>
 
 <div class="container">
 
-<div class="card">
+<section class="card">
+<span class="badge">Inicio del recorrido</span>
 <h2>Presentación del EVA</h2>
 <p>
-Este Entorno Virtual de Aprendizaje presenta una propuesta tecnopedagógica orientada al desarrollo de la comprensión de la multiplicación por 2 en estudiantes de Tercero de Educación General Básica. La estructura integra criterios pedagógicos, metodológicos y tecnológicos para organizar una experiencia de aprendizaje clara, secuencial y significativa.
+Este Entorno Virtual de Aprendizaje está dirigido a estudiantes de Tercero de Educación General Básica. 
+Su propósito es orientar el aprendizaje de la multiplicación por 2 y por 3 mediante actividades claras, visuales, participativas y progresivas.
 </p>
 <p>
-La multiplicación por 2 se trabaja como suma repetida, formación de dobles y resolución de situaciones sencillas, utilizando una ruta de aprendizaje organizada por dimensiones.
+El aula virtual se organiza bajo la metodología ERCA, permitiendo que el estudiante parta de una experiencia concreta, reflexione sobre lo observado, construya conceptos matemáticos y aplique lo aprendido en situaciones cotidianas.
 </p>
-</div>
+</section>
 
-<div class="card">
+<section class="card">
 <h2>Ficha técnica del aula virtual</h2>
 
-<div class="ficha">
-<div class="item"><strong>Responsable del diseño</strong>Fernando Sánchez</div>
-<div class="item"><strong>Nivel educativo</strong>Tercero de Educación General Básica</div>
-<div class="item"><strong>Área</strong>Matemática</div>
-<div class="item"><strong>Tema</strong>Multiplicación por 2</div>
-<div class="item"><strong>Modalidad</strong>Virtual asistida</div>
-<div class="item"><strong>Tiempo estimado</strong>60 minutos</div>
-<div class="item"><strong>Metodologías</strong>ERCA, PACIE y ABP</div>
-<div class="item"><strong>Enfoque pedagógico</strong>Constructivista y conectivista</div>
-</div>
-</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Elemento</th>
+<th>Descripción</th>
+</tr>
 
-<div class="card">
+<tr>
+<td>Área</td>
+<td>Matemática</td>
+</tr>
+
+<tr>
+<td>Nivel</td>
+<td>Tercero de Educación General Básica</td>
+</tr>
+
+<tr>
+<td>Tema</td>
+<td>Multiplicación por 2 y por 3</td>
+</tr>
+
+<tr>
+<td>Modelo pedagógico aplicado</td>
+<td>ERCA: Experiencia, Reflexión, Conceptualización y Aplicación</td>
+</tr>
+
+<tr>
+<td>Modalidad</td>
+<td>Entorno Virtual de Aprendizaje con actividades interactivas y recursos digitales</td>
+</tr>
+
+<tr>
+<td>Tiempo estimado</td>
+<td>Dos sesiones de trabajo, según el ritmo del grupo y la planificación docente</td>
+</tr>
+</table>
+</div>
+</section>
+
+<section class="card">
 <h2>Propósito de aprendizaje</h2>
 <p>
-Desarrollar la comprensión de la multiplicación por 2 mediante una secuencia didáctica que permita al estudiante relacionar la suma repetida con la formación de dobles, el conteo por grupos y la solución de problemas cotidianos.
+Reconocer la multiplicación por 2 y por 3 como una forma abreviada de representar sumas repetidas de grupos iguales, utilizando material visual, ejercicios guiados y situaciones de la vida cotidiana.
+</p>
+
+<div class="info-box">
+<strong>Criterio curricular vinculado:</strong>
+<p>
+El aprendizaje se relaciona con el desarrollo de patrones numéricos crecientes y con el uso de estrategias de cálculo para resolver situaciones matemáticas sencillas mediante suma y multiplicación.
 </p>
 </div>
+</section>
 
-<div class="visual">
+<section class="card">
 <h2>Idea matemática central</h2>
-<p class="operacion">
-2 + 2 + 2 = 6 &nbsp;&nbsp; → &nbsp;&nbsp; 3 × 2 = 6
+<p>
+La multiplicación permite representar de manera rápida una suma repetida de grupos iguales. 
+Multiplicar por 2 ayuda a comprender la formación de dobles, mientras que multiplicar por 3 permite reconocer la formación de triples.
 </p>
 <p>
-El estudiante comprenderá que multiplicar por 2 significa organizar grupos iguales de dos elementos o sumar varias veces el número 2.
+Por ejemplo, si hay 3 grupos de 2 elementos, se puede sumar 2 + 2 + 2 o expresar la misma idea como 3 × 2. 
+De igual forma, si hay 4 grupos de 3 elementos, se puede sumar 3 + 3 + 3 + 3 o representarlo como 4 × 3.
 </p>
-</div>
+</section>
 
-<div class="card">
-<h2>Ruta de aprendizaje correlacionada</h2>
+<section class="card">
+<h2>Ruta de aprendizaje ERCA</h2>
 <p>
-La ruta no es únicamente decorativa. Cada fase cumple una función dentro del EVA y prepara al estudiante para avanzar progresivamente hacia la evaluación.
+El recorrido del aula virtual se desarrollará siguiendo cuatro momentos metodológicos:
 </p>
 
-<div class="ruta">
+<div class="route">
 
-<div class="paso info">
-<h3>1. Información</h3>
-<p>Comprende el propósito, el tema, las indicaciones y la ruta de trabajo.</p>
+<div class="route-card">
+<h3>1. Experiencia</h3>
+<p>
+El estudiante observará situaciones cotidianas donde aparecen grupos de 2 y de 3 elementos.
+</p>
 </div>
 
-<div class="paso formativa">
-<h3>2. Formativa</h3>
-<p>Revisa materiales, ejemplos, explicaciones y recursos visuales.</p>
+<div class="route-card">
+<h3>2. Reflexión</h3>
+<p>
+El estudiante responderá preguntas guía para identificar patrones, grupos iguales y formas rápidas de contar.
+</p>
 </div>
 
-<div class="paso experiencial">
-<h3>3. Experiencial</h3>
-<p>Aplica lo aprendido mediante actividades, ejercicios y problemas.</p>
+<div class="route-card">
+<h3>3. Conceptualización</h3>
+<p>
+El estudiante comprenderá la multiplicación como suma repetida, doble y triple mediante ejemplos y recursos visuales.
+</p>
 </div>
 
-<div class="paso comunicativa">
-<h3>4. Comunicativa</h3>
-<p>Participa, pregunta, comparte respuestas y recibe retroalimentación.</p>
-</div>
-
-<div class="paso recursos">
-<h3>5. Recursos</h3>
-<p>Refuerza el aprendizaje con fichas, juegos y materiales complementarios.</p>
-</div>
-
-<div class="paso evaluacion">
-<h3>6. Evaluación</h3>
-<p>Demuestra lo aprendido mediante actividades de verificación.</p>
+<div class="route-card">
+<h3>4. Aplicación</h3>
+<p>
+El estudiante resolverá ejercicios, juegos y problemas contextualizados para aplicar la multiplicación por 2 y por 3.
+</p>
 </div>
 
 </div>
-</div>
+</section>
 
-<div class="card">
+<section class="card">
 <h2>Indicaciones generales para el estudiante</h2>
 <ul>
-<li>Revisar cada dimensión en el orden propuesto.</li>
-<li>Observar los ejemplos antes de resolver las actividades.</li>
-<li>Participar en los espacios de comunicación cuando tenga dudas.</li>
-<li>Utilizar los recursos de apoyo para reforzar el aprendizaje.</li>
-<li>Completar la evaluación final al terminar el recorrido.</li>
+<li>Lee con atención cada instrucción antes de iniciar una actividad.</li>
+<li>Observa los ejemplos y relaciona la multiplicación con grupos iguales.</li>
+<li>Realiza las actividades en orden para comprender mejor el tema.</li>
+<li>Participa con respeto en los espacios de comunicación y reflexión.</li>
+<li>Revisa tus respuestas y aprende de la retroalimentación recibida.</li>
+<li>Solicita ayuda al docente cuando tengas dudas.</li>
 </ul>
-</div>
+</section>
 
-<a href="eva-materiales.html" class="btn">Continuar a Dimensión Formativa →</a>
-<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+<div class="buttons">
+<a href="eva-multiplicacion-por-dos.html" class="btn btn-primary">← Regresar al EVA</a>
+<a href="eva-materiales.html" class="btn btn-formativa">Continuar a Dimensión Formativa →</a>
+</div>
 
 </div>
 
 <footer>
-Fernando Sánchez | Dimensión Informativa • Modelo Tecno-Pedagógico de Aula Virtual
+Fernando Sánchez | EVA Matemática • Multiplicación por 2 y por 3 • Dimensión Informativa
 </footer>
 
 </body>
