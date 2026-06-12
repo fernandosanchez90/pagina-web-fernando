@@ -101,18 +101,22 @@ header h1{
     border-radius:18px;
     padding:22px;
     color:white;
-    min-height:130px;
+    min-height:180px;
     box-shadow:0 5px 14px rgba(0,0,0,.12);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .ficha-item h3{
-    margin:0 0 8px;
-    font-size:18px;
+    margin:0 0 12px;
+    font-size:19px;
 }
 
 .ficha-item p{
     margin:0;
     font-size:16px;
+    line-height:1.7;
 }
 
 .f1{background:linear-gradient(135deg,#2563eb,#1d4ed8);}
@@ -134,31 +138,42 @@ header h1{
     position:absolute;
     right:28px;
     top:22px;
-    font-size:70px;
+    font-size:78px;
     opacity:.18;
 }
 
 .proposito h2{
-    font-size:34px;
+    font-size:36px;
     text-align:center;
     color:#b45309;
 }
 
 .proposito-texto{
-    font-size:22px;
+    font-size:23px;
     text-align:center;
     font-weight:bold;
     color:#1f2937;
     max-width:900px;
-    margin:0 auto 20px;
+    margin:0 auto 24px;
 }
 
 .curriculo{
     background:white;
     border-left:8px solid #f59e0b;
     border-radius:16px;
-    padding:22px;
-    margin-top:22px;
+    padding:24px;
+    margin-top:24px;
+}
+
+.curriculo h3{
+    margin-top:0;
+    color:#b45309;
+}
+
+.idea-intro{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 25px;
 }
 
 .math-play{
@@ -169,16 +184,22 @@ header h1{
 }
 
 .math-box{
-    border-radius:22px;
-    padding:26px;
+    border-radius:24px;
+    padding:30px;
     text-align:center;
     color:#1f2937;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 8px 18px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.math-box:hover{
+    transform:translateY(-6px);
 }
 
 .math-box h3{
     margin-top:0;
     color:#003366;
+    font-size:26px;
 }
 
 .dobles{
@@ -190,7 +211,7 @@ header h1{
 }
 
 .objects{
-    font-size:34px;
+    font-size:42px;
     line-height:1.7;
     margin:18px 0;
 }
@@ -198,10 +219,11 @@ header h1{
 .result{
     background:white;
     display:inline-block;
-    padding:10px 18px;
+    padding:12px 20px;
     border-radius:14px;
     font-weight:bold;
     color:#003366;
+    margin-top:10px;
 }
 
 .route{
@@ -211,9 +233,20 @@ header h1{
     margin-top:24px;
 }
 
+.route-instruction{
+    text-align:center;
+    font-weight:bold;
+    color:#003366;
+    background:#eaf2ff;
+    padding:14px 20px;
+    border-radius:18px;
+    margin:20px auto 24px;
+    max-width:750px;
+}
+
 .flip-card{
     background:transparent;
-    height:240px;
+    height:250px;
     perspective:1000px;
     cursor:pointer;
 }
@@ -237,7 +270,7 @@ header h1{
     width:100%;
     height:100%;
     backface-visibility:hidden;
-    border-radius:20px;
+    border-radius:22px;
     color:white;
     display:flex;
     align-items:center;
@@ -248,8 +281,17 @@ header h1{
     box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
 
+.flip-front{
+    flex-direction:column;
+}
+
+.flip-front .icon{
+    font-size:42px;
+    margin-bottom:14px;
+}
+
 .flip-front h3{
-    font-size:28px;
+    font-size:27px;
     margin:0;
 }
 
@@ -311,6 +353,10 @@ footer{
 
     .proposito-texto{
         font-size:19px;
+    }
+
+    .objects{
+        font-size:36px;
     }
 }
 </style>
@@ -379,13 +425,13 @@ El aula virtual se organiza bajo la metodología ERCA, permitiendo que el estudi
 </section>
 
 <section class="card proposito">
-<h2>❤️ Propósito de aprendizaje</h2>
+<h2>🎯 ¿Qué aprenderás hoy?</h2>
 <p class="proposito-texto">
-Reconocer la multiplicación por 2 y por 3 como una estrategia matemática para representar sumas repetidas, formar dobles y triples, resolver situaciones cotidianas y explicar procedimientos de manera clara.
+Aprenderás a reconocer la multiplicación por 2 y por 3 como una forma rápida de representar sumas repetidas, formar dobles y triples, resolver situaciones de tu entorno y explicar tus procedimientos matemáticos con claridad.
 </p>
 
 <div class="curriculo">
-<strong>Criterio curricular vinculado:</strong>
+<h3>📚 Destreza curricular vinculada</h3>
 <p>
 El aprendizaje se relaciona con el desarrollo de patrones numéricos crecientes y con el uso de estrategias de cálculo para resolver situaciones matemáticas sencillas mediante suma y multiplicación.
 </p>
@@ -394,14 +440,14 @@ El aprendizaje se relaciona con el desarrollo de patrones numéricos crecientes 
 
 <section class="card">
 <h2 class="center">Idea matemática central</h2>
-<p class="center">
-Multiplicar es una forma rápida y ordenada de contar grupos iguales. En esta actividad, los estudiantes descubrirán que el número 2 forma dobles y el número 3 forma triples.
+<p class="idea-intro">
+Multiplicar es una forma rápida y ordenada de contar grupos iguales. En esta actividad descubrirás que el número 2 forma dobles y el número 3 forma triples.
 </p>
 
 <div class="math-play">
 
 <div class="math-box dobles">
-<h3>El mundo de los dobles</h3>
+<h3>🍎 Dobles</h3>
 <div class="objects">
 🍎 🍎<br>
 🍎 🍎
@@ -411,7 +457,7 @@ Multiplicar es una forma rápida y ordenada de contar grupos iguales. En esta ac
 </div>
 
 <div class="math-box triples">
-<h3>El mundo de los triples</h3>
+<h3>⭐ Triples</h3>
 <div class="objects">
 ⭐ ⭐ ⭐<br>
 ⭐ ⭐ ⭐
@@ -425,15 +471,17 @@ Multiplicar es una forma rápida y ordenada de contar grupos iguales. En esta ac
 
 <section class="card">
 <h2 class="center">Ruta de aprendizaje ERCA</h2>
-<p class="center">
-Haz clic o pasa el cursor sobre cada tarjeta para descubrir lo que realizarás en cada momento del aprendizaje.
-</p>
+
+<div class="route-instruction">
+🔄 Haz clic o pasa el cursor sobre cada etapa para descubrir qué realizarás durante el aprendizaje.
+</div>
 
 <div class="route">
 
 <div class="flip-card r1" tabindex="0">
 <div class="flip-inner">
 <div class="flip-front">
+<div class="icon">👀</div>
 <h3>1. Experiencia</h3>
 </div>
 <div class="flip-back">
@@ -445,6 +493,7 @@ Haz clic o pasa el cursor sobre cada tarjeta para descubrir lo que realizarás e
 <div class="flip-card r2" tabindex="0">
 <div class="flip-inner">
 <div class="flip-front">
+<div class="icon">💭</div>
 <h3>2. Reflexión</h3>
 </div>
 <div class="flip-back">
@@ -456,6 +505,7 @@ Haz clic o pasa el cursor sobre cada tarjeta para descubrir lo que realizarás e
 <div class="flip-card r3" tabindex="0">
 <div class="flip-inner">
 <div class="flip-front">
+<div class="icon">📚</div>
 <h3>3. Conceptualización</h3>
 </div>
 <div class="flip-back">
@@ -467,6 +517,7 @@ Haz clic o pasa el cursor sobre cada tarjeta para descubrir lo que realizarás e
 <div class="flip-card r4" tabindex="0">
 <div class="flip-inner">
 <div class="flip-front">
+<div class="icon">🛠️</div>
 <h3>4. Aplicación</h3>
 </div>
 <div class="flip-back">
