@@ -17,15 +17,19 @@ header h1{margin:0;font-size:42px;}
 .orange{border-top:8px solid #ea580c;}
 .red{border-top:8px solid #dc2626;}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
-.box{background:#f8fafc;border-radius:16px;padding:20px;text-align:center;border-left:7px solid #7c3aed;}
+.box{background:#f8fafc;border-radius:16px;padding:20px;text-align:center;border-left:7px solid #7c3aed;font-weight:bold;}
 .btn{display:inline-block;background:#003366;color:white;text-decoration:none;padding:12px 22px;border-radius:10px;margin:8px;font-weight:bold;border:none;cursor:pointer;font-size:16px;}
 .btn:hover{background:#00264d;}
 input{padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:18px;text-align:center;width:200px;}
 .resultado{font-weight:bold;font-size:20px;margin-top:15px;}
 .opcion{background:#ede9fe;color:#4c1d95;padding:12px;border-radius:12px;margin:8px;cursor:pointer;font-weight:bold;}
 .opcion:hover{background:#ddd6fe;}
-.flashcard{background:#ede9fe;color:#4c1d95;border-radius:18px;padding:35px;font-size:30px;font-weight:bold;cursor:pointer;}
-.memory-card{background:#7c3aed;color:white;border-radius:14px;padding:25px;font-size:22px;font-weight:bold;cursor:pointer;}
+.flashcard{background:#ede9fe;color:#4c1d95;border-radius:18px;padding:35px;font-size:30px;font-weight:bold;cursor:pointer;text-align:center;}
+.memory-card{background:#7c3aed;color:white;border-radius:14px;padding:25px;font-size:22px;font-weight:bold;cursor:pointer;text-align:center;}
+table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden;}
+th{background:#7c3aed;color:white;padding:14px;border:1px solid #ddd;}
+td{padding:14px;border:1px solid #ddd;}
+td input{width:auto;}
 footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:40px;}
 </style>
 </head>
@@ -42,12 +46,14 @@ footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:
 <div class="card purple">
 <h2>Propósito</h2>
 <p>
-Esta sección reúne actividades internas del EVA para que el estudiante observe, practique, juegue, resuelva problemas y reciba retroalimentación inmediata sobre la multiplicación por 2.
+Esta sección reúne actividades internas del EVA para que el estudiante observe, practique, juegue, resuelva problemas y reciba retroalimentación inmediata sobre la multiplicación por 2, sin salir de la página.
 </p>
 </div>
 
 <div class="card blue">
 <h2>1. Tabla visual del 2</h2>
+<p>Observa la secuencia y reconoce cómo la multiplicación por 2 avanza de dos en dos.</p>
+
 <div class="grid">
 <div class="box">2 x 1 = 2</div>
 <div class="box">2 x 2 = 4</div>
@@ -65,42 +71,115 @@ Esta sección reúne actividades internas del EVA para que el estudiante observe
 <div class="card green">
 <h2>2. Tarjeta interactiva</h2>
 <p>Haz clic en la tarjeta para ver la respuesta.</p>
+
 <div class="flashcard" onclick="voltearTarjeta()" id="tarjeta">2 x 4</div>
+
 <button class="btn" onclick="nuevaTarjeta()">Nueva tarjeta</button>
 </div>
 
 <div class="card orange">
 <h2>3. Completa el resultado</h2>
+
 <h3 id="preguntaCompletar">2 x 1 = ?</h3>
+
 <input id="respuestaCompletar" type="number" placeholder="Respuesta">
+
 <br>
+
 <button class="btn" onclick="verificarCompletar()">Verificar</button>
 <button class="btn" onclick="nuevaCompletar()">Nueva pregunta</button>
+
 <p id="resultadoCompletar" class="resultado"></p>
 </div>
 
 <div class="card blue">
 <h2>4. Selección múltiple</h2>
+
 <h3 id="preguntaOpcion">¿Cuánto es 2 x 5?</h3>
+
 <div id="opciones"></div>
+
 <p id="resultadoOpcion" class="resultado"></p>
+
 <button class="btn" onclick="nuevaOpcion()">Nueva pregunta</button>
 </div>
 
 <div class="card green">
 <h2>5. Problema de la vida real</h2>
+
 <p id="problemaTexto"></p>
+
 <div id="problemaOpciones"></div>
+
 <p id="problemaResultado" class="resultado"></p>
+
 <button class="btn" onclick="nuevoProblema()">Nuevo problema</button>
 </div>
 
 <div class="card red">
 <h2>6. Juego de memoria</h2>
 <p>Encuentra la pareja entre operación y resultado.</p>
+
 <div class="grid" id="memoria"></div>
+
 <p id="memoriaResultado" class="resultado"></p>
+
 <button class="btn" onclick="iniciarMemoria()">Reiniciar memoria</button>
+</div>
+
+<div class="card purple">
+<h2>Tabla de avance del estudiante</h2>
+<p>
+Marca las actividades que ya completaste para revisar tu progreso antes de continuar a la evaluación.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Actividad</th>
+<th>Realizada</th>
+<th>Comentario</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Tabla visual del 2</td>
+<td style="text-align:center;"><input type="checkbox"></td>
+<td>Reconozco la secuencia de dos en dos.</td>
+</tr>
+
+<tr>
+<td>Tarjeta interactiva</td>
+<td style="text-align:center;"><input type="checkbox"></td>
+<td>Practiqué operación y resultado.</td>
+</tr>
+
+<tr>
+<td>Completa el resultado</td>
+<td style="text-align:center;"><input type="checkbox"></td>
+<td>Respondí multiplicaciones directas.</td>
+</tr>
+
+<tr>
+<td>Selección múltiple</td>
+<td style="text-align:center;"><input type="checkbox"></td>
+<td>Elegí la respuesta correcta entre varias opciones.</td>
+</tr>
+
+<tr>
+<td>Problema de la vida real</td>
+<td style="text-align:center;"><input type="checkbox"></td>
+<td>Apliqué la multiplicación en una situación cotidiana.</td>
+</tr>
+
+<tr>
+<td>Juego de memoria</td>
+<td style="text-align:center;"><input type="checkbox"></td>
+<td>Relacioné operación con resultado.</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 <a href="eva-evaluacion.html" class="btn">Continuar a Evaluación →</a>
@@ -128,6 +207,7 @@ function nuevaTarjeta(){
 
 function voltearTarjeta(){
   const tarjeta = document.getElementById("tarjeta");
+
   if(tarjetaMostrandoRespuesta){
     tarjeta.textContent = "2 x " + numeroTarjeta;
     tarjetaMostrandoRespuesta = false;
@@ -149,6 +229,12 @@ function verificarCompletar(){
   const correcta = numeroCompletar * 2;
   const resultado = document.getElementById("resultadoCompletar");
 
+  if(document.getElementById("respuestaCompletar").value === ""){
+    resultado.textContent = "Escribe una respuesta antes de verificar.";
+    resultado.style.color = "#ea580c";
+    return;
+  }
+
   if(respuesta === correcta){
     resultado.textContent = "¡Correcto!";
     resultado.style.color = "#16a34a";
@@ -161,6 +247,7 @@ function verificarCompletar(){
 function nuevaOpcion(){
   numeroOpcion = Math.floor(Math.random()*10)+1;
   const correcta = numeroOpcion * 2;
+
   document.getElementById("preguntaOpcion").textContent = "¿Cuánto es 2 x " + numeroOpcion + "?";
   document.getElementById("resultadoOpcion").textContent = "";
 
@@ -181,6 +268,7 @@ function nuevaOpcion(){
 
 function verificarOpcion(valor, correcta){
   const resultado = document.getElementById("resultadoOpcion");
+
   if(valor === correcta){
     resultado.textContent = "¡Respuesta correcta!";
     resultado.style.color = "#16a34a";
@@ -199,7 +287,9 @@ function nuevoProblema(){
 
   document.getElementById("problemaResultado").textContent = "";
 
-  let opciones = [correcta, correcta+2, correcta-2].filter(n => n > 0).sort(() => Math.random() - 0.5);
+  let opciones = [correcta, correcta+2, correcta-2].filter(n => n > 0);
+  opciones = [...new Set(opciones)].sort(() => Math.random() - 0.5);
+
   const contenedor = document.getElementById("problemaOpciones");
   contenedor.innerHTML = "";
 
@@ -207,8 +297,10 @@ function nuevoProblema(){
     const div = document.createElement("div");
     div.className = "opcion";
     div.textContent = valor + " lápices";
+
     div.onclick = () => {
       const resultado = document.getElementById("problemaResultado");
+
       if(valor === correcta){
         resultado.textContent = "¡Muy bien! Resolviste el problema.";
         resultado.style.color = "#16a34a";
@@ -217,6 +309,7 @@ function nuevoProblema(){
         resultado.style.color = "#dc2626";
       }
     };
+
     contenedor.appendChild(div);
   });
 }
@@ -231,6 +324,7 @@ function iniciarMemoria(){
   ];
 
   let cartas = [];
+
   datos.forEach(item => {
     cartas.push({texto:item.texto, valor:item.pareja});
     cartas.push({texto:item.pareja, valor:item.pareja});
@@ -276,6 +370,7 @@ function descubrirCarta(carta){
     document.getElementById("memoriaResultado").style.color = "#16a34a";
   }else{
     bloqueo = true;
+
     setTimeout(() => {
       primeraCarta.textContent = "?";
       carta.textContent = "?";
