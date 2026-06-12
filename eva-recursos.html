@@ -16,11 +16,17 @@ header h1{margin:0;font-size:42px;}
 .green{border-top:8px solid #16a34a;}
 .orange{border-top:8px solid #ea580c;}
 .red{border-top:8px solid #dc2626;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
-.resource{background:#f8fafc;border-radius:18px;padding:22px;border-left:7px solid #7c3aed;}
-.resource a,.btn{display:inline-block;background:#003366;color:white;text-decoration:none;padding:12px 22px;border-radius:10px;margin-top:12px;font-weight:bold;}
-.resource a:hover,.btn:hover{background:#00264d;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
 .badge{display:inline-block;background:#ede9fe;color:#5b21b6;padding:6px 12px;border-radius:20px;font-size:14px;font-weight:bold;margin-bottom:10px;}
+.table-card{background:#f8fafc;border-radius:16px;padding:20px;text-align:center;font-size:22px;font-weight:bold;border-left:7px solid #7c3aed;}
+.activity-box{background:#f8fafc;padding:28px;border-radius:18px;text-align:center;}
+.question{font-size:38px;margin:15px 0;color:#7c3aed;}
+input{padding:14px;border-radius:10px;border:1px solid #cbd5e1;font-size:20px;width:230px;text-align:center;}
+.btn{display:inline-block;background:#003366;color:white;text-decoration:none;padding:12px 22px;border-radius:10px;margin-top:12px;font-weight:bold;border:none;cursor:pointer;font-size:16px;}
+.btn:hover{background:#00264d;}
+.resultado{font-weight:bold;font-size:21px;margin-top:18px;}
+.score{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px;}
+.score div{background:white;border-radius:14px;padding:14px 22px;box-shadow:0 2px 8px rgba(0,0,0,.08);font-weight:bold;}
 footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:40px;}
 </style>
 </head>
@@ -29,7 +35,7 @@ footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:
 
 <header>
 <h1>Recursos de Apoyo</h1>
-<p>Materiales externos validados para reforzar la multiplicación por 2</p>
+<p>Actividades internas para reforzar la multiplicación por 2</p>
 </header>
 
 <div class="container">
@@ -37,74 +43,76 @@ footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:
 <div class="card purple">
 <h2>Propósito de los recursos de apoyo</h2>
 <p>
-Esta dimensión ofrece materiales externos seleccionados para reforzar el aprendizaje de la multiplicación por 2 mediante juegos, práctica interactiva, fichas y explicaciones complementarias.
+Esta sección permite reforzar el aprendizaje de la multiplicación por 2 mediante recursos internos del EVA. 
+El estudiante observa, practica, responde y recibe retroalimentación inmediata sin salir de la página.
 </p>
 </div>
 
 <div class="card blue">
-<h2>Recursos interactivos recomendados</h2>
+<h2>Tabla del 2: apoyo visual</h2>
+<p>
+Observa la secuencia. La multiplicación por 2 significa sumar dos veces el mismo número o avanzar de dos en dos.
+</p>
 
 <div class="grid">
-
-<div class="resource">
-<span class="badge">Juego interactivo</span>
-<h3>Árbol ABC - Tabla del 2</h3>
-<p>Permite practicar la tabla del 2 mediante juegos y actividades interactivas para niños.</p>
-<a href="https://arbolabc.com/juegos-tablas-de-multiplicar/tabla-del-2" target="visorRecursos">Abrir recurso</a>
-</div>
-
-<div class="resource">
-<span class="badge">Práctica guiada</span>
-<h3>Tablasdemultiplicar.com - Tabla del 2</h3>
-<p>Ofrece práctica en orden, en desorden, prueba contrarreloj y fichas imprimibles.</p>
-<a href="https://www.tablasdemultiplicar.com/tabla-del-2.html" target="visorRecursos">Abrir recurso</a>
-</div>
-
-<div class="resource">
-<span class="badge">Juegos</span>
-<h3>Juegos de tablas de multiplicar</h3>
-<p>Incluye juegos educativos enfocados en aprender tablas de multiplicar de forma lúdica.</p>
-<a href="https://www.tablasdemultiplicar.com/juegos/" target="visorRecursos">Abrir recurso</a>
-</div>
-
+<div class="table-card">2 x 1 = 2</div>
+<div class="table-card">2 x 2 = 4</div>
+<div class="table-card">2 x 3 = 6</div>
+<div class="table-card">2 x 4 = 8</div>
+<div class="table-card">2 x 5 = 10</div>
+<div class="table-card">2 x 6 = 12</div>
+<div class="table-card">2 x 7 = 14</div>
+<div class="table-card">2 x 8 = 16</div>
+<div class="table-card">2 x 9 = 18</div>
+<div class="table-card">2 x 10 = 20</div>
 </div>
 </div>
 
 <div class="card green">
-<h2>Lectura de apoyo para el docente</h2>
+<h2>Actividad interactiva: Practico la tabla del 2</h2>
 <p>
-Este recurso permite reforzar la comprensión de estrategias para enseñar las tablas de multiplicar de forma visual y sencilla.
+Resuelve la multiplicación que aparece en pantalla. Luego presiona verificar para recibir retroalimentación.
 </p>
 
-<div class="resource">
-<span class="badge">Lectura pedagógica</span>
-<h3>Smartick - Tablas de multiplicar</h3>
-<p>Presenta estrategias para comprender y aprender las tablas de multiplicar, incluyendo ideas visuales y progresivas.</p>
-<a href="https://www.smartick.es/blog/matematicas/multiplicaciones-y-divisiones/tablas-de-multiplicar/" target="visorRecursos">Abrir lectura</a>
+<div class="activity-box">
+<span class="badge">Reto interactivo</span>
+
+<h3 id="pregunta" class="question">2 x 1 = ?</h3>
+
+<input id="respuesta" type="number" placeholder="Tu respuesta">
+
+<br>
+
+<button onclick="verificarRespuesta()" class="btn">Verificar</button>
+<button onclick="nuevaPregunta()" class="btn">Nueva pregunta</button>
+<button onclick="reiniciarActividad()" class="btn">Reiniciar</button>
+
+<p id="resultado" class="resultado"></p>
+
+<div class="score">
+<div>Aciertos: <span id="aciertos">0</span></div>
+<div>Intentos: <span id="intentos">0</span></div>
+<div>Progreso: <span id="progreso">0%</span></div>
+</div>
 </div>
 </div>
 
 <div class="card orange">
-<h2>Uso sugerido de los recursos</h2>
+<h2>Orientación para el estudiante</h2>
 <ul>
-<li>Primero revisar la tabla del 2 en el EVA.</li>
-<li>Después practicar en Árbol ABC.</li>
-<li>Luego resolver ejercicios en Tablasdemultiplicar.com.</li>
-<li>Finalmente reforzar con juegos o fichas imprimibles.</li>
+<li>Primero observa la tabla del 2.</li>
+<li>Luego responde las preguntas del reto interactivo.</li>
+<li>Si te equivocas, vuelve a intentarlo y revisa la secuencia.</li>
+<li>Cuando logres varios aciertos, continúa a la evaluación.</li>
 </ul>
 </div>
 
 <div class="card red">
-<h2>Recurso seleccionado</h2>
+<h2>Refuerzo pedagógico</h2>
 <p>
-Al seleccionar un recurso, este se visualizará dentro de esta misma página.
+La práctica dentro del EVA evita distracciones y permite que el estudiante se concentre en el objetivo principal:
+comprender y aplicar la multiplicación por 2 de manera progresiva, visual e interactiva.
 </p>
-
-<iframe
-name="visorRecursos"
-title="Visor de recursos"
-style="width:100%;height:700px;border:none;border-radius:15px;background:white;">
-</iframe>
 </div>
 
 <a href="eva-evaluacion.html" class="btn">Continuar a Evaluación →</a>
@@ -115,6 +123,61 @@ style="width:100%;height:700px;border:none;border-radius:15px;background:white;"
 <footer>
 Fernando Sánchez | Recursos de Apoyo • Multiplicación por 2
 </footer>
+
+<script>
+let numeroActual = 1;
+let aciertos = 0;
+let intentos = 0;
+
+function nuevaPregunta() {
+  numeroActual = Math.floor(Math.random() * 10) + 1;
+  document.getElementById("pregunta").textContent = "2 x " + numeroActual + " = ?";
+  document.getElementById("respuesta").value = "";
+  document.getElementById("resultado").textContent = "";
+}
+
+function verificarRespuesta() {
+  const respuesta = Number(document.getElementById("respuesta").value);
+  const correcta = 2 * numeroActual;
+  const resultado = document.getElementById("resultado");
+
+  if (document.getElementById("respuesta").value === "") {
+    resultado.textContent = "Escribe una respuesta antes de verificar.";
+    resultado.style.color = "#ea580c";
+    return;
+  }
+
+  intentos++;
+
+  if (respuesta === correcta) {
+    aciertos++;
+    resultado.textContent = "¡Correcto! Muy bien.";
+    resultado.style.color = "#16a34a";
+  } else {
+    resultado.textContent = "Intenta otra vez. La respuesta correcta era " + correcta + ".";
+    resultado.style.color = "#dc2626";
+  }
+
+  actualizarMarcador();
+}
+
+function actualizarMarcador() {
+  document.getElementById("aciertos").textContent = aciertos;
+  document.getElementById("intentos").textContent = intentos;
+
+  const progreso = intentos === 0 ? 0 : Math.round((aciertos / intentos) * 100);
+  document.getElementById("progreso").textContent = progreso + "%";
+}
+
+function reiniciarActividad() {
+  aciertos = 0;
+  intentos = 0;
+  actualizarMarcador();
+  nuevaPregunta();
+}
+
+nuevaPregunta();
+</script>
 
 </body>
 </html>
