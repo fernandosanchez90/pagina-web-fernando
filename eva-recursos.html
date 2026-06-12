@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recursos de Apoyo - Multiplicación por 2</title>
+<title>Recursos de Apoyo EVA</title>
 
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#f5f3ff;color:#243447;line-height:1.7;}
@@ -16,17 +16,16 @@ header h1{margin:0;font-size:42px;}
 .green{border-top:8px solid #16a34a;}
 .orange{border-top:8px solid #ea580c;}
 .red{border-top:8px solid #dc2626;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
-.badge{display:inline-block;background:#ede9fe;color:#5b21b6;padding:6px 12px;border-radius:20px;font-size:14px;font-weight:bold;margin-bottom:10px;}
-.table-card{background:#f8fafc;border-radius:16px;padding:20px;text-align:center;font-size:22px;font-weight:bold;border-left:7px solid #7c3aed;}
-.activity-box{background:#f8fafc;padding:28px;border-radius:18px;text-align:center;}
-.question{font-size:38px;margin:15px 0;color:#7c3aed;}
-input{padding:14px;border-radius:10px;border:1px solid #cbd5e1;font-size:20px;width:230px;text-align:center;}
-.btn{display:inline-block;background:#003366;color:white;text-decoration:none;padding:12px 22px;border-radius:10px;margin-top:12px;font-weight:bold;border:none;cursor:pointer;font-size:16px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+.box{background:#f8fafc;border-radius:16px;padding:20px;text-align:center;border-left:7px solid #7c3aed;}
+.btn{display:inline-block;background:#003366;color:white;text-decoration:none;padding:12px 22px;border-radius:10px;margin:8px;font-weight:bold;border:none;cursor:pointer;font-size:16px;}
 .btn:hover{background:#00264d;}
-.resultado{font-weight:bold;font-size:21px;margin-top:18px;}
-.score{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px;}
-.score div{background:white;border-radius:14px;padding:14px 22px;box-shadow:0 2px 8px rgba(0,0,0,.08);font-weight:bold;}
+input{padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:18px;text-align:center;width:200px;}
+.resultado{font-weight:bold;font-size:20px;margin-top:15px;}
+.opcion{background:#ede9fe;color:#4c1d95;padding:12px;border-radius:12px;margin:8px;cursor:pointer;font-weight:bold;}
+.opcion:hover{background:#ddd6fe;}
+.flashcard{background:#ede9fe;color:#4c1d95;border-radius:18px;padding:35px;font-size:30px;font-weight:bold;cursor:pointer;}
+.memory-card{background:#7c3aed;color:white;border-radius:14px;padding:25px;font-size:22px;font-weight:bold;cursor:pointer;}
 footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:40px;}
 </style>
 </head>
@@ -35,84 +34,73 @@ footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:
 
 <header>
 <h1>Recursos de Apoyo</h1>
-<p>Actividades internas para reforzar la multiplicación por 2</p>
+<p>Actividades interactivas para reforzar la multiplicación por 2</p>
 </header>
 
 <div class="container">
 
 <div class="card purple">
-<h2>Propósito de los recursos de apoyo</h2>
+<h2>Propósito</h2>
 <p>
-Esta sección permite reforzar el aprendizaje de la multiplicación por 2 mediante recursos internos del EVA. 
-El estudiante observa, practica, responde y recibe retroalimentación inmediata sin salir de la página.
+Esta sección reúne actividades internas del EVA para que el estudiante observe, practique, juegue, resuelva problemas y reciba retroalimentación inmediata sobre la multiplicación por 2.
 </p>
 </div>
 
 <div class="card blue">
-<h2>Tabla del 2: apoyo visual</h2>
-<p>
-Observa la secuencia. La multiplicación por 2 significa sumar dos veces el mismo número o avanzar de dos en dos.
-</p>
-
+<h2>1. Tabla visual del 2</h2>
 <div class="grid">
-<div class="table-card">2 x 1 = 2</div>
-<div class="table-card">2 x 2 = 4</div>
-<div class="table-card">2 x 3 = 6</div>
-<div class="table-card">2 x 4 = 8</div>
-<div class="table-card">2 x 5 = 10</div>
-<div class="table-card">2 x 6 = 12</div>
-<div class="table-card">2 x 7 = 14</div>
-<div class="table-card">2 x 8 = 16</div>
-<div class="table-card">2 x 9 = 18</div>
-<div class="table-card">2 x 10 = 20</div>
+<div class="box">2 x 1 = 2</div>
+<div class="box">2 x 2 = 4</div>
+<div class="box">2 x 3 = 6</div>
+<div class="box">2 x 4 = 8</div>
+<div class="box">2 x 5 = 10</div>
+<div class="box">2 x 6 = 12</div>
+<div class="box">2 x 7 = 14</div>
+<div class="box">2 x 8 = 16</div>
+<div class="box">2 x 9 = 18</div>
+<div class="box">2 x 10 = 20</div>
 </div>
 </div>
 
 <div class="card green">
-<h2>Actividad interactiva: Practico la tabla del 2</h2>
-<p>
-Resuelve la multiplicación que aparece en pantalla. Luego presiona verificar para recibir retroalimentación.
-</p>
-
-<div class="activity-box">
-<span class="badge">Reto interactivo</span>
-
-<h3 id="pregunta" class="question">2 x 1 = ?</h3>
-
-<input id="respuesta" type="number" placeholder="Tu respuesta">
-
-<br>
-
-<button onclick="verificarRespuesta()" class="btn">Verificar</button>
-<button onclick="nuevaPregunta()" class="btn">Nueva pregunta</button>
-<button onclick="reiniciarActividad()" class="btn">Reiniciar</button>
-
-<p id="resultado" class="resultado"></p>
-
-<div class="score">
-<div>Aciertos: <span id="aciertos">0</span></div>
-<div>Intentos: <span id="intentos">0</span></div>
-<div>Progreso: <span id="progreso">0%</span></div>
-</div>
-</div>
+<h2>2. Tarjeta interactiva</h2>
+<p>Haz clic en la tarjeta para ver la respuesta.</p>
+<div class="flashcard" onclick="voltearTarjeta()" id="tarjeta">2 x 4</div>
+<button class="btn" onclick="nuevaTarjeta()">Nueva tarjeta</button>
 </div>
 
 <div class="card orange">
-<h2>Orientación para el estudiante</h2>
-<ul>
-<li>Primero observa la tabla del 2.</li>
-<li>Luego responde las preguntas del reto interactivo.</li>
-<li>Si te equivocas, vuelve a intentarlo y revisa la secuencia.</li>
-<li>Cuando logres varios aciertos, continúa a la evaluación.</li>
-</ul>
+<h2>3. Completa el resultado</h2>
+<h3 id="preguntaCompletar">2 x 1 = ?</h3>
+<input id="respuestaCompletar" type="number" placeholder="Respuesta">
+<br>
+<button class="btn" onclick="verificarCompletar()">Verificar</button>
+<button class="btn" onclick="nuevaCompletar()">Nueva pregunta</button>
+<p id="resultadoCompletar" class="resultado"></p>
+</div>
+
+<div class="card blue">
+<h2>4. Selección múltiple</h2>
+<h3 id="preguntaOpcion">¿Cuánto es 2 x 5?</h3>
+<div id="opciones"></div>
+<p id="resultadoOpcion" class="resultado"></p>
+<button class="btn" onclick="nuevaOpcion()">Nueva pregunta</button>
+</div>
+
+<div class="card green">
+<h2>5. Problema de la vida real</h2>
+<p id="problemaTexto"></p>
+<div id="problemaOpciones"></div>
+<p id="problemaResultado" class="resultado"></p>
+<button class="btn" onclick="nuevoProblema()">Nuevo problema</button>
 </div>
 
 <div class="card red">
-<h2>Refuerzo pedagógico</h2>
-<p>
-La práctica dentro del EVA evita distracciones y permite que el estudiante se concentre en el objetivo principal:
-comprender y aplicar la multiplicación por 2 de manera progresiva, visual e interactiva.
-</p>
+<h2>6. Juego de memoria</h2>
+<p>Encuentra la pareja entre operación y resultado.</p>
+<div class="grid" id="memoria"></div>
+<p id="memoriaResultado" class="resultado"></p>
+<button class="btn" onclick="iniciarMemoria()">Reiniciar memoria</button>
 </div>
 
 <a href="eva-evaluacion.html" class="btn">Continuar a Evaluación →</a>
@@ -125,58 +113,185 @@ Fernando Sánchez | Recursos de Apoyo • Multiplicación por 2
 </footer>
 
 <script>
-let numeroActual = 1;
-let aciertos = 0;
-let intentos = 0;
+let numeroTarjeta = 4;
+let tarjetaMostrandoRespuesta = false;
+let numeroCompletar = 1;
+let numeroOpcion = 5;
+let primeraCarta = null;
+let bloqueo = false;
 
-function nuevaPregunta() {
-  numeroActual = Math.floor(Math.random() * 10) + 1;
-  document.getElementById("pregunta").textContent = "2 x " + numeroActual + " = ?";
-  document.getElementById("respuesta").value = "";
-  document.getElementById("resultado").textContent = "";
+function nuevaTarjeta(){
+  numeroTarjeta = Math.floor(Math.random()*10)+1;
+  tarjetaMostrandoRespuesta = false;
+  document.getElementById("tarjeta").textContent = "2 x " + numeroTarjeta;
 }
 
-function verificarRespuesta() {
-  const respuesta = Number(document.getElementById("respuesta").value);
-  const correcta = 2 * numeroActual;
-  const resultado = document.getElementById("resultado");
+function voltearTarjeta(){
+  const tarjeta = document.getElementById("tarjeta");
+  if(tarjetaMostrandoRespuesta){
+    tarjeta.textContent = "2 x " + numeroTarjeta;
+    tarjetaMostrandoRespuesta = false;
+  }else{
+    tarjeta.textContent = 2 * numeroTarjeta;
+    tarjetaMostrandoRespuesta = true;
+  }
+}
 
-  if (document.getElementById("respuesta").value === "") {
-    resultado.textContent = "Escribe una respuesta antes de verificar.";
-    resultado.style.color = "#ea580c";
+function nuevaCompletar(){
+  numeroCompletar = Math.floor(Math.random()*10)+1;
+  document.getElementById("preguntaCompletar").textContent = "2 x " + numeroCompletar + " = ?";
+  document.getElementById("respuestaCompletar").value = "";
+  document.getElementById("resultadoCompletar").textContent = "";
+}
+
+function verificarCompletar(){
+  const respuesta = Number(document.getElementById("respuestaCompletar").value);
+  const correcta = numeroCompletar * 2;
+  const resultado = document.getElementById("resultadoCompletar");
+
+  if(respuesta === correcta){
+    resultado.textContent = "¡Correcto!";
+    resultado.style.color = "#16a34a";
+  }else{
+    resultado.textContent = "Intenta otra vez. La respuesta correcta es " + correcta + ".";
+    resultado.style.color = "#dc2626";
+  }
+}
+
+function nuevaOpcion(){
+  numeroOpcion = Math.floor(Math.random()*10)+1;
+  const correcta = numeroOpcion * 2;
+  document.getElementById("preguntaOpcion").textContent = "¿Cuánto es 2 x " + numeroOpcion + "?";
+  document.getElementById("resultadoOpcion").textContent = "";
+
+  let respuestas = [correcta, correcta+2, correcta-2, correcta+4].filter(n => n > 0);
+  respuestas = [...new Set(respuestas)].sort(() => Math.random() - 0.5);
+
+  const contenedor = document.getElementById("opciones");
+  contenedor.innerHTML = "";
+
+  respuestas.forEach(valor => {
+    const div = document.createElement("div");
+    div.className = "opcion";
+    div.textContent = valor;
+    div.onclick = () => verificarOpcion(valor, correcta);
+    contenedor.appendChild(div);
+  });
+}
+
+function verificarOpcion(valor, correcta){
+  const resultado = document.getElementById("resultadoOpcion");
+  if(valor === correcta){
+    resultado.textContent = "¡Respuesta correcta!";
+    resultado.style.color = "#16a34a";
+  }else{
+    resultado.textContent = "Respuesta incorrecta. Revisa la tabla del 2.";
+    resultado.style.color = "#dc2626";
+  }
+}
+
+function nuevoProblema(){
+  const cantidad = Math.floor(Math.random()*10)+1;
+  const correcta = cantidad * 2;
+
+  document.getElementById("problemaTexto").textContent =
+  "En una caja hay 2 lápices. Si hay " + cantidad + " cajas, ¿cuántos lápices hay en total?";
+
+  document.getElementById("problemaResultado").textContent = "";
+
+  let opciones = [correcta, correcta+2, correcta-2].filter(n => n > 0).sort(() => Math.random() - 0.5);
+  const contenedor = document.getElementById("problemaOpciones");
+  contenedor.innerHTML = "";
+
+  opciones.forEach(valor => {
+    const div = document.createElement("div");
+    div.className = "opcion";
+    div.textContent = valor + " lápices";
+    div.onclick = () => {
+      const resultado = document.getElementById("problemaResultado");
+      if(valor === correcta){
+        resultado.textContent = "¡Muy bien! Resolviste el problema.";
+        resultado.style.color = "#16a34a";
+      }else{
+        resultado.textContent = "Revisa: debes multiplicar 2 x " + cantidad + ".";
+        resultado.style.color = "#dc2626";
+      }
+    };
+    contenedor.appendChild(div);
+  });
+}
+
+function iniciarMemoria(){
+  const datos = [
+    {texto:"2 x 1", pareja:"2"},
+    {texto:"2 x 2", pareja:"4"},
+    {texto:"2 x 3", pareja:"6"},
+    {texto:"2 x 4", pareja:"8"},
+    {texto:"2 x 5", pareja:"10"}
+  ];
+
+  let cartas = [];
+  datos.forEach(item => {
+    cartas.push({texto:item.texto, valor:item.pareja});
+    cartas.push({texto:item.pareja, valor:item.pareja});
+  });
+
+  cartas.sort(() => Math.random() - 0.5);
+
+  const memoria = document.getElementById("memoria");
+  memoria.innerHTML = "";
+  document.getElementById("memoriaResultado").textContent = "";
+  primeraCarta = null;
+  bloqueo = false;
+
+  cartas.forEach(carta => {
+    const div = document.createElement("div");
+    div.className = "memory-card";
+    div.textContent = "?";
+    div.dataset.texto = carta.texto;
+    div.dataset.valor = carta.valor;
+    div.dataset.descubierta = "false";
+    div.onclick = () => descubrirCarta(div);
+    memoria.appendChild(div);
+  });
+}
+
+function descubrirCarta(carta){
+  if(bloqueo || carta.dataset.descubierta === "true") return;
+
+  carta.textContent = carta.dataset.texto;
+
+  if(!primeraCarta){
+    primeraCarta = carta;
     return;
   }
 
-  intentos++;
+  if(primeraCarta === carta) return;
 
-  if (respuesta === correcta) {
-    aciertos++;
-    resultado.textContent = "¡Correcto! Muy bien.";
-    resultado.style.color = "#16a34a";
-  } else {
-    resultado.textContent = "Intenta otra vez. La respuesta correcta era " + correcta + ".";
-    resultado.style.color = "#dc2626";
+  if(primeraCarta.dataset.valor === carta.dataset.valor){
+    primeraCarta.dataset.descubierta = "true";
+    carta.dataset.descubierta = "true";
+    primeraCarta = null;
+    document.getElementById("memoriaResultado").textContent = "¡Pareja encontrada!";
+    document.getElementById("memoriaResultado").style.color = "#16a34a";
+  }else{
+    bloqueo = true;
+    setTimeout(() => {
+      primeraCarta.textContent = "?";
+      carta.textContent = "?";
+      primeraCarta = null;
+      bloqueo = false;
+      document.getElementById("memoriaResultado").textContent = "Intenta encontrar otra pareja.";
+      document.getElementById("memoriaResultado").style.color = "#dc2626";
+    }, 900);
   }
-
-  actualizarMarcador();
 }
 
-function actualizarMarcador() {
-  document.getElementById("aciertos").textContent = aciertos;
-  document.getElementById("intentos").textContent = intentos;
-
-  const progreso = intentos === 0 ? 0 : Math.round((aciertos / intentos) * 100);
-  document.getElementById("progreso").textContent = progreso + "%";
-}
-
-function reiniciarActividad() {
-  aciertos = 0;
-  intentos = 0;
-  actualizarMarcador();
-  nuevaPregunta();
-}
-
-nuevaPregunta();
+nuevaTarjeta();
+nuevaCompletar();
+nuevaOpcion();
+nuevoProblema();
+iniciarMemoria();
 </script>
 
 </body>
