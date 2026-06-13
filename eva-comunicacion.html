@@ -33,7 +33,7 @@ header p{
 }
 
 .container{
-    max-width:1500px;
+    max-width:1280px;
     margin:auto;
     padding:40px 26px;
 }
@@ -123,12 +123,10 @@ header p{
     font-size:18px;
 }
 
-.activities-horizontal{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(280px,1fr));
-    gap:32px;
-    align-items:stretch;
-    margin-top:35px;
+.activities-wide{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
 }
 
 .activity{
@@ -137,12 +135,29 @@ header p{
     padding:34px;
     box-shadow:0 6px 18px rgba(0,0,0,.09);
     border-left:10px solid #2563eb;
-    min-height:500px;
+}
+
+.activity-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    margin-bottom:18px;
+}
+
+.activity-title{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icon{
+    font-size:44px;
 }
 
 .activity h3{
-    font-size:24px;
-    margin:8px 0 12px;
+    font-size:26px;
+    margin:0;
     color:#1e3a8a;
 }
 
@@ -151,18 +166,13 @@ header p{
     font-size:17px;
 }
 
-.icon{
-    font-size:44px;
-    margin-bottom:10px;
-}
-
 .tag{
     display:inline-block;
-    padding:7px 14px;
+    padding:8px 16px;
     border-radius:999px;
     font-size:14px;
     font-weight:bold;
-    margin-bottom:12px;
+    white-space:nowrap;
 }
 
 .recurso{
@@ -180,6 +190,18 @@ header p{
     color:#166534;
 }
 
+.activity-body{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:28px;
+    align-items:center;
+}
+
+.option-area{
+    display:grid;
+    gap:12px;
+}
+
 .option-btn{
     display:block;
     width:100%;
@@ -188,7 +210,6 @@ header p{
     color:#1e3a8a;
     padding:14px;
     border-radius:14px;
-    margin:10px 0;
     cursor:pointer;
     font-weight:bold;
     font-size:16px;
@@ -207,17 +228,16 @@ header p{
 .build-box{
     background:#f8fafc;
     border-radius:18px;
-    padding:18px;
-    margin-top:18px;
+    padding:22px;
     border-left:7px solid #2563eb;
     text-align:center;
     font-weight:bold;
-    font-size:17px;
+    font-size:18px;
 }
 
 .match-area{
     display:grid;
-    gap:10px;
+    gap:12px;
 }
 
 .feedback{
@@ -268,10 +288,11 @@ input{
 
 .visual-map{
     display:flex;
-    flex-direction:column;
+    justify-content:center;
     align-items:center;
-    gap:10px;
+    gap:14px;
     margin-top:18px;
+    flex-wrap:wrap;
 }
 
 .visual-map div{
@@ -281,7 +302,6 @@ input{
     border-radius:18px;
     font-weight:bold;
     text-align:center;
-    width:90%;
     font-size:17px;
 }
 
@@ -338,19 +358,17 @@ footer{
     margin-top:40px;
 }
 
-@media(max-width:1200px){
-    .activities-horizontal{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:768px){
-    .activities-horizontal{
+@media(max-width:900px){
+    .activity-body{
         grid-template-columns:1fr;
     }
 
-    .activity{
-        min-height:auto;
+    .activity-header{
+        flex-direction:column;
+    }
+
+    .tag{
+        white-space:normal;
     }
 }
 
@@ -369,6 +387,15 @@ footer{
 
     .card, .activity{
         padding:24px;
+    }
+
+    .activity-title{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .visual-map{
+        flex-direction:column;
     }
 }
 </style>
@@ -416,73 +443,112 @@ footer{
         </p>
     </div>
 
-    <div class="activities-horizontal">
+    <div class="activities-wide">
 
         <div class="activity">
-            <div class="icon">🧩</div>
-            <span class="tag recurso">R · Recurso</span>
-            <h3>Descubro el concepto</h3>
-            <p>Elige cuántos grupos iguales quieres formar y observa cómo nace la multiplicación.</p>
+            <div class="activity-header">
+                <div class="activity-title">
+                    <div class="icon">🧩</div>
+                    <h3>Descubro el concepto</h3>
+                </div>
+                <span class="tag recurso">R · Recurso</span>
+            </div>
 
-            <button class="option-btn" onclick="construirConcepto(2,3,this)">3 grupos de 2</button>
-            <button class="option-btn" onclick="construirConcepto(3,2,this)">2 grupos de 3</button>
-            <button class="option-btn" onclick="construirConcepto(2,4,this)">4 grupos de 2</button>
+            <div class="activity-body">
+                <div>
+                    <p>Elige cuántos grupos iguales quieres formar y observa cómo nace la multiplicación.</p>
 
-            <div id="conceptoResultado" class="build-box">
-                Selecciona una opción para construir la multiplicación.
+                    <div class="option-area">
+                        <button class="option-btn" onclick="construirConcepto(2,3,this)">3 grupos de 2</button>
+                        <button class="option-btn" onclick="construirConcepto(3,2,this)">2 grupos de 3</button>
+                        <button class="option-btn" onclick="construirConcepto(2,4,this)">4 grupos de 2</button>
+                    </div>
+                </div>
+
+                <div id="conceptoResultado" class="build-box">
+                    Selecciona una opción para construir la multiplicación.
+                </div>
             </div>
         </div>
 
         <div class="activity">
-            <div class="icon">🃏</div>
-            <span class="tag asincronica">AA · Actividad Asincrónica</span>
-            <h3>Construyo la idea matemática</h3>
-            <p>Selecciona la multiplicación que representa la suma repetida.</p>
-
-            <div class="build-box">
-                2 + 2 + 2 = ?
+            <div class="activity-header">
+                <div class="activity-title">
+                    <div class="icon">🃏</div>
+                    <h3>Construyo la idea matemática</h3>
+                </div>
+                <span class="tag asincronica">AA · Actividad Asincrónica</span>
             </div>
 
-            <div class="match-area">
-                <button class="option-btn" onclick="verificarRelacion(this,false,'feedbackRelacion')">2 × 2</button>
-                <button class="option-btn" onclick="verificarRelacion(this,true,'feedbackRelacion')">3 × 2</button>
-                <button class="option-btn" onclick="verificarRelacion(this,false,'feedbackRelacion')">2 × 3 × 2</button>
-            </div>
+            <div class="activity-body">
+                <div>
+                    <p>Selecciona la multiplicación que representa la suma repetida.</p>
 
-            <div id="feedbackRelacion" class="feedback"></div>
-        </div>
+                    <div class="build-box">
+                        2 + 2 + 2 = ?
+                    </div>
+                </div>
 
-        <div class="activity">
-            <div class="icon">🎙️</div>
-            <span class="tag sincronica">SS · Actividad Sincrónica</span>
-            <h3>Conversamos el significado</h3>
-            <p>Completa la idea con tus palabras.</p>
+                <div>
+                    <div class="match-area">
+                        <button class="option-btn" onclick="verificarRelacion(this,false,'feedbackRelacion')">2 × 2</button>
+                        <button class="option-btn" onclick="verificarRelacion(this,true,'feedbackRelacion')">3 × 2</button>
+                        <button class="option-btn" onclick="verificarRelacion(this,false,'feedbackRelacion')">2 × 3 × 2</button>
+                    </div>
 
-            <p><strong>Multiplicar significa...</strong></p>
-
-            <input id="respuestaSignificado" type="text" placeholder="Escribe tu idea aquí">
-            <button class="action-btn" onclick="guardarSignificado()">Construir mi explicación</button>
-
-            <div id="feedbackSignificado" class="feedback"></div>
-            <div id="resultadoSignificado" class="build-box">
-                Tu explicación aparecerá aquí.
+                    <div id="feedbackRelacion" class="feedback"></div>
+                </div>
             </div>
         </div>
 
         <div class="activity">
-            <div class="icon">🗺️</div>
-            <span class="tag recurso">R · Recurso</span>
-            <h3>Mapa visual del concepto</h3>
-            <p>Presiona el botón para ordenar la idea matemática.</p>
+            <div class="activity-header">
+                <div class="activity-title">
+                    <div class="icon">🎙️</div>
+                    <h3>Conversamos el significado</h3>
+                </div>
+                <span class="tag sincronica">SS · Actividad Sincrónica</span>
+            </div>
 
-            <button class="action-btn" onclick="mostrarMapa()">Mostrar ruta del concepto</button>
+            <div class="activity-body">
+                <div>
+                    <p>Completa la idea con tus palabras.</p>
+                    <p><strong>Multiplicar significa...</strong></p>
 
-            <div id="mapaConcepto" class="visual-map" style="display:none;">
-                <div>Grupos iguales</div>
-                <span>↓</span>
-                <div>Suma repetida</div>
-                <span>↓</span>
-                <div>Multiplicación</div>
+                    <input id="respuestaSignificado" type="text" placeholder="Escribe tu idea aquí">
+                    <button class="action-btn" onclick="guardarSignificado()">Construir mi explicación</button>
+
+                    <div id="feedbackSignificado" class="feedback"></div>
+                </div>
+
+                <div id="resultadoSignificado" class="build-box">
+                    Tu explicación aparecerá aquí.
+                </div>
+            </div>
+        </div>
+
+        <div class="activity">
+            <div class="activity-header">
+                <div class="activity-title">
+                    <div class="icon">🗺️</div>
+                    <h3>Mapa visual del concepto</h3>
+                </div>
+                <span class="tag recurso">R · Recurso</span>
+            </div>
+
+            <div class="activity-body">
+                <div>
+                    <p>Presiona el botón para ordenar la idea matemática.</p>
+                    <button class="action-btn" onclick="mostrarMapa()">Mostrar ruta del concepto</button>
+                </div>
+
+                <div id="mapaConcepto" class="visual-map" style="display:none;">
+                    <div>Grupos iguales</div>
+                    <span>→</span>
+                    <div>Suma repetida</div>
+                    <span>→</span>
+                    <div>Multiplicación</div>
+                </div>
             </div>
         </div>
 
