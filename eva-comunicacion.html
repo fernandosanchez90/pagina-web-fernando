@@ -33,9 +33,9 @@ header p{
 }
 
 .container{
-    max-width:1180px;
+    max-width:1500px;
     margin:auto;
-    padding:40px 20px;
+    padding:40px 26px;
 }
 
 .badge{
@@ -108,41 +108,59 @@ header p{
 
 .section-title{
     text-align:center;
-    margin:45px 0 25px;
+    margin:50px 0 35px;
 }
 
 .section-title h2{
     color:#1d4ed8;
-    font-size:32px;
-    margin-bottom:8px;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    max-width:850px;
+    margin:auto;
+    font-size:18px;
 }
 
 .activities-horizontal{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    grid-template-columns:repeat(4,minmax(280px,1fr));
+    gap:32px;
     align-items:stretch;
+    margin-top:35px;
 }
 
 .activity{
     background:white;
-    border-radius:22px;
-    padding:22px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
-    border-left:8px solid #2563eb;
-    min-height:420px;
+    border-radius:26px;
+    padding:34px;
+    box-shadow:0 6px 18px rgba(0,0,0,.09);
+    border-left:10px solid #2563eb;
+    min-height:500px;
+}
+
+.activity h3{
+    font-size:24px;
+    margin:8px 0 12px;
+    color:#1e3a8a;
+}
+
+.activity p,
+.activity li{
+    font-size:17px;
 }
 
 .icon{
-    font-size:38px;
+    font-size:44px;
     margin-bottom:10px;
 }
 
 .tag{
     display:inline-block;
-    padding:6px 12px;
+    padding:7px 14px;
     border-radius:999px;
-    font-size:13px;
+    font-size:14px;
     font-weight:bold;
     margin-bottom:12px;
 }
@@ -168,11 +186,12 @@ header p{
     background:#f8fafc;
     border:2px solid #bfdbfe;
     color:#1e3a8a;
-    padding:10px;
-    border-radius:12px;
-    margin:8px 0;
+    padding:14px;
+    border-radius:14px;
+    margin:10px 0;
     cursor:pointer;
     font-weight:bold;
+    font-size:16px;
 }
 
 .option-btn:hover{
@@ -187,25 +206,27 @@ header p{
 
 .build-box{
     background:#f8fafc;
-    border-radius:16px;
-    padding:14px;
-    margin-top:14px;
-    border-left:6px solid #2563eb;
+    border-radius:18px;
+    padding:18px;
+    margin-top:18px;
+    border-left:7px solid #2563eb;
     text-align:center;
     font-weight:bold;
+    font-size:17px;
 }
 
 .match-area{
     display:grid;
-    gap:8px;
+    gap:10px;
 }
 
 .feedback{
     display:none;
-    margin-top:12px;
-    padding:10px;
-    border-radius:12px;
+    margin-top:14px;
+    padding:13px;
+    border-radius:14px;
     font-weight:bold;
+    font-size:16px;
 }
 
 .ok{
@@ -220,24 +241,25 @@ header p{
 
 input{
     width:100%;
-    padding:11px;
+    padding:14px;
     border:2px solid #bfdbfe;
-    border-radius:12px;
-    font-size:15px;
+    border-radius:14px;
+    font-size:16px;
     box-sizing:border-box;
-    margin-top:8px;
+    margin-top:10px;
 }
 
 .action-btn{
     background:#2563eb;
     color:white;
     border:none;
-    padding:11px 16px;
-    border-radius:12px;
+    padding:14px 18px;
+    border-radius:14px;
     cursor:pointer;
     font-weight:bold;
-    margin-top:10px;
+    margin-top:12px;
     width:100%;
+    font-size:16px;
 }
 
 .action-btn:hover{
@@ -248,30 +270,31 @@ input{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:8px;
-    margin-top:14px;
+    gap:10px;
+    margin-top:18px;
 }
 
 .visual-map div{
     background:#dbeafe;
     color:#1e40af;
-    padding:12px 14px;
-    border-radius:16px;
+    padding:15px 18px;
+    border-radius:18px;
     font-weight:bold;
     text-align:center;
     width:90%;
+    font-size:17px;
 }
 
 .visual-map span{
     color:#2563eb;
-    font-size:22px;
+    font-size:25px;
     font-weight:bold;
 }
 
 .question{
     background:#dbeafe;
     border-left:8px solid #2563eb;
-    margin-top:28px;
+    margin-top:32px;
 }
 
 .question h2{
@@ -315,9 +338,19 @@ footer{
     margin-top:40px;
 }
 
-@media(max-width:1050px){
+@media(max-width:1200px){
     .activities-horizontal{
         grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .activities-horizontal{
+        grid-template-columns:1fr;
+    }
+
+    .activity{
+        min-height:auto;
     }
 }
 
@@ -327,15 +360,15 @@ footer{
     }
 
     .section-title h2{
-        font-size:26px;
+        font-size:28px;
+    }
+
+    .container{
+        padding:32px 18px;
     }
 
     .card, .activity{
-        padding:22px;
-    }
-
-    .activities-horizontal{
-        grid-template-columns:1fr;
+        padding:24px;
     }
 }
 </style>
@@ -376,7 +409,7 @@ footer{
     </div>
 
     <div class="section-title">
-        <h2>Construimos el concepto matemático</h2>
+        <h2>Construimos el Concepto Matemático</h2>
         <p>
             En esta fase pasamos de observar y reflexionar a construir una idea clara:
             multiplicar significa organizar cantidades en grupos iguales.
