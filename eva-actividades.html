@@ -1,344 +1,546 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dimensión Experiencial - Multiplicación por 2</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#fff7ed;
-    color:#243447;
-    line-height:1.7;
-}
+  <title>Reflexión | EVA Matemática</title>
 
-header{
-    background:linear-gradient(135deg,#ea580c,#fb923c);
-    color:white;
-    text-align:center;
-    padding:55px 20px;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #faf5ff;
+      color: #243447;
+      line-height: 1.7;
+    }
 
-header h1{
-    margin:0;
-    font-size:42px;
-}
+    .eva-page {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
 
-.container{
-    max-width:1180px;
-    margin:auto;
-    padding:40px 20px;
-}
+    .eva-hero {
+      background: linear-gradient(135deg, #6d28d9, #9333ea, #c084fc);
+      border-radius: 28px;
+      padding: 45px 30px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      margin-bottom: 35px;
+    }
 
-.card{
-    background:white;
-    border-radius:20px;
-    padding:28px;
-    margin-bottom:25px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
-}
+    .eva-hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
 
-.orange{border-top:8px solid #ea580c;}
-.blue{border-top:8px solid #2563eb;}
-.green{border-top:8px solid #16a34a;}
-.purple{border-top:8px solid #7c3aed;}
-.red{border-top:8px solid #dc2626;}
+    .eva-hero p {
+      font-size: 1.25rem;
+      margin-top: 12px;
+      font-weight: 600;
+    }
 
-h2{
-    margin-top:0;
-}
+    .erca-badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 22px;
+      background: white;
+      color: #7c3aed;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
 
-.input-box{
-    padding:12px;
-    border:2px solid #cbd5e1;
-    border-radius:10px;
-    font-size:18px;
-    width:120px;
-    margin:10px 0;
-}
+    .section-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      border-left: 8px solid #7c3aed;
+    }
 
-button{
-    background:#003366;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    margin:6px;
-}
+    .section-card h2 {
+      color: #2e1065;
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
 
-button:hover{
-    background:#00264d;
-}
+    .purpose {
+      background: #f3e8ff;
+      border-left-color: #7c3aed;
+    }
 
-.feedback{
-    font-weight:bold;
-    margin-top:10px;
-    padding:10px;
-    border-radius:10px;
-    display:none;
-}
+    .progress-zone {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
 
-.correcto{
-    background:#dcfce7;
-    color:#166534;
-}
+    .progress-step {
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid #a78bfa;
+    }
 
-.incorrecto{
-    background:#fee2e2;
-    color:#991b1b;
-}
+    .progress-step.done {
+      background: #f97316;
+      color: white;
+      border-color: #fb923c;
+    }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
-}
+    .progress-step.active {
+      background: #7c3aed;
+      color: white;
+      border-color: #6d28d9;
+    }
 
-.option{
-    background:#f8fafc;
-    border:2px solid #cbd5e1;
-    border-radius:16px;
-    padding:18px;
-    text-align:center;
-    cursor:pointer;
-    font-weight:bold;
-}
+    .compliance-card {
+      background: #f3e8ff;
+      border: 3px solid #a855f7;
+      border-radius: 24px;
+      padding: 24px;
+      margin: 28px 0;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    }
 
-.option:hover{
-    border-color:#2563eb;
-    background:#dbeafe;
-}
+    .compliance-card h2 {
+      margin: 0 0 12px 0;
+      color: #581c87;
+    }
 
-.problem{
-    background:#f0fdf4;
-    border-left:7px solid #16a34a;
-    border-radius:18px;
-    padding:22px;
-    margin-bottom:18px;
-}
+    .compliance-percent {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #7c3aed;
+    }
 
-.game-box{
-    text-align:center;
-    background:#f3e8ff;
-    border-radius:18px;
-    padding:25px;
-    border:2px solid #c084fc;
-}
+    .compliance-bar {
+      width: 100%;
+      height: 18px;
+      background: #ddd6fe;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
 
-.question{
-    font-size:34px;
-    font-weight:bold;
-    color:#5b21b6;
-    margin:20px 0;
-}
+    .compliance-fill {
+      width: 50%;
+      height: 100%;
+      background: #7c3aed;
+    }
 
-.btn{
-    display:inline-block;
-    background:#003366;
-    color:white;
-    text-decoration:none;
-    padding:13px 25px;
-    border-radius:12px;
-    margin-top:15px;
-    margin-right:10px;
-    font-weight:bold;
-}
+    .activity-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
 
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-</style>
+    .activity-card {
+      position: relative;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.09);
+      border: 2px solid #ddd6fe;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+    }
+
+    .activity-card h3 {
+      margin-top: 18px;
+      color: #2e1065;
+      font-size: 1.5rem;
+    }
+
+    .activity-card p,
+    .activity-card li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .type-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 8px 13px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+    }
+
+    .badge-r {
+      background: #2563eb;
+    }
+
+    .badge-aa {
+      background: #16a34a;
+    }
+
+    .badge-ss {
+      background: #dc2626;
+    }
+
+    .icon {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .pattern-box {
+      background: linear-gradient(135deg, #fdf4ff, #ede9fe);
+      border: 2px dashed #9333ea;
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 18px;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #581c87;
+    }
+
+    .thinking-box {
+      background: #f5f3ff;
+      border-left: 7px solid #7c3aed;
+      padding: 18px;
+      border-radius: 18px;
+      margin-top: 18px;
+    }
+
+    .thinking-box ul {
+      margin-bottom: 0;
+    }
+
+    .response-area {
+      margin-top: 16px;
+      background: #faf5ff;
+      border: 2px solid #c084fc;
+      border-radius: 16px;
+      padding: 16px;
+      color: #581c87;
+      font-weight: 700;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 90px;
+      border: 2px solid #c4b5fd;
+      border-radius: 14px;
+      padding: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 10px;
+    }
+
+    .mini-game {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .game-card {
+      background: #f8fafc;
+      border: 2px solid #c4b5fd;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+      font-weight: 800;
+      color: #4c1d95;
+    }
+
+    .game-card span {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .question-card {
+      background: linear-gradient(135deg, #581c87, #7c3aed, #2563eb);
+      color: white;
+      text-align: center;
+      border-radius: 26px;
+      padding: 35px 25px;
+      margin-top: 35px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+    }
+
+    .question-card h2 {
+      color: white;
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .question-card p {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .eva-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .eva-btn {
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: white;
+      background: #f97316;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .eva-btn:hover {
+      transform: translateY(-3px);
+      background: #ea580c;
+    }
+
+    .eva-btn.main {
+      background: #f97316;
+    }
+
+    .eva-btn.main:hover {
+      background: #ea580c;
+    }
+
+    .eva-btn.next {
+      background: #2563eb;
+    }
+
+    .eva-btn.next:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>Dimensión Experiencial</h1>
-<p>Aplicamos la multiplicación por 2 mediante retos y actividades interactivas</p>
-</header>
+  <main class="eva-page">
 
-<div class="container">
+    <section class="eva-hero">
+      <h1>REFLEXIÓN</h1>
+      <p>EVA Matemática | Multiplicación por 2 y por 3</p>
+      <span class="erca-badge">ERCA – Fase de Reflexión</span>
+    </section>
 
-<div class="card orange">
-<h2>Propósito de la Dimensión Experiencial</h2>
-<p>
-En esta sección el estudiante aplica lo aprendido mediante ejercicios, problemas cotidianos y un mini juego interactivo. 
-El objetivo es comprobar la comprensión de la multiplicación por 2 como suma repetida y formación de grupos iguales.
-</p>
-</div>
+    <section class="section-card purpose">
+      <h2>Propósito de la reflexión</h2>
+      <p>
+        En esta fase, los estudiantes piensan sobre lo que observaron en la experiencia.
+        No se busca resolver ejercicios mecánicos, sino descubrir patrones, comparar
+        formas de contar, explicar ideas con palabras propias y prepararse para comprender
+        qué significa multiplicar.
+      </p>
+    </section>
 
-<div class="card blue">
-<h2>Actividad 1: Observa y responde</h2>
-<p>
-Hay 3 grupos de 2 elementos. ¿Cuántos elementos hay en total?
-</p>
+    <div class="progress-zone">
+      <span class="progress-step done">1. Experiencia</span>
+      <span class="progress-step active">2. Reflexión</span>
+      <span class="progress-step">3. Conceptualización</span>
+      <span class="progress-step">4. Aplicación</span>
+    </div>
 
-<p style="font-size:28px; text-align:center;">
-● ● &nbsp;&nbsp; ● ● &nbsp;&nbsp; ● ●
-</p>
+    <section class="compliance-card">
+      <h2>Porcentaje de cumplimiento del recorrido ERCA</h2>
+      <div class="compliance-percent">50%</div>
+      <p>
+        Ya vivimos la experiencia y ahora pensamos sobre lo observado para encontrar
+        patrones, relaciones y nuevas formas de contar.
+      </p>
+      <div class="compliance-bar">
+        <div class="compliance-fill"></div>
+      </div>
+    </section>
 
-<p>
-Escribe tu respuesta:
-</p>
+    <section class="section-card">
+      <h2>Actividades de reflexión</h2>
 
-<input id="respuesta1" class="input-box" type="number">
-<br>
-<button onclick="verificarActividad1()">Verificar</button>
+      <div class="activity-grid">
 
-<div id="feedback1" class="feedback"></div>
-</div>
+        <article class="activity-card">
+          <span class="type-badge badge-aa">AA · Actividad Asincrónica</span>
+          <div class="icon">🧩</div>
+          <h3>Actividad 1: Detective de patrones</h3>
+          <p>
+            Observa los grupos de frutas. Tu misión es descubrir qué se repite y cómo
+            están organizados los elementos.
+          </p>
 
-<div class="card green">
-<h2>Actividad 2: Completa los resultados</h2>
+          <div class="pattern-box">
+            🍎 🍎 &nbsp;&nbsp; | &nbsp;&nbsp; 🍎 🍎 &nbsp;&nbsp; | &nbsp;&nbsp; 🍎 🍎
+          </div>
 
-<div class="problem">
-<p><strong>2 × 4 =</strong></p>
-<input id="respuesta2" class="input-box" type="number">
-</div>
+          <div class="thinking-box">
+            <strong>Pistas para pensar:</strong>
+            <ul>
+              <li>¿Cuántos grupos observas?</li>
+              <li>¿Todos los grupos tienen la misma cantidad?</li>
+              <li>¿Qué se repite en cada grupo?</li>
+              <li>¿Cómo podrías contar más rápido?</li>
+            </ul>
+          </div>
 
-<div class="problem">
-<p><strong>2 × 6 =</strong></p>
-<input id="respuesta3" class="input-box" type="number">
-</div>
+          <div class="response-area">
+            Escribe tu idea:
+            <textarea placeholder="Ejemplo: Observo que hay grupos iguales y puedo contar de dos en dos..."></textarea>
+          </div>
+        </article>
 
-<div class="problem">
-<p><strong>2 × 8 =</strong></p>
-<input id="respuesta4" class="input-box" type="number">
-</div>
+        <article class="activity-card">
+          <span class="type-badge badge-ss">SS · Actividad Sincrónica</span>
+          <div class="icon">🎤</div>
+          <h3>Actividad 2: Micrófono matemático</h3>
+          <p>
+            En clase, cada estudiante comparte una idea sobre lo que observó en la fase
+            de experiencia. No se busca una respuesta perfecta, sino explicar cómo se pensó.
+          </p>
 
-<button onclick="verificarActividad2()">Verificar respuestas</button>
-<div id="feedback2" class="feedback"></div>
-</div>
+          <div class="mini-game">
+            <div class="game-card">
+              <span>👀</span>
+              ¿Qué observaste?
+            </div>
 
-<div class="card purple">
-<h2>Actividad 3: Problema cotidiano</h2>
-<p>
-Ana tiene 4 pares de zapatos. Si cada par tiene 2 zapatos, ¿cuántos zapatos tiene en total?
-</p>
+            <div class="game-card">
+              <span>🧠</span>
+              ¿Cómo lo pensaste?
+            </div>
 
-<input id="respuesta5" class="input-box" type="number">
-<br>
-<button onclick="verificarActividad3()">Verificar</button>
-<div id="feedback3" class="feedback"></div>
-</div>
+            <div class="game-card">
+              <span>🗣️</span>
+              ¿Cómo lo explicarías?
+            </div>
+          </div>
 
-<div class="card red">
-<h2>Mini juego: Reto de la tabla del 2</h2>
-<p>
-Presiona el botón para generar una multiplicación por 2. Escribe la respuesta y comprueba si es correcta.
-</p>
+          <div class="thinking-box">
+            <strong>Regla del reto:</strong>
+            <p>
+              Escucha a tus compañeros y compara si todos pensaron de la misma manera
+              o si encontraron estrategias diferentes.
+            </p>
+          </div>
+        </article>
 
-<div class="game-box">
-<button onclick="generarPregunta()">Generar pregunta</button>
-<div id="preguntaJuego" class="question">Presiona iniciar</div>
+        <article class="activity-card">
+          <span class="type-badge badge-aa">AA · Actividad Asincrónica</span>
+          <div class="icon">🔍</div>
+          <h3>Actividad 3: Encuentra la diferencia</h3>
+          <p>
+            Observa dos formas de organizar estrellas. Luego piensa cuál se puede contar
+            más rápido y por qué.
+          </p>
 
-<input id="respuestaJuego" class="input-box" type="number">
-<br>
-<button onclick="verificarJuego()">Comprobar</button>
+          <div class="mini-game">
+            <div class="game-card">
+              <span>Grupo A</span>
+              ⭐ ⭐<br>
+              ⭐ ⭐<br>
+              ⭐ ⭐
+            </div>
 
-<div id="feedbackJuego" class="feedback"></div>
-</div>
-</div>
+            <div class="game-card">
+              <span>Grupo B</span>
+              ⭐ ⭐ ⭐<br>
+              ⭐ ⭐ ⭐
+            </div>
+          </div>
 
-<div class="card orange">
-<h2>Cierre de la experiencia</h2>
-<p>
-Si lograste resolver las actividades, ya estás preparado para participar en la Dimensión Comunicativa, donde podrás compartir tus respuestas, expresar dudas y recibir retroalimentación.
-</p>
-</div>
+          <div class="thinking-box">
+            <strong>Preguntas para reflexionar:</strong>
+            <ul>
+              <li>¿Los dos grupos tienen la misma cantidad total?</li>
+              <li>¿Están organizados de la misma manera?</li>
+              <li>¿Cuál te parece más fácil de contar?</li>
+              <li>¿Por qué?</li>
+            </ul>
+          </div>
 
-<a href="eva-comunicacion.html" class="btn">Continuar a Dimensión Comunicativa →</a>
-<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+          <div class="response-area">
+            Escribe tu comparación:
+            <textarea placeholder="Ejemplo: Los dos tienen la misma cantidad, pero están organizados de forma diferente..."></textarea>
+          </div>
+        </article>
 
-</div>
+        <article class="activity-card">
+          <span class="type-badge badge-ss">SS · Actividad Sincrónica</span>
+          <div class="icon">🎲</div>
+          <h3>Actividad 4: Reto del pensamiento rápido</h3>
+          <p>
+            Participa en el reto con tus compañeros. El docente presentará situaciones
+            y el grupo deberá explicar cuál estrategia permite contar mejor.
+          </p>
 
-<footer>
-Fernando Sánchez | Dimensión Experiencial • Multiplicación por 2
-</footer>
+          <div class="pattern-box">
+            Pedro cuenta: 2 + 2 + 2 + 2<br>
+            Ana observa grupos de 2
+          </div>
 
-<script>
-let numeroActual = 0;
+          <div class="thinking-box">
+            <strong>Pregunta del reto:</strong>
+            <p>
+              ¿Quién crees que terminará primero? ¿Pedro o Ana? Explica tu respuesta
+              usando tus propias palabras.
+            </p>
+          </div>
 
-function mostrarFeedback(id, correcto, mensajeCorrecto, mensajeIncorrecto){
-    const feedback = document.getElementById(id);
-    feedback.style.display = "block";
-    feedback.className = correcto ? "feedback correcto" : "feedback incorrecto";
-    feedback.textContent = correcto ? mensajeCorrecto : mensajeIncorrecto;
-}
+          <div class="response-area">
+            Acuerdo del grupo:
+            <textarea placeholder="Escriban la idea principal que compartieron en clase..."></textarea>
+          </div>
+        </article>
 
-function verificarActividad1(){
-    const respuesta = Number(document.getElementById("respuesta1").value);
-    mostrarFeedback(
-        "feedback1",
-        respuesta === 6,
-        "Correcto. 3 grupos de 2 forman 6 elementos.",
-        "Vuelve a intentarlo. Cuenta de dos en dos: 2, 4, 6."
-    );
-}
+      </div>
+    </section>
 
-function verificarActividad2(){
-    const r1 = Number(document.getElementById("respuesta2").value);
-    const r2 = Number(document.getElementById("respuesta3").value);
-    const r3 = Number(document.getElementById("respuesta4").value);
+    <section class="question-card">
+      <h2>Pregunta final de reflexión</h2>
+      <p>
+        ¿Por qué crees que las personas agrupan objetos cuando necesitan contar cantidades grandes?
+      </p>
+    </section>
 
-    const correcto = r1 === 8 && r2 === 12 && r3 === 16;
+    <nav class="eva-navigation">
+      <a class="eva-btn" href="eva-materiales.html">← Anterior</a>
+      <a class="eva-btn main" href="eva-multiplicacion-por-dos.html">Regresar EVA</a>
+      <a class="eva-btn next" href="eva-comunicacion.html">Siguiente →</a>
+    </nav>
 
-    mostrarFeedback(
-        "feedback2",
-        correcto,
-        "Muy bien. Completaste correctamente los resultados.",
-        "Revisa nuevamente la tabla del 2. Recuerda que los resultados aumentan de dos en dos."
-    );
-}
+  </main>
 
-function verificarActividad3(){
-    const respuesta = Number(document.getElementById("respuesta5").value);
-    mostrarFeedback(
-        "feedback3",
-        respuesta === 8,
-        "Correcto. 4 pares de zapatos tienen 8 zapatos en total.",
-        "Vuelve a intentarlo. Cada par tiene 2 zapatos: 4 × 2."
-    );
-}
-
-function generarPregunta(){
-    numeroActual = Math.floor(Math.random() * 10) + 1;
-    document.getElementById("preguntaJuego").textContent = numeroActual + " × 2 = ?";
-    document.getElementById("respuestaJuego").value = "";
-    const feedback = document.getElementById("feedbackJuego");
-    feedback.style.display = "none";
-}
-
-function verificarJuego(){
-    if(numeroActual === 0){
-        mostrarFeedback(
-            "feedbackJuego",
-            false,
-            "",
-            "Primero genera una pregunta."
-        );
-        return;
-    }
-
-    const respuesta = Number(document.getElementById("respuestaJuego").value);
-    const correcto = respuesta === numeroActual * 2;
-
-    mostrarFeedback(
-        "feedbackJuego",
-        correcto,
-        "Excelente. Respuesta correcta.",
-        "Intenta otra vez. Multiplica " + numeroActual + " por 2."
-    );
-}
-</script>
+  <footer>
+    Fernando Sánchez | EVA Matemática • ERCA Reflexión
+  </footer>
 
 </body>
 </html>
