@@ -117,18 +117,20 @@ header p{
     margin-bottom:8px;
 }
 
-.grid{
+.activities-horizontal{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:22px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    align-items:stretch;
 }
 
 .activity{
     background:white;
     border-radius:22px;
-    padding:25px;
+    padding:22px;
     box-shadow:0 4px 14px rgba(0,0,0,.08);
     border-left:8px solid #2563eb;
+    min-height:420px;
 }
 
 .icon{
@@ -160,42 +162,116 @@ header p{
     color:#166534;
 }
 
-.math-box{
+.option-btn{
+    display:block;
+    width:100%;
+    background:#f8fafc;
+    border:2px solid #bfdbfe;
+    color:#1e3a8a;
+    padding:10px;
+    border-radius:12px;
+    margin:8px 0;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.option-btn:hover{
+    background:#dbeafe;
+}
+
+.option-btn.selected{
+    background:#2563eb;
+    color:white;
+    border-color:#1d4ed8;
+}
+
+.build-box{
     background:#f8fafc;
     border-radius:16px;
-    padding:18px;
-    margin:15px 0;
+    padding:14px;
+    margin-top:14px;
     border-left:6px solid #2563eb;
-    font-size:18px;
     text-align:center;
+    font-weight:bold;
+}
+
+.match-area{
+    display:grid;
+    gap:8px;
+}
+
+.feedback{
+    display:none;
+    margin-top:12px;
+    padding:10px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.ok{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.warn{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+input{
+    width:100%;
+    padding:11px;
+    border:2px solid #bfdbfe;
+    border-radius:12px;
+    font-size:15px;
+    box-sizing:border-box;
+    margin-top:8px;
+}
+
+.action-btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:11px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+    width:100%;
+}
+
+.action-btn:hover{
+    background:#1d4ed8;
 }
 
 .visual-map{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-direction:column;
     align-items:center;
-    gap:12px;
-    margin-top:18px;
+    gap:8px;
+    margin-top:14px;
 }
 
 .visual-map div{
     background:#dbeafe;
     color:#1e40af;
-    padding:14px 18px;
+    padding:12px 14px;
     border-radius:16px;
     font-weight:bold;
+    text-align:center;
+    width:90%;
 }
 
 .visual-map span{
     color:#2563eb;
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
 }
 
 .question{
     background:#dbeafe;
     border-left:8px solid #2563eb;
+    margin-top:28px;
 }
 
 .question h2{
@@ -239,7 +315,13 @@ footer{
     margin-top:40px;
 }
 
-@media(max-width:600px){
+@media(max-width:1050px){
+    .activities-horizontal{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
     header h1{
         font-size:34px;
     }
@@ -250,6 +332,10 @@ footer{
 
     .card, .activity{
         padding:22px;
+    }
+
+    .activities-horizontal{
+        grid-template-columns:1fr;
     }
 }
 </style>
@@ -297,83 +383,74 @@ footer{
         </p>
     </div>
 
-    <div class="grid">
+    <div class="activities-horizontal">
 
         <div class="activity">
             <div class="icon">🧩</div>
             <span class="tag recurso">R · Recurso</span>
             <h3>Descubro el concepto</h3>
-            <p>
-                Observa cómo una cantidad puede organizarse en grupos iguales.
-                Cuando los grupos tienen la misma cantidad, podemos usar la multiplicación.
-            </p>
+            <p>Elige cuántos grupos iguales quieres formar y observa cómo nace la multiplicación.</p>
 
-            <div class="math-box">
-                <strong>3 grupos de 2</strong><br>
-                2 + 2 + 2 = 6<br>
-                3 × 2 = 6
+            <button class="option-btn" onclick="construirConcepto(2,3,this)">3 grupos de 2</button>
+            <button class="option-btn" onclick="construirConcepto(3,2,this)">2 grupos de 3</button>
+            <button class="option-btn" onclick="construirConcepto(2,4,this)">4 grupos de 2</button>
+
+            <div id="conceptoResultado" class="build-box">
+                Selecciona una opción para construir la multiplicación.
             </div>
-
-            <p>
-                La multiplicación permite escribir de forma más corta una suma que se repite.
-            </p>
         </div>
 
         <div class="activity">
             <div class="icon">🃏</div>
             <span class="tag asincronica">AA · Actividad Asincrónica</span>
             <h3>Construyo la idea matemática</h3>
-            <p>
-                Relaciona mentalmente cada suma repetida con su multiplicación.
-            </p>
+            <p>Selecciona la multiplicación que representa la suma repetida.</p>
 
-            <ul>
-                <li>2 + 2 + 2 corresponde a 3 × 2.</li>
-                <li>3 + 3 corresponde a 2 × 3.</li>
-                <li>2 + 2 + 2 + 2 corresponde a 4 × 2.</li>
-            </ul>
+            <div class="build-box">
+                2 + 2 + 2 = ?
+            </div>
 
-            <p>
-                El objetivo no es memorizar todavía, sino comprender cómo se representa
-                matemáticamente una agrupación.
-            </p>
+            <div class="match-area">
+                <button class="option-btn" onclick="verificarRelacion(this,false,'feedbackRelacion')">2 × 2</button>
+                <button class="option-btn" onclick="verificarRelacion(this,true,'feedbackRelacion')">3 × 2</button>
+                <button class="option-btn" onclick="verificarRelacion(this,false,'feedbackRelacion')">2 × 3 × 2</button>
+            </div>
+
+            <div id="feedbackRelacion" class="feedback"></div>
         </div>
 
         <div class="activity">
             <div class="icon">🎙️</div>
             <span class="tag sincronica">SS · Actividad Sincrónica</span>
             <h3>Conversamos el significado</h3>
-            <p>
-                En clase, comparte tus ideas con tus compañeros y responde oralmente:
-            </p>
+            <p>Completa la idea con tus palabras.</p>
 
-            <ul>
-                <li>¿Qué significa multiplicar?</li>
-                <li>¿Por qué 3 grupos de 2 se puede escribir como 3 × 2?</li>
-                <li>¿Qué cambia entre sumar uno por uno y agrupar?</li>
-            </ul>
+            <p><strong>Multiplicar significa...</strong></p>
+
+            <input id="respuestaSignificado" type="text" placeholder="Escribe tu idea aquí">
+            <button class="action-btn" onclick="guardarSignificado()">Construir mi explicación</button>
+
+            <div id="feedbackSignificado" class="feedback"></div>
+            <div id="resultadoSignificado" class="build-box">
+                Tu explicación aparecerá aquí.
+            </div>
         </div>
 
         <div class="activity">
             <div class="icon">🗺️</div>
             <span class="tag recurso">R · Recurso</span>
             <h3>Mapa visual del concepto</h3>
-            <p>
-                Observa la ruta que sigue la idea matemática:
-            </p>
+            <p>Presiona el botón para ordenar la idea matemática.</p>
 
-            <div class="visual-map">
+            <button class="action-btn" onclick="mostrarMapa()">Mostrar ruta del concepto</button>
+
+            <div id="mapaConcepto" class="visual-map" style="display:none;">
                 <div>Grupos iguales</div>
-                <span>→</span>
+                <span>↓</span>
                 <div>Suma repetida</div>
-                <span>→</span>
+                <span>↓</span>
                 <div>Multiplicación</div>
             </div>
-
-            <p>
-                Esta relación permite comprender que multiplicar no es solo repetir números,
-                sino organizar cantidades de manera más eficiente.
-            </p>
         </div>
 
     </div>
@@ -396,6 +473,71 @@ footer{
 <footer>
     Fernando Sánchez | EVA Matemática • Conceptualización ERCA
 </footer>
+
+<script>
+function limpiarSeleccion(grupo){
+    const botones = grupo.parentElement.querySelectorAll(".option-btn");
+    botones.forEach(boton => boton.classList.remove("selected"));
+}
+
+function construirConcepto(valorGrupo, cantidadGrupos, boton){
+    limpiarSeleccion(boton);
+    boton.classList.add("selected");
+
+    let suma = [];
+    for(let i = 0; i < cantidadGrupos; i++){
+        suma.push(valorGrupo);
+    }
+
+    const total = valorGrupo * cantidadGrupos;
+
+    document.getElementById("conceptoResultado").innerHTML =
+        cantidadGrupos + " grupos de " + valorGrupo + "<br>" +
+        suma.join(" + ") + " = " + total + "<br>" +
+        cantidadGrupos + " × " + valorGrupo + " = " + total;
+}
+
+function verificarRelacion(boton, correcto, idFeedback){
+    limpiarSeleccion(boton);
+    boton.classList.add("selected");
+
+    const feedback = document.getElementById(idFeedback);
+    feedback.style.display = "block";
+
+    if(correcto){
+        feedback.className = "feedback ok";
+        feedback.textContent = "Correcto: hay 3 grupos de 2, por eso se escribe 3 × 2.";
+    }else{
+        feedback.className = "feedback warn";
+        feedback.textContent = "Revisa otra vez: cuenta cuántas veces se repite el número 2.";
+    }
+}
+
+function guardarSignificado(){
+    const respuesta = document.getElementById("respuestaSignificado").value.trim();
+    const feedback = document.getElementById("feedbackSignificado");
+    const resultado = document.getElementById("resultadoSignificado");
+
+    feedback.style.display = "block";
+
+    if(respuesta.length < 8){
+        feedback.className = "feedback warn";
+        feedback.textContent = "Escribe una idea un poco más completa.";
+        return;
+    }
+
+    feedback.className = "feedback ok";
+    feedback.textContent = "Muy bien. Estás construyendo el concepto con tus propias palabras.";
+
+    resultado.innerHTML = "<strong>Mi explicación:</strong><br>" + respuesta;
+    document.getElementById("respuestaSignificado").value = "";
+}
+
+function mostrarMapa(){
+    const mapa = document.getElementById("mapaConcepto");
+    mapa.style.display = "flex";
+}
+</script>
 
 </body>
 </html>
