@@ -3,27 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dimensión Comunicativa - Multiplicación por 2</title>
+<title>Conceptualización - EVA Matemática</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#fff1f2;
+    background:#eff6ff;
     color:#243447;
     line-height:1.7;
 }
 
 header{
-    background:linear-gradient(135deg,#dc2626,#f87171);
+    background:linear-gradient(135deg,#1d4ed8,#60a5fa);
     color:white;
     text-align:center;
-    padding:55px 20px;
+    padding:60px 20px;
 }
 
 header h1{
     margin:0;
-    font-size:42px;
+    font-size:44px;
+    letter-spacing:1px;
+}
+
+header p{
+    font-size:19px;
+    margin-top:10px;
 }
 
 .container{
@@ -32,94 +38,197 @@ header h1{
     padding:40px 20px;
 }
 
+.badge{
+    display:inline-block;
+    background:white;
+    color:#2563eb;
+    padding:8px 18px;
+    border-radius:999px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
 .card{
     background:white;
-    border-radius:20px;
-    padding:28px;
+    border-radius:22px;
+    padding:30px;
     margin-bottom:25px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
 }
 
-.red{border-top:8px solid #dc2626;}
-.blue{border-top:8px solid #2563eb;}
-.green{border-top:8px solid #16a34a;}
-.purple{border-top:8px solid #7c3aed;}
-.orange{border-top:8px solid #ea580c;}
+.blue{
+    border-top:8px solid #2563eb;
+}
 
-textarea, input{
+.purpose{
+    font-size:18px;
+}
+
+.progress-card{
+    border-top:8px solid #2563eb;
+}
+
+.progress-bar{
     width:100%;
-    padding:14px;
-    border:2px solid #cbd5e1;
-    border-radius:12px;
-    font-size:16px;
-    box-sizing:border-box;
-    margin-top:10px;
+    background:#dbeafe;
+    border-radius:999px;
+    overflow:hidden;
+    margin:20px 0;
 }
 
-button{
-    background:#003366;
+.progress-fill{
+    width:75%;
+    background:#2563eb;
     color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    cursor:pointer;
+    text-align:center;
+    padding:10px 0;
     font-weight:bold;
-    margin-top:12px;
 }
 
-button:hover{
-    background:#00264d;
+.erca-steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+    margin-top:18px;
 }
 
-.message{
+.step{
     background:#f8fafc;
-    border-left:6px solid #dc2626;
     border-radius:14px;
-    padding:16px;
-    margin-top:15px;
-}
-
-.feedback{
-    display:none;
-    margin-top:12px;
-    padding:12px;
-    border-radius:12px;
+    padding:14px;
+    text-align:center;
     font-weight:bold;
 }
 
-.ok{
-    background:#dcfce7;
-    color:#166534;
+.active{
+    background:#dbeafe;
+    color:#1d4ed8;
+    border:2px solid #2563eb;
 }
 
-.warn{
-    background:#fee2e2;
-    color:#991b1b;
+.section-title{
+    text-align:center;
+    margin:45px 0 25px;
+}
+
+.section-title h2{
+    color:#1d4ed8;
+    font-size:32px;
+    margin-bottom:8px;
 }
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
 }
 
-.guide{
+.activity{
+    background:white;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border-left:8px solid #2563eb;
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.tag{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.recurso{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.asincronica{
+    background:#ede9fe;
+    color:#6d28d9;
+}
+
+.sincronica{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.math-box{
     background:#f8fafc;
     border-radius:16px;
-    padding:20px;
-    border-left:7px solid #2563eb;
+    padding:18px;
+    margin:15px 0;
+    border-left:6px solid #2563eb;
+    font-size:18px;
+    text-align:center;
+}
+
+.visual-map{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:18px;
+}
+
+.visual-map div{
+    background:#dbeafe;
+    color:#1e40af;
+    padding:14px 18px;
+    border-radius:16px;
+    font-weight:bold;
+}
+
+.visual-map span{
+    color:#2563eb;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.question{
+    background:#dbeafe;
+    border-left:8px solid #2563eb;
+}
+
+.question h2{
+    color:#1d4ed8;
+}
+
+.nav-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    margin-top:35px;
 }
 
 .btn{
     display:inline-block;
-    background:#003366;
     color:white;
     text-decoration:none;
-    padding:13px 25px;
+    padding:14px 24px;
     border-radius:12px;
-    margin-top:15px;
-    margin-right:10px;
     font-weight:bold;
+}
+
+.btn-prev{
+    background:#7c3aed;
+}
+
+.btn-home{
+    background:#003366;
+}
+
+.btn-next{
+    background:#16a34a;
 }
 
 footer{
@@ -129,146 +238,164 @@ footer{
     padding:25px;
     margin-top:40px;
 }
+
+@media(max-width:600px){
+    header h1{
+        font-size:34px;
+    }
+
+    .section-title h2{
+        font-size:26px;
+    }
+
+    .card, .activity{
+        padding:22px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Dimensión Comunicativa</h1>
-<p>Compartimos ideas, dudas y reflexiones sobre la multiplicación por 2</p>
+    <span class="badge">ERCA – Fase de Conceptualización</span>
+    <h1>CONCEPTUALIZACIÓN</h1>
+    <p>EVA Matemática | Multiplicación por 2 y por 3</p>
 </header>
 
 <div class="container">
 
-<div class="card red">
-<h2>Propósito de la Dimensión Comunicativa</h2>
-<p>
-Esta dimensión permite que el estudiante exprese sus ideas, comparta ejemplos, formule preguntas y reflexione sobre lo aprendido. La comunicación fortalece la comprensión porque permite explicar con palabras propias cómo funciona la multiplicación por 2.
-</p>
-</div>
+    <div class="card blue">
+        <h2>Propósito de aprendizaje</h2>
+        <p class="purpose">
+            Comprender que la multiplicación es una forma rápida de representar sumas repetidas
+            de grupos iguales, utilizando ejemplos visuales, lenguaje matemático inicial y
+            representaciones simbólicas sencillas.
+        </p>
+    </div>
 
-<div class="card blue">
-<h2>Foro de participación</h2>
-<p>
-Pregunta guía:
-<strong>¿Dónde puedes usar la multiplicación por 2 en tu vida diaria?</strong>
-</p>
+    <div class="card progress-card">
+        <h2>Avance en la ruta ERCA</h2>
 
-<textarea id="respuestaForo" rows="4" placeholder="Escribe aquí tu respuesta..."></textarea>
-<button onclick="publicarForo()">Publicar participación</button>
+        <div class="progress-bar">
+            <div class="progress-fill">75%</div>
+        </div>
 
-<div id="feedbackForo" class="feedback"></div>
+        <div class="erca-steps">
+            <div class="step">Experiencia</div>
+            <div class="step">Reflexión</div>
+            <div class="step active">Conceptualización</div>
+            <div class="step">Aplicación</div>
+        </div>
+    </div>
 
-<div id="muroForo"></div>
-</div>
+    <div class="section-title">
+        <h2>Construimos el concepto matemático</h2>
+        <p>
+            En esta fase pasamos de observar y reflexionar a construir una idea clara:
+            multiplicar significa organizar cantidades en grupos iguales.
+        </p>
+    </div>
 
-<div class="card green">
-<h2>Preguntas guía para conversar</h2>
+    <div class="grid">
 
-<div class="grid">
-<div class="guide">
-<strong>Pregunta 1</strong>
-<p>¿Qué significa formar grupos de 2?</p>
-</div>
+        <div class="activity">
+            <div class="icon">🧩</div>
+            <span class="tag recurso">R · Recurso</span>
+            <h3>Descubro el concepto</h3>
+            <p>
+                Observa cómo una cantidad puede organizarse en grupos iguales.
+                Cuando los grupos tienen la misma cantidad, podemos usar la multiplicación.
+            </p>
 
-<div class="guide">
-<strong>Pregunta 2</strong>
-<p>¿Por qué la multiplicación por 2 se relaciona con los dobles?</p>
-</div>
+            <div class="math-box">
+                <strong>3 grupos de 2</strong><br>
+                2 + 2 + 2 = 6<br>
+                3 × 2 = 6
+            </div>
 
-<div class="guide">
-<strong>Pregunta 3</strong>
-<p>¿Qué ejemplo puedes encontrar en tu casa o en la escuela?</p>
-</div>
-</div>
-</div>
+            <p>
+                La multiplicación permite escribir de forma más corta una suma que se repite.
+            </p>
+        </div>
 
-<div class="card purple">
-<h2>Mi reflexión de aprendizaje</h2>
-<p>
-Completa la siguiente idea:
-</p>
+        <div class="activity">
+            <div class="icon">🃏</div>
+            <span class="tag asincronica">AA · Actividad Asincrónica</span>
+            <h3>Construyo la idea matemática</h3>
+            <p>
+                Relaciona mentalmente cada suma repetida con su multiplicación.
+            </p>
 
-<p><strong>Hoy aprendí que multiplicar por 2 significa...</strong></p>
+            <ul>
+                <li>2 + 2 + 2 corresponde a 3 × 2.</li>
+                <li>3 + 3 corresponde a 2 × 3.</li>
+                <li>2 + 2 + 2 + 2 corresponde a 4 × 2.</li>
+            </ul>
 
-<textarea id="reflexion" rows="4" placeholder="Escribe tu reflexión..."></textarea>
-<button onclick="guardarReflexion()">Guardar reflexión</button>
+            <p>
+                El objetivo no es memorizar todavía, sino comprender cómo se representa
+                matemáticamente una agrupación.
+            </p>
+        </div>
 
-<div id="feedbackReflexion" class="feedback"></div>
-<div id="resultadoReflexion"></div>
-</div>
+        <div class="activity">
+            <div class="icon">🎙️</div>
+            <span class="tag sincronica">SS · Actividad Sincrónica</span>
+            <h3>Conversamos el significado</h3>
+            <p>
+                En clase, comparte tus ideas con tus compañeros y responde oralmente:
+            </p>
 
-<div class="card orange">
-<h2>Retroalimentación del docente</h2>
-<p>
-Después de compartir tus ideas, revisa si tu explicación menciona alguno de estos elementos:
-</p>
+            <ul>
+                <li>¿Qué significa multiplicar?</li>
+                <li>¿Por qué 3 grupos de 2 se puede escribir como 3 × 2?</li>
+                <li>¿Qué cambia entre sumar uno por uno y agrupar?</li>
+            </ul>
+        </div>
 
-<ul>
-<li>Grupos de dos.</li>
-<li>Suma repetida.</li>
-<li>Dobles.</li>
-<li>Ejemplos de la vida diaria.</li>
-</ul>
+        <div class="activity">
+            <div class="icon">🗺️</div>
+            <span class="tag recurso">R · Recurso</span>
+            <h3>Mapa visual del concepto</h3>
+            <p>
+                Observa la ruta que sigue la idea matemática:
+            </p>
 
-<p>
-Si tu respuesta incluye estas ideas, significa que estás comprendiendo correctamente el tema.
-</p>
-</div>
+            <div class="visual-map">
+                <div>Grupos iguales</div>
+                <span>→</span>
+                <div>Suma repetida</div>
+                <span>→</span>
+                <div>Multiplicación</div>
+            </div>
 
-<a href="eva-recursos.html" class="btn">Continuar a Recursos de Apoyo →</a>
-<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
+            <p>
+                Esta relación permite comprender que multiplicar no es solo repetir números,
+                sino organizar cantidades de manera más eficiente.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="card question">
+        <h2>Pregunta final de conceptualización</h2>
+        <p>
+            <strong>¿Cómo explicarías con tus palabras qué significa multiplicar?</strong>
+        </p>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="eva-actividades.html" class="btn btn-prev">← Anterior: Reflexión</a>
+        <a href="eva-multiplicacion-por-dos.html" class="btn btn-home">Regresar al EVA</a>
+        <a href="eva-recursos.html" class="btn btn-next">Siguiente: Aplicación →</a>
+    </div>
 
 </div>
 
 <footer>
-Fernando Sánchez | Dimensión Comunicativa • Multiplicación por 2
+    Fernando Sánchez | EVA Matemática • Conceptualización ERCA
 </footer>
-
-<script>
-function mostrar(id, tipo, texto){
-    const elemento = document.getElementById(id);
-    elemento.style.display = "block";
-    elemento.className = "feedback " + tipo;
-    elemento.textContent = texto;
-}
-
-function publicarForo(){
-    const texto = document.getElementById("respuestaForo").value.trim();
-
-    if(texto.length < 10){
-        mostrar("feedbackForo", "warn", "Escribe una participación más completa.");
-        return;
-    }
-
-    mostrar("feedbackForo", "ok", "Participación publicada correctamente.");
-
-    const muro = document.getElementById("muroForo");
-    const mensaje = document.createElement("div");
-    mensaje.className = "message";
-    mensaje.textContent = texto;
-    muro.prepend(mensaje);
-
-    document.getElementById("respuestaForo").value = "";
-}
-
-function guardarReflexion(){
-    const texto = document.getElementById("reflexion").value.trim();
-
-    if(texto.length < 10){
-        mostrar("feedbackReflexion", "warn", "Completa tu reflexión con una idea más clara.");
-        return;
-    }
-
-    mostrar("feedbackReflexion", "ok", "Reflexión guardada correctamente.");
-
-    document.getElementById("resultadoReflexion").innerHTML =
-        '<div class="message"><strong>Mi reflexión:</strong><br>' + texto + '</div>';
-
-    document.getElementById("reflexion").value = "";
-}
-</script>
 
 </body>
 </html>
