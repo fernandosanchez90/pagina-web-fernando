@@ -10,7 +10,8 @@
 <body>
 
 <header>
-   <img src="fernando-sanchez.png" alt="Fernando Sánchez" class="foto-perfil">
+    <img src="fernando-sanchez.png" alt="Fernando Sánchez" class="foto-perfil">
+
     <h1>Fernando Sánchez</h1>
     <p>Rector • Magíster en Pedagogía</p>
     <p>Gestión Educativa | Innovación Pedagógica | Tecnología Aplicada a la Educación</p>
@@ -18,7 +19,7 @@
     <div class="contador-card">
         <div class="contador-titulo">VISITAS AL SITIO</div>
         <div class="contador-numero">
-            <span>000001</span>
+            <span id="contador-visitas">Cargando...</span>
         </div>
     </div>
 </header>
@@ -127,6 +128,17 @@
     <p>© 2026 Fernando Sánchez</p>
     <p>Rector • Magíster en Pedagogía | Quito - Ecuador</p>
 </footer>
+
+<script>
+fetch("https://counterapi.dev/api/pagina-web-fernando/visitas/up")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("contador-visitas").textContent = data.count;
+    })
+    .catch(() => {
+        document.getElementById("contador-visitas").textContent = "0";
+    });
+</script>
 
 </body>
 </html>
