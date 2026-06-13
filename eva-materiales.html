@@ -1,534 +1,345 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dimensión Formativa - Experiencia ERCA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia | EVA Matemática</title>
+  <link rel="stylesheet" href="style.css" />
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f7fb;
-    color:#263238;
-    line-height:1.75;
-}
-
-header{
-    background:linear-gradient(135deg,#15803d,#22c55e);
-    color:white;
-    text-align:center;
-    padding:70px 20px 60px;
-}
-
-.header-label{
-    font-size:18px;
-    letter-spacing:3px;
-    font-weight:bold;
-    text-transform:uppercase;
-    opacity:.9;
-}
-
-header h1{
-    margin:14px 0 8px;
-    font-size:54px;
-    line-height:1.1;
-}
-
-.header-subtitle{
-    font-size:24px;
-    margin:8px 0;
-}
-
-.header-topic{
-    font-size:36px;
-    font-weight:bold;
-    color:#fde68a;
-    margin:14px 0;
-}
-
-.header-method{
-    display:inline-block;
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.35);
-    padding:10px 22px;
-    border-radius:30px;
-    font-size:18px;
-    margin-top:10px;
-}
-
-.container{
-    max-width:1180px;
-    margin:auto;
-    padding:42px 20px;
-}
-
-.card{
-    background:white;
-    border-radius:22px;
-    padding:32px;
-    margin-bottom:30px;
-    box-shadow:0 8px 22px rgba(0,0,0,.08);
-}
-
-.card h2{
-    color:#003366;
-    margin-top:0;
-}
-
-.center{
-    text-align:center;
-}
-
-.proposito{
-    background:linear-gradient(135deg,#ecfdf5,#eff6ff);
-    border:3px solid #16a34a;
-    position:relative;
-    overflow:hidden;
-}
-
-.proposito::before{
-    content:"👀";
-    position:absolute;
-    right:28px;
-    top:22px;
-    font-size:82px;
-    opacity:.16;
-}
-
-.proposito h2{
-    font-size:36px;
-    text-align:center;
-    color:#166534;
-}
-
-.proposito-texto{
-    font-size:22px;
-    text-align:center;
-    font-weight:bold;
-    color:#1f2937;
-    max-width:900px;
-    margin:0 auto;
-}
-
-.activity{
-    border-left:10px solid #16a34a;
-}
-
-.badge{
-    display:inline-block;
-    background:#16a34a;
-    color:white;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-bottom:18px;
-}
-
-.meta-box{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:14px;
-    margin:22px 0;
-}
-
-.meta{
-    border-radius:16px;
-    padding:16px;
-    text-align:center;
-    font-weight:bold;
-    box-shadow:0 4px 10px rgba(0,0,0,.08);
-}
-
-.meta span{
-    display:block;
-    font-size:30px;
-    margin-bottom:6px;
-}
-
-.recurso{
-    background:#dbeafe;
-    color:#1e40af;
-}
-
-.asincronica{
-    background:#dcfce7;
-    color:#166534;
-}
-
-.sincronica{
-    background:#ffedd5;
-    color:#9a3412;
-}
-
-.video-box{
-    position:relative;
-    padding-bottom:56.25%;
-    height:0;
-    overflow:hidden;
-    border-radius:22px;
-    margin-top:22px;
-    box-shadow:0 8px 18px rgba(0,0,0,.12);
-    border:6px solid #bbf7d0;
-}
-
-.video-box iframe{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border:0;
-}
-
-.mission-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:24px;
-}
-
-.mission-card{
-    border-radius:22px;
-    padding:24px;
-    text-align:center;
-    color:#1f2937;
-    box-shadow:0 6px 16px rgba(0,0,0,.09);
-    transition:.3s;
-}
-
-.mission-card:hover{
-    transform:translateY(-6px);
-}
-
-.mission-card h3{
-    color:#003366;
-    margin-top:0;
-    font-size:24px;
-}
-
-.m1{
-    background:#dbeafe;
-    border:2px solid #93c5fd;
-}
-
-.m2{
-    background:#dcfce7;
-    border:2px solid #86efac;
-}
-
-.m3{
-    background:#ffedd5;
-    border:2px solid #fdba74;
-}
-
-.check-btn{
-    background:#003366;
-    color:white;
-    border:none;
-    padding:12px 18px;
-    border-radius:12px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:12px;
-}
-
-.check-btn.done{
-    background:#16a34a;
-}
-
-.challenge{
-    background:linear-gradient(135deg,#fff7ed,#fef2f2);
-    border:3px solid #fb923c;
-}
-
-.challenge h2{
-    text-align:center;
-    color:#c2410c;
-}
-
-.challenge-box{
-    background:white;
-    border-radius:20px;
-    padding:24px;
-    margin-top:18px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-    color:#1f2937;
-}
-
-.question-box{
-    background:#f0fdf4;
-    border-left:8px solid #16a34a;
-    border-radius:18px;
-    padding:24px;
-    margin-top:22px;
-}
-
-.question-box h3{
-    color:#166534;
-    margin-top:0;
-}
-
-.progress-card{
-    background:#eef6ff;
-    border-radius:22px;
-    padding:26px;
-    margin-bottom:30px;
-    border:2px solid #bfdbfe;
-}
-
-.progress-bar{
-    width:100%;
-    height:22px;
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:14px;
-}
-
-.progress-fill{
-    width:0%;
-    height:100%;
-    background:linear-gradient(90deg,#2563eb,#16a34a);
-    transition:.4s;
-}
-
-.progress-text{
-    text-align:center;
-    font-weight:bold;
-    color:#003366;
-    margin-top:10px;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    color:white;
-    text-decoration:none;
-    padding:13px 24px;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-.btn-primary{
-    background:#003366;
-}
-
-.btn-back{
-    background:#2563eb;
-}
-
-.btn-next{
-    background:#16a34a;
-}
-
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-
-@media(max-width:700px){
-    header h1{
-        font-size:38px;
+  <style>
+    .eva-page {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
     }
 
-    .header-topic{
-        font-size:28px;
+    .eva-hero {
+      background: linear-gradient(135deg, #ff8a00, #ffb703, #38bdf8);
+      border-radius: 28px;
+      padding: 45px 30px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      margin-bottom: 35px;
     }
 
-    .proposito-texto{
-        font-size:19px;
+    .eva-hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 2px;
     }
-}
-</style>
+
+    .eva-hero p {
+      font-size: 1.25rem;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .erca-badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 22px;
+      background: white;
+      color: #f97316;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      border-left: 8px solid #fb923c;
+    }
+
+    .section-card h2 {
+      color: #0f172a;
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .purpose {
+      background: #fff7ed;
+      border-left-color: #f97316;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .activity-card {
+      position: relative;
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.09);
+      border: 2px solid #e2e8f0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+    }
+
+    .activity-card h3 {
+      margin-top: 18px;
+      color: #0f172a;
+      font-size: 1.4rem;
+    }
+
+    .activity-card p,
+    .activity-card li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .type-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 8px 13px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+    }
+
+    .badge-r {
+      background: #2563eb;
+    }
+
+    .badge-aa {
+      background: #16a34a;
+    }
+
+    .badge-as {
+      background: #dc2626;
+    }
+
+    .icon {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+      top: 0;
+      left: 0;
+    }
+
+    .challenge-box {
+      background: #ecfeff;
+      border: 2px dashed #0891b2;
+      padding: 18px;
+      border-radius: 18px;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .question-card {
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      color: white;
+      text-align: center;
+      border-radius: 26px;
+      padding: 35px 25px;
+      margin-top: 35px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+    }
+
+    .question-card h2 {
+      color: white;
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .question-card p {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .progress-zone {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .progress-step {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid #38bdf8;
+    }
+
+    .progress-step.active {
+      background: #f97316;
+      color: white;
+      border-color: #fb923c;
+    }
+
+    .eva-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .eva-btn {
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: white;
+      background: #0f172a;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .eva-btn:hover {
+      transform: translateY(-3px);
+      background: #2563eb;
+    }
+
+    .eva-btn.main {
+      background: #f97316;
+    }
+
+    .eva-btn.main:hover {
+      background: #ea580c;
+    }
+  </style>
 </head>
 
 <body>
+  <main class="eva-page">
 
-<header>
-<div class="header-label">Entorno Virtual de Aprendizaje</div>
-<h1>Dimensión Formativa</h1>
-<div class="header-subtitle">EVA Matemática | Tercero de Educación General Básica</div>
-<div class="header-topic">Multiplicación por 2 y por 3</div>
-<div class="header-method">👀 ERCA: Experiencia</div>
-</header>
+    <section class="eva-hero">
+      <h1>EXPERIENCIA</h1>
+      <p>EVA Matemática | Multiplicación por 2 y por 3</p>
+      <span class="erca-badge">ERCA – Fase de Experiencia</span>
+    </section>
 
-<div class="container">
+    <section class="section-card purpose">
+      <h2>Propósito de aprendizaje</h2>
+      <p>
+        En esta fase, los estudiantes se acercan a la multiplicación desde situaciones
+        cercanas, visuales y dinámicas. El objetivo es despertar la curiosidad,
+        observar patrones y reconocer que multiplicar puede ayudarnos a contar grupos
+        iguales de manera más rápida y ordenada.
+      </p>
+    </section>
 
-<section class="card proposito">
-<h2>Propósito de Aprendizaje</h2>
-<p class="proposito-texto">
-Observar una situación audiovisual para descubrir grupos iguales, cantidades que se repiten, dobles y triples como punto de partida para comprender la multiplicación por 2 y por 3.
-</p>
-</section>
+    <div class="progress-zone">
+      <span class="progress-step active">1. Experiencia</span>
+      <span class="progress-step">2. Reflexión</span>
+      <span class="progress-step">3. Conceptualización</span>
+      <span class="progress-step">4. Aplicación</span>
+    </div>
 
-<section class="progress-card">
-<h2 class="center">Mi Avance en la Experiencia</h2>
-<p class="center">Marca las misiones que completes durante la observación.</p>
-<div class="progress-bar">
-<div class="progress-fill" id="progressFill"></div>
-</div>
-<div class="progress-text" id="progressText">0% completado</div>
-</section>
+    <section class="section-card">
+      <h2>Actividades de descubrimiento</h2>
 
-<section class="card activity">
-<span class="badge">Actividad 1 | Video de Experiencia</span>
+      <div class="activity-grid">
 
-<h2>Observamos para Descubrir</h2>
+        <article class="activity-card">
+          <span class="type-badge badge-r">R · Recurso</span>
+          <div class="icon">🎥</div>
+          <h3>Actividad 1: Video de experiencia</h3>
+          <p>
+            Observa el video con atención. Fíjate cómo aparecen los grupos, los objetos
+            repetidos y las cantidades que se pueden contar de forma más rápida.
+          </p>
 
-<div class="meta-box">
-<div class="meta recurso">
-<span>R</span>
-Recurso: Video de YouTube
-</div>
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/YFtEaVw5k1A"
+              title="Video de experiencia multiplicación por 2 y por 3"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
 
-<div class="meta asincronica">
-<span>AA</span>
-Actividad Asincrónica: Observación individual
-</div>
+        <article class="activity-card">
+          <span class="type-badge badge-aa">AA · Actividad Asincrónica</span>
+          <div class="icon">🔍</div>
+          <h3>Actividad 2: Observación guiada</h3>
+          <p>
+            Mira a tu alrededor y encuentra objetos que estén organizados en grupos
+            iguales. Puedes observar lápices, zapatos, ruedas, mesas, sillas o juguetes.
+          </p>
 
-<div class="meta sincronica">
-<span>AS</span>
-Actividad Sincrónica: Conversación guiada en clase
-</div>
-</div>
+          <div class="challenge-box">
+            Descubre y escribe mentalmente:
+            <ul>
+              <li>¿Qué objetos encontraste?</li>
+              <li>¿Cuántos grupos hay?</li>
+              <li>¿Cuántos objetos tiene cada grupo?</li>
+            </ul>
+          </div>
+        </article>
 
-<p>
-Antes de aprender reglas o tablas, observa con atención el video. Tu misión será descubrir dónde aparecen grupos iguales, cantidades repetidas, dobles y triples.
-</p>
+        <article class="activity-card">
+          <span class="type-badge badge-as">AS · Actividad Sincrónica</span>
+          <div class="icon">🎲</div>
+          <h3>Actividad 3: Reto inicial</h3>
+          <p>
+            En clase, participa en el reto de los grupos rápidos. El docente mostrará
+            imágenes u objetos y tú deberás descubrir cuántos grupos hay y cuántos
+            elementos se repiten.
+          </p>
 
-<div class="video-box">
-<iframe src="https://www.youtube.com/embed/YFtEaVw5k1A" title="Video de experiencia sobre multiplicación" allowfullscreen></iframe>
-</div>
-</section>
+          <div class="challenge-box">
+            Reto:
+            <br />
+            Si veo 3 grupos con 2 objetos cada uno, ¿cómo puedo saber cuántos objetos
+            hay en total sin contar uno por uno?
+          </div>
+        </article>
 
-<section class="card activity">
-<span class="badge">Actividad 2 | Detectives de Grupos Iguales</span>
+      </div>
+    </section>
 
-<h2>Misiones de Observación</h2>
+    <section class="question-card">
+      <h2>Pregunta generadora</h2>
+      <p>
+        ¿Cómo podemos contar más rápido cuando tenemos varios grupos con la misma cantidad de objetos?
+      </p>
+    </section>
 
-<div class="meta-box">
-<div class="meta recurso">
-<span>R</span>
-Recurso: Guía visual de observación
-</div>
+    <nav class="eva-navigation">
+      <a class="eva-btn" href="eva-informacion.html">← Anterior</a>
+      <a class="eva-btn main" href="eva-multiplicacion-por-dos.html">Regresar EVA</a>
+      <a class="eva-btn" href="eva-actividades.html">Siguiente →</a>
+    </nav>
 
-<div class="meta asincronica">
-<span>AA</span>
-Actividad Asincrónica: Identificación de grupos
-</div>
-
-<div class="meta sincronica">
-<span>AS</span>
-Actividad Sincrónica: Socialización de hallazgos
-</div>
-</div>
-
-<p class="center">
-Mientras observas el video, cumple estas tres misiones. No necesitas resolver operaciones todavía; solo mirar, pensar y descubrir.
-</p>
-
-<div class="mission-grid">
-
-<div class="mission-card m1">
-<h3>🔍 Misión 1</h3>
-<p>Encuentra objetos que aparezcan en grupos de 2.</p>
-<button class="check-btn" onclick="completeMission(this)">Ya lo descubrí</button>
-</div>
-
-<div class="mission-card m2">
-<h3>⭐ Misión 2</h3>
-<p>Encuentra objetos que aparezcan en grupos de 3.</p>
-<button class="check-btn" onclick="completeMission(this)">Ya lo descubrí</button>
-</div>
-
-<div class="mission-card m3">
-<h3>🧠 Misión 3</h3>
-<p>Piensa qué sucede cuando una cantidad se repite varias veces.</p>
-<button class="check-btn" onclick="completeMission(this)">Ya lo pensé</button>
-</div>
-
-</div>
-</section>
-
-<section class="card challenge">
-<h2>Actividad 3 | Reto Inicial</h2>
-
-<div class="meta-box">
-<div class="meta recurso">
-<span>R</span>
-Recurso: Pregunta generadora
-</div>
-
-<div class="meta asincronica">
-<span>AA</span>
-Actividad Asincrónica: Respuesta personal
-</div>
-
-<div class="meta sincronica">
-<span>AS</span>
-Actividad Sincrónica: Diálogo con el docente y compañeros
-</div>
-</div>
-
-<p class="center">
-Después de observar el video, responde mentalmente o conversa con tu docente y compañeros.
-</p>
-
-<div class="challenge-box">
-Si ves varios grupos iguales, ¿es mejor contar uno por uno o buscar una forma más rápida?
-</div>
-
-<div class="question-box">
-<h3>Pregunta Generadora</h3>
-<p>
-¿Cómo podemos saber rápidamente cuántos objetos hay cuando se repiten grupos de 2 o grupos de 3?
-</p>
-</div>
-</section>
-
-<div class="buttons">
-<a href="eva-informacion.html" class="btn btn-back">← Regresar a la Dimensión Informativa</a>
-<a href="eva-actividades.html" class="btn btn-next">💭 Continuar a la Reflexión →</a>
-<a href="eva-multiplicacion-por-dos.html" class="btn btn-primary">← Regresar al EVA</a>
-</div>
-
-</div>
-
-<footer>
-Fernando Sánchez | EVA Matemática • Multiplicación por 2 y por 3 • ERCA: Experiencia
-</footer>
-
-<script>
-let completed = 0;
-const total = 3;
-
-function completeMission(button){
-    if(!button.classList.contains("done")){
-        button.classList.add("done");
-        button.textContent = "Completado ✓";
-        completed++;
-        updateProgress();
-    }
-}
-
-function updateProgress(){
-    const percent = Math.round((completed / total) * 100);
-    document.getElementById("progressFill").style.width = percent + "%";
-    document.getElementById("progressText").textContent = percent + "% completado";
-}
-</script>
-
+  </main>
 </body>
 </html>
