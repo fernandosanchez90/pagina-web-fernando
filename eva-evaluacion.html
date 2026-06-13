@@ -3,157 +3,503 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación - Multiplicación por 2</title>
+<title>Evaluación | EVA Matemática</title>
 
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#fffbeb;color:#243447;line-height:1.7;}
-header{background:linear-gradient(135deg,#ca8a04,#facc15);color:white;text-align:center;padding:55px 20px;}
-header h1{margin:0;font-size:42px;}
-.container{max-width:1180px;margin:auto;padding:40px 20px;}
-.card{background:white;border-radius:20px;padding:28px;margin-bottom:25px;box-shadow:0 4px 14px rgba(0,0,0,.08);}
-.gold{border-top:8px solid #ca8a04;}
-.blue{border-top:8px solid #2563eb;}
-.green{border-top:8px solid #16a34a;}
-.orange{border-top:8px solid #ea580c;}
-.purple{border-top:8px solid #7c3aed;}
-.red{border-top:8px solid #dc2626;}
-input{padding:12px;border:2px solid #cbd5e1;border-radius:10px;font-size:18px;width:130px;}
-button,.btn{display:inline-block;background:#003366;color:white;text-decoration:none;border:none;padding:13px 25px;border-radius:12px;margin-top:15px;margin-right:10px;font-weight:bold;cursor:pointer;}
-button:hover,.btn:hover{background:#00264d;}
-.question{background:#f8fafc;border-radius:16px;padding:20px;margin-bottom:18px;border-left:7px solid #ca8a04;}
-.resultado{display:none;border-radius:20px;padding:28px;margin-top:25px;text-align:center;font-size:20px;font-weight:bold;}
-.excelente{background:#dcfce7;color:#166534;}
-.bueno{background:#dbeafe;color:#1e40af;}
-.practica{background:#fef3c7;color:#92400e;}
-.refuerzo{background:#fee2e2;color:#991b1b;}
-.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;margin-top:20px;}
-.badge{background:#f8fafc;border-radius:16px;padding:18px;text-align:center;font-weight:bold;border-top:6px solid #ca8a04;}
-footer{background:#0f172a;color:white;text-align:center;padding:25px;margin-top:40px;}
+:root{
+  --rojo:#dc2626;
+  --rojo-claro:#fee2e2;
+  --rojo-suave:#fef2f2;
+  --verde:#16a34a;
+  --azul-institucional:#003366;
+  --texto:#243447;
+  --borde:#fecaca;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(180deg,#fef2f2 0%,#ffffff 100%);
+  color:var(--texto);
+  line-height:1.7;
+}
+
+.eva-page{
+  max-width:1180px;
+  margin:auto;
+  padding:30px 20px 50px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#dc2626,#ef4444);
+  color:white;
+  text-align:center;
+  padding:50px 24px;
+  border-radius:28px;
+  box-shadow:0 15px 35px rgba(220,38,38,.28);
+  margin-bottom:28px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:50px;
+  letter-spacing:2px;
+  font-weight:900;
+}
+
+.hero p{
+  font-size:19px;
+  margin:12px 0 0;
+}
+
+.membrete{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 22px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.18);
+  font-weight:bold;
+}
+
+.card{
+  background:white;
+  border-radius:26px;
+  padding:30px;
+  margin-bottom:28px;
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
+  border:2px solid var(--borde);
+}
+
+.card-intro{
+  border-left:10px solid var(--rojo);
+}
+
+.card h2{
+  margin-top:0;
+  color:var(--rojo);
+  font-size:28px;
+}
+
+.progress-bar{
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+  height:26px;
+  margin-top:15px;
+}
+
+.progress-fill{
+  background:linear-gradient(90deg,#dc2626,#ef4444);
+  height:100%;
+  width:100%;
+  color:white;
+  text-align:center;
+  font-weight:bold;
+  line-height:26px;
+}
+
+.section-title{
+  text-align:center;
+  color:var(--rojo);
+  font-size:34px;
+  margin:38px 0 24px;
+}
+
+.evaluation-card{
+  background:white;
+  border-radius:30px;
+  padding:32px;
+  margin-bottom:32px;
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
+  border:2px solid var(--borde);
+}
+
+.evaluation-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.evaluation-title{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.icon{
+  font-size:42px;
+  background:var(--rojo-claro);
+  width:76px;
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:24px;
+}
+
+.evaluation-title h3{
+  margin:0;
+  font-size:26px;
+  color:var(--rojo);
+}
+
+.tag{
+  background:var(--rojo);
+  color:white;
+  padding:9px 16px;
+  border-radius:999px;
+  font-weight:bold;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.question{
+  background:#f8fafc;
+  border-left:8px solid var(--rojo);
+  border-radius:18px;
+  padding:20px;
+  margin:18px 0;
+}
+
+input{
+  padding:12px;
+  border:2px solid #cbd5e1;
+  border-radius:12px;
+  font-size:18px;
+  width:150px;
+  text-align:center;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--rojo);
+  color:white;
+  text-decoration:none;
+  padding:13px 22px;
+  border-radius:14px;
+  margin:8px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+  transition:.25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  opacity:.92;
+}
+
+.resultado{
+  display:none;
+  border-radius:22px;
+  padding:28px;
+  margin-top:25px;
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.excelente{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.bueno{
+  background:#dbeafe;
+  color:#1e40af;
+}
+
+.practica{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.refuerzo{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.badges{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+  margin-top:20px;
+}
+
+.badge{
+  background:#f8fafc;
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+  font-weight:bold;
+  border-top:7px solid var(--rojo);
+}
+
+.close-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+.close-item{
+  background:var(--rojo-suave);
+  border:2px solid var(--borde);
+  border-radius:18px;
+  padding:18px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.final-message{
+  background:linear-gradient(135deg,#fee2e2,#fff);
+  border:2px solid var(--borde);
+  border-radius:26px;
+  padding:28px;
+  margin-top:34px;
+  text-align:center;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.final-message h2{
+  color:var(--rojo);
+  margin-top:0;
+}
+
+.eva-navigation{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:38px;
+}
+
+.eva-navigation a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  padding:15px 24px;
+  border-radius:18px;
+  box-shadow:0 8px 18px rgba(0,0,0,.16);
+}
+
+.btn-anterior{
+  background:var(--verde);
+}
+
+.btn-eva{
+  background:var(--azul-institucional);
+}
+
+.btn-finalizar{
+  background:#111827;
+}
+
+footer{
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+  border-radius:22px;
+}
+
+@media(max-width:768px){
+  .hero h1{
+    font-size:36px;
+  }
+
+  .evaluation-header{
+    align-items:flex-start;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Dimensión Evaluativa</h1>
-<p>Verificación del aprendizaje sobre la multiplicación por 2</p>
-</header>
+<main class="eva-page">
 
-<div class="container">
+<section class="hero">
+  <h1>EVALUACIÓN</h1>
+  <p>EVA Matemática | Multiplicación por 2 y por 3</p>
+  <div class="membrete">Cierre del recorrido de aprendizaje</div>
+</section>
 
-<div class="card gold">
-<h2>Instrucciones</h2>
-<p>
-Responde cada pregunta. Cada respuesta correcta vale <strong>2 puntos</strong>.  
-El puntaje final será sobre <strong>10 puntos</strong>.
-</p>
-</div>
+<section class="card card-intro">
+  <h2>Propósito de evaluación</h2>
+  <p>
+    Verificar si el estudiante comprende y aplica la multiplicación por 2 y por 3 mediante operaciones sencillas, grupos iguales, sumas repetidas y situaciones de la vida diaria.
+  </p>
+</section>
 
-<div class="card blue">
-<h2>Evaluación interactiva</h2>
+<section class="card">
+  <h2>Avance del EVA</h2>
+  <p>
+    Has completado el recorrido de aprendizaje. En esta sección demostrarás lo aprendido de manera clara, sencilla y práctica.
+  </p>
 
-<div class="question">
-<p><strong>1. ¿Cuánto es 2 × 3?</strong></p>
-<input id="p1" type="number">
-</div>
+  <div class="progress-bar">
+    <div class="progress-fill">100%</div>
+  </div>
+</section>
 
-<div class="question">
-<p><strong>2. ¿Cuánto es 5 × 2?</strong></p>
-<input id="p2" type="number">
-</div>
+<h2 class="section-title">Demuestro lo Aprendido</h2>
 
-<div class="question">
-<p><strong>3. Si hay 4 grupos de 2 elementos, ¿cuántos elementos hay?</strong></p>
-<input id="p3" type="number">
-</div>
+<section class="evaluation-card">
+  <div class="evaluation-header">
+    <div class="evaluation-title">
+      <div class="icon">📝</div>
+      <h3>Evaluación interactiva</h3>
+    </div>
+    <span class="tag">Evaluación final</span>
+  </div>
 
-<div class="question">
-<p><strong>4. Ana tiene 3 pares de zapatos. ¿Cuántos zapatos tiene en total?</strong></p>
-<input id="p4" type="number">
-</div>
+  <p>
+    Responde cada pregunta. Cada respuesta correcta vale <strong>2 puntos</strong>. El puntaje final será sobre <strong>10 puntos</strong>.
+  </p>
 
-<div class="question">
-<p><strong>5. Observa: ● ● &nbsp;&nbsp; ● ● &nbsp;&nbsp; ● ●. ¿Cuántos elementos hay?</strong></p>
-<input id="p5" type="number">
-</div>
+  <div class="question">
+    <p><strong>1. ¿Cuánto es 2 × 3?</strong></p>
+    <input id="p1" type="number" placeholder="Respuesta">
+  </div>
 
-<button onclick="calcularResultado()">Calcular resultado</button>
+  <div class="question">
+    <p><strong>2. ¿Cuánto es 3 × 4?</strong></p>
+    <input id="p2" type="number" placeholder="Respuesta">
+  </div>
 
-<div id="resultado" class="resultado"></div>
-</div>
+  <div class="question">
+    <p><strong>3. Si hay 4 grupos de 2 elementos, ¿cuántos elementos hay?</strong></p>
+    <input id="p3" type="number" placeholder="Respuesta">
+  </div>
 
-<div class="card purple">
-<h2>Niveles de logro</h2>
+  <div class="question">
+    <p><strong>4. Ana tiene 3 pares de zapatos. ¿Cuántos zapatos tiene en total?</strong></p>
+    <input id="p4" type="number" placeholder="Respuesta">
+  </div>
 
-<div class="badges">
-<div class="badge">9 - 10<br>Experto en la tabla del 2</div>
-<div class="badge">7 - 8<br>Muy buen trabajo</div>
-<div class="badge">5 - 6<br>Sigue practicando</div>
-<div class="badge">0 - 4<br>Revisa los materiales</div>
-</div>
-</div>
+  <div class="question">
+    <p><strong>5. Observa: ● ● ● &nbsp;&nbsp; ● ● ● &nbsp;&nbsp; ● ● ●. ¿Cuántos elementos hay?</strong></p>
+    <input id="p5" type="number" placeholder="Respuesta">
+  </div>
 
-<div class="card green">
-<h2>Cierre del EVA</h2>
-<p>
-Al finalizar esta evaluación, el estudiante completa el recorrido por las seis dimensiones del Entorno Virtual de Aprendizaje:
-</p>
-<ul>
-<li>Dimensión Informativa</li>
-<li>Dimensión Formativa</li>
-<li>Dimensión Experiencial</li>
-<li>Dimensión Comunicativa</li>
-<li>Recursos de Apoyo</li>
-<li>Evaluación</li>
-</ul>
-</div>
+  <button class="btn" onclick="calcularResultado()">Calcular resultado</button>
+  <button class="btn" onclick="reiniciarEvaluacion()">Reiniciar evaluación</button>
 
-<a href="eva-multiplicacion-por-dos.html" class="btn">← Regresar al EVA</a>
-<a href="eva-materiales.html" class="btn">Revisar materiales</a>
-<a href="index.html" class="btn">Finalizar recorrido</a>
+  <div id="resultado" class="resultado"></div>
+</section>
 
-</div>
+<section class="evaluation-card">
+  <div class="evaluation-header">
+    <div class="evaluation-title">
+      <div class="icon">🏅</div>
+      <h3>Niveles de logro</h3>
+    </div>
+    <span class="tag">Retroalimentación</span>
+  </div>
+
+  <div class="badges">
+    <div class="badge">9 - 10<br>Excelente dominio</div>
+    <div class="badge">7 - 8<br>Muy buen trabajo</div>
+    <div class="badge">5 - 6<br>Sigue practicando</div>
+    <div class="badge">0 - 4<br>Necesitas refuerzo</div>
+  </div>
+</section>
+
+<section class="evaluation-card">
+  <div class="evaluation-header">
+    <div class="evaluation-title">
+      <div class="icon">✅</div>
+      <h3>Cierre del EVA</h3>
+    </div>
+    <span class="tag">Recorrido completo</span>
+  </div>
+
+  <p>
+    Al finalizar esta evaluación, el estudiante completa el recorrido por las dimensiones del Entorno Virtual de Aprendizaje y las fases trabajadas desde la metodología ERCA.
+  </p>
+
+  <div class="close-list">
+    <div class="close-item">Dimensión Informativa</div>
+    <div class="close-item">Dimensión Formativa</div>
+    <div class="close-item">Dimensión Experiencial</div>
+    <div class="close-item">Dimensión Comunicativa</div>
+    <div class="close-item">Aplicación</div>
+    <div class="close-item">Evaluación</div>
+  </div>
+</section>
+
+<section class="final-message">
+  <h2>Mensaje final</h2>
+  <p>
+    Multiplicar no es solo memorizar. Es reconocer grupos iguales, contar más rápido y resolver situaciones de la vida diaria.
+  </p>
+</section>
+
+<nav class="eva-navigation">
+  <a href="eva-recursos.html" class="btn-anterior">← Anterior</a>
+  <a href="eva-multiplicacion-por-dos.html" class="btn-eva">Regresar EVA</a>
+  <a href="index.html" class="btn-finalizar">Finalizar recorrido</a>
+</nav>
 
 <footer>
-Fernando Sánchez | Evaluación • Multiplicación por 2
+  Fernando Sánchez | Evaluación • Multiplicación por 2 y por 3
 </footer>
+
+</main>
 
 <script>
 function calcularResultado(){
-    let puntaje = 0;
+  let puntaje = 0;
 
-    const respuestas = [
-        Number(document.getElementById("p1").value),
-        Number(document.getElementById("p2").value),
-        Number(document.getElementById("p3").value),
-        Number(document.getElementById("p4").value),
-        Number(document.getElementById("p5").value)
-    ];
+  const respuestas = [
+    Number(document.getElementById("p1").value),
+    Number(document.getElementById("p2").value),
+    Number(document.getElementById("p3").value),
+    Number(document.getElementById("p4").value),
+    Number(document.getElementById("p5").value)
+  ];
 
-    const correctas = [6,10,8,6,6];
+  const correctas = [6,12,8,6,9];
 
-    for(let i=0; i<correctas.length; i++){
-        if(respuestas[i] === correctas[i]){
-            puntaje += 2;
-        }
+  for(let i = 0; i < correctas.length; i++){
+    if(respuestas[i] === correctas[i]){
+      puntaje += 2;
     }
+  }
 
-    const resultado = document.getElementById("resultado");
-    resultado.style.display = "block";
+  const resultado = document.getElementById("resultado");
+  resultado.style.display = "block";
 
-    if(puntaje >= 9){
-        resultado.className = "resultado excelente";
-        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Excelente. Eres experto en la tabla del 2.";
-    }else if(puntaje >= 7){
-        resultado.className = "resultado bueno";
-        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Muy buen trabajo. Dominas gran parte del tema.";
-    }else if(puntaje >= 5){
-        resultado.className = "resultado practica";
-        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Sigue practicando. Revisa nuevamente algunos ejemplos.";
-    }else{
-        resultado.className = "resultado refuerzo";
-        resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Necesitas reforzar. Vuelve a revisar los materiales.";
-    }
+  if(puntaje >= 9){
+    resultado.className = "resultado excelente";
+    resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Excelente. Comprendes y aplicas muy bien la multiplicación por 2 y por 3.";
+  }else if(puntaje >= 7){
+    resultado.className = "resultado bueno";
+    resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Muy buen trabajo. Dominas gran parte del tema.";
+  }else if(puntaje >= 5){
+    resultado.className = "resultado practica";
+    resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Sigue practicando. Revisa nuevamente las actividades de aplicación.";
+  }else{
+    resultado.className = "resultado refuerzo";
+    resultado.innerHTML = "Puntaje obtenido: " + puntaje + "/10<br>Necesitas reforzar. Vuelve a revisar la experiencia, la reflexión, la conceptualización y la aplicación.";
+  }
+}
+
+function reiniciarEvaluacion(){
+  for(let i = 1; i <= 5; i++){
+    document.getElementById("p" + i).value = "";
+  }
+
+  const resultado = document.getElementById("resultado");
+  resultado.style.display = "none";
+  resultado.innerHTML = "";
 }
 </script>
 
