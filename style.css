@@ -1,130 +1,145 @@
 body{
     margin:0;
-    font-family: Arial, sans-serif;
+    font-family:Arial, sans-serif;
     background:#f4f6f9;
     color:#1e293b;
 }
 
+/* ENCABEZADO PRINCIPAL */
 header{
-    background:#003366;
+    background:linear-gradient(135deg,#003366,#00509d);
     color:white;
-    padding:60px 20px;
+    padding:65px 20px;
     text-align:center;
 }
 
 header h1{
-    font-size:48px;
+    font-size:52px;
     margin-bottom:10px;
+    letter-spacing:1px;
 }
 
 header p{
-    font-size:20px;
+    font-size:21px;
+    margin:8px 0;
 }
 
+/* FOTO DE PERFIL */
+header img{
+    border:6px solid white;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+/* SECCIONES */
 section{
     max-width:1100px;
     margin:auto;
-    padding:60px 20px;
+    padding:55px 20px;
 }
 
+section h2{
+    color:#003366;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+/* TARJETAS */
 .card-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    gap:24px;
 }
 
 .card{
     background:white;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-    height:260px;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 8px 22px rgba(0,0,0,.10);
+    min-height:250px;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
+    transition:.3s ease;
+    border-top:6px solid #003366;
 }
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px rgba(0,0,0,.16);
 }
 
 .card h3{
     color:#003366;
+    font-size:22px;
+    margin-bottom:18px;
 }
 
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:40px;
+.card p{
+    font-size:16px;
+    line-height:1.45;
 }
 
+/* FRASE CENTRAL */
 .quote{
-    background:#003366;
+    background:linear-gradient(135deg,#003366,#00509d);
     color:white;
-    padding:50px;
-    border-radius:25px;
+    padding:48px;
+    border-radius:28px;
     text-align:center;
-    font-size:24px;
+    font-size:27px;
     line-height:1.6;
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
 }
+
+/* CONTADOR */
 .contador-card{
-    margin-top:20px;
+    margin-top:28px;
     display:inline-block;
     background:white;
-    padding:15px 25px;
+    padding:18px 28px;
     border-radius:18px;
-    box-shadow:0 6px 18px rgba(0,0,0,.18);
+    box-shadow:0 6px 18px rgba(0,0,0,.20);
 }
 
 .contador-titulo{
     color:#003366;
     font-size:12px;
     font-weight:bold;
-    letter-spacing:1px;
+    letter-spacing:2px;
     margin-bottom:10px;
 }
 
 .contador-numero img{
     height:35px;
 }
-.comentarios-cta{
 
+/* BLOQUE COMENTARIOS */
+.comentarios-cta{
     grid-column:1 / -1;
     width:100%;
     box-sizing:border-box;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:30px;
     margin-top:40px;
-    padding:35px;
+    padding:38px;
     background:linear-gradient(135deg,#003366,#00509d);
     color:white;
     text-decoration:none;
-    border-radius:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
+    border-radius:28px;
+    box-shadow:0 10px 28px rgba(0,0,0,.20);
+    transition:.3s ease;
+}
 
-}   
-    
-    
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:30px;
-    margin-top:40px;
-    padding:35px;
-    background:linear-gradient(135deg,#003366,#00509d);
-    color:white;
-    text-decoration:none;
-    border-radius:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
+.comentarios-cta:hover{
+    transform:translateY(-6px);
 }
 
 .comentarios-texto h2{
     margin-top:0;
     margin-bottom:15px;
-    font-size:32px;
+    font-size:30px;
     color:white;
 }
 
@@ -138,23 +153,50 @@ footer{
     background:#fbbf24;
     color:#003366;
     font-weight:bold;
-    padding:18px 28px;
-    border-radius:15px;
+    padding:18px 30px;
+    border-radius:16px;
     font-size:20px;
     white-space:nowrap;
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
+    box-shadow:0 5px 14px rgba(0,0,0,.25);
 }
 
-.comentarios-cta:hover{
-    transform:translateY(-4px);
-    transition:0.3s;
+/* PIE DE PÁGINA */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
+
+    header h1{
+        font-size:38px;
+    }
+
+    header p{
+        font-size:18px;
+    }
+
+    section{
+        padding:40px 18px;
+    }
+
+    .quote{
+        font-size:22px;
+        padding:35px 24px;
+    }
 
     .comentarios-cta{
         flex-direction:column;
         text-align:center;
     }
 
+    .comentarios-boton{
+        width:100%;
+        text-align:center;
+        box-sizing:border-box;
+    }
 }
