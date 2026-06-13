@@ -244,9 +244,9 @@
     .eva-navegacion {
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
-      margin: 34px 0;
+      margin: 36px 0 10px;
     }
 
     .btn-eva {
@@ -254,8 +254,8 @@
       text-decoration: none;
       border: none;
       cursor: pointer;
-      padding: 14px 22px;
-      border-radius: 999px;
+      padding: 14px 24px;
+      border-radius: 9px;
       font-weight: 900;
       font-size: 1rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -265,16 +265,22 @@
       transform: translateY(-3px);
     }
 
-    .btn-secundario {
-      background: #ffedd5;
-      color: #9a3412;
-      box-shadow: 0 8px 18px rgba(154, 52, 18, 0.16);
+    .btn-regresar {
+      background: #003366;
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(0, 51, 102, 0.22);
     }
 
-    .btn-principal {
-      background: linear-gradient(135deg, #f97316, #ea580c);
+    .btn-anterior {
+      background: #f97316;
       color: #ffffff;
-      box-shadow: 0 8px 18px rgba(234, 88, 12, 0.26);
+      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.24);
+    }
+
+    .btn-siguiente {
+      background: #16a34a;
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.24);
     }
 
     .eva-footer {
@@ -283,12 +289,23 @@
       color: #7c2d12;
       font-weight: 700;
     }
+
+    @media (max-width: 700px) {
+      .eva-card {
+        padding: 22px;
+      }
+
+      .btn-eva {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
 <body class="experiencia-page">
 
-  <header class="eva-header experiencia-header" id="inicio">
+  <header class="eva-header experiencia-header">
     <div class="eva-header-contenido">
       <h1>Experiencia</h1>
       <p>EVA Matemática: multiplicación por 2 y por 3</p>
@@ -385,12 +402,16 @@
     </section>
 
     <section class="eva-navegacion">
-      <a href="#inicio" class="btn-eva btn-secundario">
-        Regresar al inicio de esta página
+      <a href="index.html" class="btn-eva btn-regresar">
+        ← Regresar al EVA
       </a>
 
-      <a href="eva-formativa.html" class="btn-eva btn-principal">
-        Continuar con la siguiente dimensión
+      <a href="eva-informativa.html" class="btn-eva btn-anterior">
+        ← Página anterior
+      </a>
+
+      <a href="eva-formativa.html" class="btn-eva btn-siguiente">
+        🚀 Avanzar a la siguiente página →
       </a>
     </section>
 
