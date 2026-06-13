@@ -68,9 +68,68 @@
       border-left-color: #f97316;
     }
 
+    .progress-zone {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .progress-step {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid #38bdf8;
+    }
+
+    .progress-step.active {
+      background: #f97316;
+      color: white;
+      border-color: #fb923c;
+    }
+
+    .compliance-card {
+      background: #fef3c7;
+      border: 3px solid #f59e0b;
+      border-radius: 24px;
+      padding: 24px;
+      margin: 28px 0;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    }
+
+    .compliance-card h2 {
+      margin: 0 0 12px 0;
+      color: #92400e;
+    }
+
+    .compliance-percent {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #ea580c;
+    }
+
+    .compliance-bar {
+      width: 100%;
+      height: 18px;
+      background: #fde68a;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+
+    .compliance-fill {
+      width: 25%;
+      height: 100%;
+      background: #f97316;
+    }
+
     .activity-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 24px;
     }
 
@@ -130,6 +189,10 @@
       margin-bottom: 10px;
     }
 
+    .video-activity {
+      padding: 30px;
+    }
+
     .video-container {
       position: relative;
       width: 100%;
@@ -181,29 +244,6 @@
       line-height: 1.5;
     }
 
-    .progress-zone {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
-
-    .progress-step {
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 2px solid #38bdf8;
-    }
-
-    .progress-step.active {
-      background: #f97316;
-      color: white;
-      border-color: #fb923c;
-    }
-
     .eva-navigation {
       display: flex;
       justify-content: center;
@@ -218,14 +258,14 @@
       border-radius: 999px;
       font-weight: 800;
       color: white;
-      background: #0f172a;
+      background: #2563eb;
       box-shadow: 0 6px 16px rgba(0,0,0,0.18);
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .eva-btn:hover {
       transform: translateY(-3px);
-      background: #2563eb;
+      background: #1d4ed8;
     }
 
     .eva-btn.main {
@@ -264,12 +304,24 @@
       <span class="progress-step">4. Aplicación</span>
     </div>
 
+    <section class="compliance-card">
+      <h2>Porcentaje de cumplimiento del recorrido ERCA</h2>
+      <div class="compliance-percent">25%</div>
+      <p>
+        Estamos iniciando la fase de experiencia: observar, descubrir y conectar con
+        situaciones reales antes de construir el concepto matemático.
+      </p>
+      <div class="compliance-bar">
+        <div class="compliance-fill"></div>
+      </div>
+    </section>
+
     <section class="section-card">
       <h2>Actividades de descubrimiento</h2>
 
       <div class="activity-grid">
 
-        <article class="activity-card">
+        <article class="activity-card video-activity">
           <span class="type-badge badge-r">R · Recurso</span>
           <div class="icon">🎥</div>
           <h3>Actividad 1: Video de experiencia</h3>
@@ -293,15 +345,17 @@
           <h3>Actividad 2: Observación guiada</h3>
           <p>
             Mira a tu alrededor y encuentra objetos que estén organizados en grupos
-            iguales. Puedes observar lápices, zapatos, ruedas, mesas, sillas o juguetes.
+            iguales. Puedes observar lápices, zapatos, ruedas, mesas, sillas, juguetes
+            u otros elementos de tu casa o aula.
           </p>
 
           <div class="challenge-box">
-            Descubre y escribe mentalmente:
+            Descubre y responde:
             <ul>
               <li>¿Qué objetos encontraste?</li>
-              <li>¿Cuántos grupos hay?</li>
+              <li>¿Cuántos grupos iguales observaste?</li>
               <li>¿Cuántos objetos tiene cada grupo?</li>
+              <li>¿Crees que contar por grupos es más rápido que contar uno por uno?</li>
             </ul>
           </div>
         </article>
