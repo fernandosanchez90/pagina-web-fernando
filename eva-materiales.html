@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
+<body>
 
-  <header class="eva-header experiencia-header">
+  <header class="eva-header experiencia-header" id="inicio">
     <div class="eva-header-contenido">
       <h1>Experiencia</h1>
       <p>EVA Matemática: multiplicación por 2 y por 3</p>
@@ -105,9 +105,12 @@
     </section>
 
     <section class="eva-navegacion">
-      <a href="#top" class="btn-eva btn-secundario">
+      <button 
+        type="button" 
+        class="btn-eva btn-secundario"
+        onclick="document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });">
         Regresar al inicio de esta página
-      </a>
+      </button>
 
       <a href="eva-formativa.html" class="btn-eva btn-principal">
         Continuar con la siguiente dimensión
@@ -120,6 +123,5 @@
     <p>EVA Matemática · Tercero EGB · Multiplicación por 2 y por 3</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
